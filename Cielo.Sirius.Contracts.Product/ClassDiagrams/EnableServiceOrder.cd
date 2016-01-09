@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Cielo.Sirius.Contracts.DisableServiceOrder.EnableServiceOrderRequest">
+    <Position X="6.5" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAQABAAAACgEAAAAAAAAAQAAAAAAAACAAA=</HashCode>
+      <FileName>EnableServiceOrder.cs</FileName>
+      <NewMemberFileName>DisableServiceOrder.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Contracts.DisableServiceOrder.EnableServiceOrderResponse">
+    <Position X="6" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnableServiceOrder.cs</FileName>
+      <NewMemberFileName>DisableServiceOrder.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Foundation.RequestBase">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Cielo.Sirius.Foundation.ResponseBase">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="Cielo.Sirius.Foundation.ExecutionStatus">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

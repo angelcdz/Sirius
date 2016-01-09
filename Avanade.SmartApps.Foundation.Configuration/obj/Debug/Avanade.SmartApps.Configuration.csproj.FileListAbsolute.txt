@@ -1,0 +1,5 @@
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Foundation.Configuration\bin\Debug\Avanade.SmartApps.Configuration.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Foundation.Configuration\bin\Debug\Avanade.SmartApps.Configuration.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Foundation.Configuration\obj\Debug\Avanade.SmartApps.Configuration.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Foundation.Configuration\obj\Debug\Avanade.SmartApps.Configuration.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Foundation.Configuration\obj\Debug\Avanade.SmartApps.Configuration.csprojResolveAssemblyReference.cache

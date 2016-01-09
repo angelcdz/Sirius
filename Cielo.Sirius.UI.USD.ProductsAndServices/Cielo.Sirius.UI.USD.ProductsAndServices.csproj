@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90CAD69A-4AFE-410A-BD0A-CF2A31C19245}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cielo.Sirius.UI.USD.ProductsAndServices</RootNamespace>
+    <AssemblyName>Cielo.Sirius.UI.USD.ProductsAndServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cielo.Sirius.Foundation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8788bfe52c9f1ff7, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.7.0.0\lib\net45\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.UnifiedServiceDesk.BaseControl">
+      <HintPath>..\packages\Microsoft.CrmSdk.USD.CoreAssemblies.7.0.0\lib\net45\Microsoft.Crm.UnifiedServiceDesk.BaseControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.UnifiedServiceDesk.CommonUtility">
+      <HintPath>..\packages\Microsoft.CrmSdk.USD.CoreAssemblies.7.0.0\lib\net45\Microsoft.Crm.UnifiedServiceDesk.CommonUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.UnifiedServiceDesk.Dynamics">
+      <HintPath>..\packages\Microsoft.CrmSdk.USD.CoreAssemblies.7.0.0\lib\net45\Microsoft.Crm.UnifiedServiceDesk.Dynamics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Uii.AifServices">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.AifServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Configuration">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Listeners">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Listeners.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Logging">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Logging.Providers">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Logging.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Providers">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Browser.Web">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Csr.Browser.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Core">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Csr.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Win32Api">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Csr.Win32Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.Core">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Desktop.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.Cti.Controls">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Desktop.Cti.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.Cti.Core">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Desktop.Cti.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.SessionManager">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Desktop.SessionManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.UI.Controls">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Desktop.UI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.UI.Controls.Wpf">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Desktop.UI.Controls.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.UI.Core">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Desktop.UI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Desktop.UI.Wpf">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Desktop.UI.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Practices.CompositeUI">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Practices.CompositeUI.Windows">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Practices.CompositeUI.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Practices.CompositeUI.WinForms">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Practices.ObjectBuilder">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.DesktopAssemblies.7.0.0\lib\net45\Microsoft.Uii.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.7.0.0\lib\net45\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment">
+      <HintPath>..\packages\Microsoft.CrmSdk.Deployment.7.0.0\lib\net45\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
+      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.7.0.0\lib\net45\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.7.0.0\lib\net45\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ChangeProductInstallmentCreditModel.cs" />
+    <Compile Include="Model\CommercialDealRequestsTypesModel.cs" />
+    <Compile Include="Model\ConsultProductFlexibleDeadlineModel.cs" />
+    <Compile Include="Model\DefaultRequestSLAModel.cs" />
+    <Compile Include="Model\CommercialNegotiationModel.cs" />
+    <Compile Include="Model\GetNegotiationDataModel.cs" />
+    <Compile Include="Service References\ProdutosService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CommercialDeal\CommercialDealRequestsSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Products\ChangeProductSegmentedParcelledCreditViewModel.cs" />
+    <Compile Include="Model\ChangeProductOneLumpModel.cs" />
+    <Compile Include="Model\ChangeProductRatesModel.cs" />
+    <Compile Include="Model\GetDiscountRateRestrictionRangeSegmentedParcelledModel.cs" />
+    <Compile Include="Model\ConsultDeadlineTaxFlexibleDeadlineModel.cs" />
+    <Compile Include="Model\ConsultInformationPatAleloModel.cs" />
+    <Compile Include="Model\DisableProductModel.cs" />
+    <Compile Include="Model\ChangeProductSegmentedParcelledCreditModel.cs" />
+    <Compile Include="Model\EnabledTypedSaleModel.cs" />
+    <Compile Include="Model\GetRequestReasonModel.cs" />
+    <Compile Include="Model\NonElegibleServiceRequestsTypesModel.cs" />
+    <Compile Include="Model\NonEnabledServiceRequestsTypesModel.cs" />
+    <Compile Include="Model\DisabledTypedSaleModel.cs" />
+    <Compile Include="Model\EligibleServicesModel.cs" />
+    <Compile Include="Model\EnableDisableTypedSale.cs" />
+    <Compile Include="Model\EnabledServiceRequestsTypesModel.cs" />
+    <Compile Include="Model\NonElegibleProductRequestsTypesModel.cs" />
+    <Compile Include="Model\NonEnableProductRequestsTypesModel.cs" />
+    <Compile Include="Model\EnableServiceModel.cs" />
+    <Compile Include="Model\GetPatAleloInformationModel.cs" />
+    <Compile Include="Model\NonEnabledServicesModel.cs" />
+    <Compile Include="Model\EnableProduct.cs" />
+    <Compile Include="Model\NonElegibleServicesModel.cs" />
+    <Compile Include="Model\EnabledServicesModel.cs" />
+    <Compile Include="Model\GetMultivanProductDetailModel.cs" />
+    <Compile Include="Model\GetServiceRequestsHistoryModel.cs" />
+    <Compile Include="Model\NonEnabledProductDetailsModel.cs" />
+    <Compile Include="Model\NonElegibleProductDetailsModel.cs" />
+    <Compile Include="Model\NonElegibleProductsModel.cs" />
+    <Compile Include="Model\EnabledProductRequestsTypesModel.cs" />
+    <Compile Include="Model\RateNegotiationRequestModel.cs" />
+    <Compile Include="Model\RatesPurviewModel.cs" />
+    <Compile Include="Model\RequestProductExclusion.cs" />
+    <Compile Include="Model\NonEnabledProductsModel.cs" />
+    <Compile Include="Model\EnabledProductDetailsModel.cs" />
+    <Compile Include="Model\EnabledProductsModel.cs" />
+    <Compile Include="Model\DisableServiceModel.cs" />
+    <Compile Include="Model\RequestsHistoryModel.cs" />
+    <Compile Include="Model\ValidatePermissionTypedSale.cs" />
+    <Compile Include="ViewModel\Products\ChangeProductSegmentedParcelledCreditRateItem.cs" />
+    <Compile Include="Shells\DetailsShell.xaml.cs">
+      <DependentUpon>DetailsShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shells\SingleControlShell.xaml.cs">
+      <DependentUpon>SingleControlShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shells\TwoResultsDisplayShell.xaml.cs">
+      <DependentUpon>TwoResultsDisplayShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestControls\BackControl.xaml.cs">
+      <DependentUpon>BackControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestControls\BackControlViewModel.cs" />
+    <Compile Include="TestControls\ContextControl.xaml.cs">
+      <DependentUpon>ContextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestControls\ContextControlViewModel.cs" />
+    <Compile Include="ViewModel\Products\CreateDocumentAnalysisRequest.cs" />
+    <Compile Include="ViewModel\Products\DisabledTypedSaleViewModel.cs" />
+    <Compile Include="ViewModel\Products\DisableProductViewModel.cs" />
+    <Compile Include="ViewModel\Products\EnabledProductTaxesDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Products\EnabledTypedSaleViewModel.cs" />
+    <Compile Include="ViewModel\Products\NonElegibleProductTaxesDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Products\NonElegibleProductRequestsSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Products\NonEnabledProductTaxesDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Products\NonEnabledProductRequestsSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Products\GetPATAleloAlimentacaoInformationViewModel.cs" />
+    <Compile Include="ViewModel\Products\GetPATAleloRefeicaoInformationViewModel.cs" />
+    <Compile Include="ViewModel\Products\GetMultivanProductDetailViewModel.cs" />
+    <Compile Include="ViewModel\Products\ProductRequestErrorViewModel.cs" />
+    <Compile Include="ViewModel\Products\ProductRequestSuccessViewModel.cs" />
+    <Compile Include="ViewModel\Products\RateNegotiationRequestViewModel.cs" />
+    <Compile Include="ViewModel\Services\NonEnabledServiceRequestsSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Services\DisableServiceViewModel.cs" />
+    <Compile Include="ViewModel\Services\EnabledServiceDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Services\EnabledServiceRequestsSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Services\EnableServiceViewModel.cs" />
+    <Compile Include="ViewModel\Services\NonElegibleServiceDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Services\NonEnabledServiceDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Services\EnabledServicesViewModel.cs" />
+    <Compile Include="ViewModel\Services\NonElegibleServicesViewModel.cs" />
+    <Compile Include="ViewModel\Products\NonEnabledProductDetailsViewModel .cs" />
+    <Compile Include="ViewModel\Products\NonElegibleProductDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Products\EnabledProductsViewModel.cs" />
+    <Compile Include="ViewModel\Products\NonElegibleProductsViewModel.cs" />
+    <Compile Include="ViewModel\Products\NonEnabledProductsViewModel.cs" />
+    <Compile Include="ViewModel\Products\EnabledProductDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Services\NonEnabledServicesViewModel.cs" />
+    <Compile Include="ViewModel\Products\EnabledProductRequestsSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Products\ProductsViewModel.cs" />
+    <Compile Include="ViewModel\Products\ChangeProductOneLumpViewModel.cs" />
+    <Compile Include="ViewModel\Products\RateChangeViewModel.cs" />
+    <Compile Include="ViewModel\Products\RequestsHistoryViewModel.cs" />
+    <Compile Include="ViewModel\Services\ServiceRequestErrorViewModel.cs" />
+    <Compile Include="ViewModel\Services\NonElegibleServiceRequestSelectorViewModel.cs" />
+    <Compile Include="ViewModel\Services\ServiceRequestsHistoryViewModel.cs" />
+    <Compile Include="ViewModel\Services\ServiceRequestSuccessViewModel.cs" />
+    <Compile Include="ViewModel\Services\ServicesViewModel.cs" />
+    <Compile Include="View\CommercialDeal\CommercialDealRequestsSelector.xaml.cs">
+      <DependentUpon>CommercialDealRequestsSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommercialDeal\EquipmentDetail.xaml.cs">
+      <DependentUpon>EquipmentDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\CreateDocumentAnalysisRequest.xaml.cs">
+      <DependentUpon>CreateDocumentAnalysisRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\DisabledTypedSale.xaml.cs">
+      <DependentUpon>DisabledTypedSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\DisableProduct.xaml.cs">
+      <DependentUpon>DisableProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\EnabledProductTaxesDetails.xaml.cs">
+      <DependentUpon>EnabledProductTaxesDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\EnabledTypedSale.xaml.cs">
+      <DependentUpon>EnabledTypedSale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\NonElegibleProductTaxesDetails.xaml.cs">
+      <DependentUpon>NonElegibleProductTaxesDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\NonElegibleProductRequestsSelector.xaml.cs">
+      <DependentUpon>NonElegibleProductRequestsSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\NonEnabledProductTaxesDetails.xaml.cs">
+      <DependentUpon>NonEnabledProductTaxesDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\NonEnabledProductRequestsSelector.xaml.cs">
+      <DependentUpon>NonEnabledProductRequestsSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\GetMultivanProductDetail.xaml.cs">
+      <DependentUpon>GetMultivanProductDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\GetPATAleloAlimentacaoInformation.xaml.cs">
+      <DependentUpon>GetPATAleloAlimentacaoInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\GetPATAleloRefeicaoInformation.xaml.cs">
+      <DependentUpon>GetPATAleloRefeicaoInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\ProductRequestError.xaml.cs">
+      <DependentUpon>ProductRequestError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\ProductRequestSuccess.xaml.cs">
+      <DependentUpon>ProductRequestSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\ChangeProductSegmentedParcelledCredit.xaml.cs">
+      <DependentUpon>ChangeProductSegmentedParcelledCredit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\RateNegotiationRequest.xaml.cs">
+      <DependentUpon>RateNegotiationRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\NonEnabledServiceRequestsSelector.xaml.cs">
+      <DependentUpon>NonEnabledServiceRequestsSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\DisableService.xaml.cs">
+      <DependentUpon>DisableService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\EnabledServiceDetails.xaml.cs">
+      <DependentUpon>EnabledServiceDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\EnabledServiceRequestsSelector.xaml.cs">
+      <DependentUpon>EnabledServiceRequestsSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\EnableService.xaml.cs">
+      <DependentUpon>EnableService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\NonElegibleServiceDetails.xaml.cs">
+      <DependentUpon>NonElegibleServiceDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\NonEnabledServiceDetails.xaml.cs">
+      <DependentUpon>NonEnabledServiceDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\EnabledProducts.xaml.cs">
+      <DependentUpon>EnabledProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\EnabledServices.xaml.cs">
+      <DependentUpon>EnabledServices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\NonElegibleProductDetails.xaml.cs">
+      <DependentUpon>NonElegibleProductDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\NonElegibleProducts.xaml.cs">
+      <DependentUpon>NonElegibleProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\NonElegibleServices.xaml.cs">
+      <DependentUpon>NonElegibleServices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\NonEnabledProductDetails.xaml.cs">
+      <DependentUpon>NonEnabledProductDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\NonEnabledProducts.xaml.cs">
+      <DependentUpon>NonEnabledProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\EnabledProductDetails.xaml.cs">
+      <DependentUpon>EnabledProductDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\NonEnabledServices.xaml.cs">
+      <DependentUpon>NonEnabledServices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\EnabledProductRequestsSelector.xaml.cs">
+      <DependentUpon>EnabledProductRequestsSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductsServicesView.xaml.cs">
+      <DependentUpon>ProductsServicesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\ProductsView.xaml.cs">
+      <DependentUpon>ProductsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\ChangeProductOneLump.xaml.cs">
+      <DependentUpon>ChangeProductOneLump.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\RateChange.xaml.cs">
+      <DependentUpon>RateChange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Products\RequestsHistory.xaml.cs">
+      <DependentUpon>RequestsHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\ServiceRequestError.xaml.cs">
+      <DependentUpon>ServiceRequestError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\ServiceRequestsHistory.xaml.cs">
+      <DependentUpon>ServiceRequestsHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\NonElegibleServiceRequestsSelector.xaml.cs">
+      <DependentUpon>NonElegibleServiceRequestsSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\ServiceRequestSuccess.xaml.cs">
+      <DependentUpon>ServiceRequestSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\ServicesView.xaml.cs">
+      <DependentUpon>ServicesView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ProductsAndServicesMainControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="ProductsAndServicesMainControl.xaml.cs">
+      <DependentUpon>ProductsAndServicesMainControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Shells\DetailsShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shells\SingleControlShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shells\TwoResultsDisplayShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestControls\BackControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestControls\ContextControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CommercialDeal\CommercialDealRequestsSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CommercialDeal\EquipmentDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\CreateDocumentAnalysisRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\DisabledTypedSale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Products\DisableProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\EnabledProductTaxesDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Products\EnabledTypedSale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\NonElegibleProductTaxesDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Products\NonElegibleProductRequestsSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Products\NonEnabledProductTaxesDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Products\NonEnabledProductRequestsSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Products\GetMultivanProductDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\GetPATAleloAlimentacaoInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\GetPATAleloRefeicaoInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\ProductRequestError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\ProductRequestSuccess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\ChangeProductSegmentedParcelledCredit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Products\RateNegotiationRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\NonEnabledServiceRequestsSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\DisableService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\EnabledServiceDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\EnabledServiceRequestsSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\EnableService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\NonElegibleServiceDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\NonEnabledServiceDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\EnabledProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\EnabledServices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\NonElegibleProductDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\NonElegibleProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\NonElegibleServices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\NonEnabledProductDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\NonEnabledProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\EnabledProductDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\NonEnabledServices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\EnabledProductRequestsSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductsServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\ProductsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\ChangeProductOneLump.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Products\RateChange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Products\RequestsHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\ServiceRequestError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\ServiceRequestsHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\NonElegibleServiceRequestsSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\ServiceRequestSuccess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\ServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Model\ClassDiagrams\ChangeProductOneLumpModel.cd" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarProdutoAVista.AlterarProdutoAVistaResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarProdutoCreditoParcelado.AlterarProdutoCreditoParceladoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarProdutoCreditoParceladoSegmentado.AlterarProdutoCreditoParceladoSegmentadoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.CalcularAlcadaFaixasParceladoSegmentado.CalcularAlcadaFaixasParceladoSegmentadoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDadosNegociacao.ConsultarDadosNegociacaoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarElegibilidadeCriacaoDemanda.ConsultarElegibilidadeCriacaoDemandaResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutosPrazoFlexivel.ConsultarProdutosPrazoFlexivelResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarSLAPadrao.ConsultarSLAPadraoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetAvailableCustomerOffers.GetAvailableCustomerOffersResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetCompetitors.GetCompetitorsResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetRequestReasonMetricas.GetRequestReasonMetricasResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.NegociacaoComercial.NegociacaoComercialResponse.datasource" />
+    <None Include="Service References\ProdutosService\ProdutosService.wsdl" />
+    <None Include="Service References\ProdutosService\ProdutosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService40.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="View\ClassDiagrams\ChangeProductOneLumpClassDiagram.cd" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.DesabilitarProduto.DesabilitarProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.DetalharProdutoCreditoParceladoSegmentado.DetalharProdutoCreditoParceladoSegmentadoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.DetalharProdutoParceladoSegmentado.DetalharProdutoParceladoSegmentadoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarPrazoFlexivel.HabilitarPrazoFlexivelResponse.datasource" />
+    <None Include="View\ClassDiagrams\ChangeProductSegmentedParcelledCredit.cd" />
+    <None Include="View\ClassDiagrams\EnableServiceClassDiagram.cd" />
+    <None Include="Model\ClassDiagrams\ConsultInformationPatAleloModel.cd" />
+    <None Include="Model\ClassDiagrams\GetServiceRequestsHistory.cd" />
+    <None Include="Model\ClassDiagrams\NonElegibleServicesModel.cd" />
+    <None Include="Model\ClassDiagrams\EnabledServicesModel.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarParcelaFaixaProduto.AlterarParcelaFaixaProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarParcelaFaixaProduto.AlterarParcelaFaixaProdutoResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarTaxasProdutoCreditoParceladoSegmentado.AlterarTaxasProdutoCreditoParceladoSegmentadoResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente.ConsultarDetalheProdutoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente.ConsultarDetalheProdutoElegivelClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoHabilitadoCliente.ConsultarDetalheProdutoHabilitadoClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoHabilitadoCliente.ConsultarDetalheProdutoHabilitadoClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente.ConsultarDetalheProdutoMultivanContratadoClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente.ConsultarDetalheProdutoMultivanContratadoClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoNaoElegivelCliente.ConsultarDetalheProdutoNaoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoNaoElegivelCliente.ConsultarDetalheProdutoNaoElegivelClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo.ConsultarInformacoesPatAleloResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo.ConsultarInformacoesPatAleloResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarPrazoPadrao.ConsultarPrazoPadraoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarPrazoPadrao.ConsultarPrazoPadraoResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel.ConsultarPrazosTaxasPrazoFlexivelResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel.ConsultarPrazosTaxasPrazoFlexivelResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoElegivelCliente.ConsultarProdutoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoElegivelCliente.ConsultarProdutoElegivelClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente.ConsultarProdutoHabilitadoClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente.ConsultarProdutoHabilitadoClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoNaoElegivelCliente.ConsultarProdutoNaoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoNaoElegivelCliente.ConsultarProdutoNaoElegivelClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutosClienteHabilitados.ConsultarProdutosClienteHabilitadosResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente.ConsultarServicoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente.ConsultarServicoElegivelClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoHabilitadoCliente.ConsultarServicoHabilitadoClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoHabilitadoCliente.ConsultarServicoHabilitadoClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoNaoElegivelCliente.ConsultarServicoNaoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoNaoElegivelCliente.ConsultarServicoNaoElegivelClienteResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.DesabilitarServico.DesabilitarServicoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.DesabilitarServico.DesabilitarServicoResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetDiscountRateRestriction.GetDiscountRateRestrictionResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetDiscountRateRestriction.GetDiscountRateRestrictionResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEligibleProductRequestTypes.GetEligibleProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEligibleServiceRequestTypes.GetEligibleServiceRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEnabledProductRequestTypes.GetEnabledProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEnabledProductRequestTypes.GetEnabledProductRequestTypesResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEnabledServiceRequestTypes.GetEnabledServiceRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEnabledServiceRequestTypes.GetEnabledServiceRequestTypesResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetNonEligibleProductRequestTypes.GetNonEligibleProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetNonEligibleProductRequestTypes.GetNonEligibleProductRequestTypesResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetNonEnabledProductRequestTypes.GetNonEnabledProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetProductRequestsHistory.GetProductRequestsHistoryResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetProductRequestsHistory.GetProductRequestsHistoryResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetProductRequestTypes.GetProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetRequestReason.GetRequestReasonResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetServiceRequestsHistory.GetServiceRequestsHistoryResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetServiceRequestsHistory.GetServiceRequestsHistoryResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada.HabilitarDesabilitarVendaDigitadaResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada.HabilitarDesabilitarVendaDigitadaResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarProduto.HabilitarProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarProduto.HabilitarProdutoResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarServico.HabilitarServicoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarServico.HabilitarServicoResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ManterPrazoFlexivel.ManterPrazoFlexivelResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ManterPrazoFlexivel.ManterPrazoFlexivelResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.Products.GetDisabledServiceRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.Products.GetNonEligibleServiceRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.Products.GetNonEligibleServiceRequestTypesResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.Products.GetNonEnabledServiceRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.Products.GetNonEnabledServiceRequestTypesResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.RecuperarTaxasProduto.RecuperarTaxasProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.RecuperarTaxasProdutoCreditoParceladoSegmentado.RecuperarTaxasProdutoCreditoParceladoSegmentadoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitaAnaliseAlvara.SolicitaAnaliseAlvaraResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitaAnaliseAlvara.SolicitaAnaliseAlvaraResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitarExclusaoProduto.SolicitarExclusaoProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitarExclusaoProduto.SolicitarExclusaoProdutoResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitarInclusaoServico.SolicitarInclusaoServicoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitarNegociacaoTaxa.SolicitarNegociacaoTaxaResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitarNegociacaoTaxa.SolicitarNegociacaoTaxaResponse1.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada.ValidarPermissaoVendaDigitadaResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada.ValidarPermissaoVendaDigitadaResponse1.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="UnifiedServiceDesk.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cielo.Sirius.Contracts.Product\Cielo.Sirius.Contracts.Products.csproj">
+      <Project>{df68dd91-542f-4a49-88a7-e23d8bbc8405}</Project>
+      <Name>Cielo.Sirius.Contracts.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Foundation.USD\Avanade.SmartApps.UI.USD.csproj">
+      <Project>{12916597-635d-4015-bb9a-30ca29472f16}</Project>
+      <Name>Avanade.SmartApps.UI.USD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Foundation\Avanade.SmartApps.csproj">
+      <Project>{0995c250-a3bd-4973-82e7-a43f8b23493a}</Project>
+      <Name>Avanade.SmartApps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.UI.USD.Style\Cielo.Sirius.UI.USD.Style.csproj">
+      <Project>{c35be091-d052-4641-bb62-01a436bb44db}</Project>
+      <Name>Cielo.Sirius.UI.USD.Style</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ProdutosService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutosService\ProdutosService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutosService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutosService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutosService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)build.cmd" "$(TargetPath)" "$(ProjectDir)" Applications "$(ProjectDir)UnifiedServiceDesk.exe.config"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

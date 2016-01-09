@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:aas="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="SolicitacaoCentralAtendimento">
+    <annotation>
+      <documentation>Solicitacoes dos clientes que foram realizadas atraves da central de atendimento. Exemplos de tipo de solicitacoes:
+        1 - Alterar Produto
+        2 - Habilitar Produto
+        3 - Habilitar Servico
+        4 - Abrir Solicitacao de Negociacao de Taxa
+        5 - Habilitar Venda Digitada
+        6 - Desabilitar Venda Digitada
+        Referencia: arquivo VSAM.CAPTACAV - sistema SEC.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+        <annotation>
+          <documentation>Codigo adotado pela Cielo para identificar o Cliente.
+            Referencia: arquivo VSAM.CAPTACAV - sistema SEC.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoSolicitacao" nillable="true" type="integer">
+        <annotation>
+          <documentation>Codigo que identifica unicamente uma solicitacao.
+            Referencia: arquivo VSAM.CAPTACAV - sistema SEC.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dataPrevistaConclusaoSolicitacao" nillable="true" type="date">
+        <annotation>
+          <documentation>Data prevista para a solicitacao ser concluida.
+            Referencia: arquivo VSAM.CAPTACAV - sistema SEC.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

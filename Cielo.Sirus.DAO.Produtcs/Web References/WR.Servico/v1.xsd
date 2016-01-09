@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="Servico">
+    <annotation>
+      <documentation>Catalogo de servicos disponibilizado pela Cielo aos clientes, como por exemplo: Cielo Promo, extrato de venda diario, programa de pontos, etc.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoServico" nillable="true" type="integer">
+        <annotation>
+          <documentation>Codigo que identifica o servico disponibilizado pela Cielo aos clientes (estabelecimento comercial).</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeServico" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome do servico disponibilizado pela Cielo aos clientes</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="descricaoServico" nillable="true" type="string">
+        <annotation>
+          <documentation>Descricao explicativa do servico, de modo a auxiliar na explicacao do servico.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dataHabilitacaoServico" nillable="true" type="dateTime">
+        <annotation>
+          <documentation>Data na qual o servico foi habilitado para o cliente.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="Servicos">
+    <annotation>
+      <documentation>Lista de servicos</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosServico" nillable="true" type="cds:Servico">
+        <annotation>
+          <documentation>Lista de servicos Cielo</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

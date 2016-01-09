@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="HabilitarDesabilitarVendaDigitadaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArvoreDeAssunto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CanalDeAtendimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoCliente" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DadosVendaDigitada" nillable="true" type="tns:ArrayOfHabilitarDesabilitarVendaDigitadaDTO" />
+          <xs:element minOccurs="0" name="IlhaDeAtendimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicaOperacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentCaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TituloDaOcorrencia" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarDesabilitarVendaDigitadaRequest" nillable="true" type="tns:HabilitarDesabilitarVendaDigitadaRequest" />
+  <xs:complexType name="ArrayOfHabilitarDesabilitarVendaDigitadaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HabilitarDesabilitarVendaDigitadaDTO" nillable="true" type="tns:HabilitarDesabilitarVendaDigitadaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHabilitarDesabilitarVendaDigitadaDTO" nillable="true" type="tns:ArrayOfHabilitarDesabilitarVendaDigitadaDTO" />
+  <xs:complexType name="HabilitarDesabilitarVendaDigitadaDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicaAcao" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarDesabilitarVendaDigitadaDTO" nillable="true" type="tns:HabilitarDesabilitarVendaDigitadaDTO" />
+  <xs:complexType name="HabilitarDesabilitarVendaDigitadaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarDesabilitarVendaDigitadaResponse" nillable="true" type="tns:HabilitarDesabilitarVendaDigitadaResponse" />
+</xs:schema>

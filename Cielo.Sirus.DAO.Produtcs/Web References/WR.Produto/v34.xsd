@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="LojaFisica">
+    <annotation>
+      <documentation>Características da loja física onde é realizado o atendimento aos clientes do estabelecimento comercial.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="quantidadeMesa" nillable="true" type="integer">
+        <annotation>
+          <documentation>Quantidade de mesas disponíveis na loja física para que os clientes do estabelecimento comercial possam realizar as refeições.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="quantidadeAssento" nillable="true" type="integer">
+        <annotation>
+          <documentation>Quantidade de assentos disponíveis na loja física para que os clientes do estabelecimento comercial possam realizar as refeições.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="quantidadeMaximaRefeicao" nillable="true" type="integer">
+        <annotation>
+          <documentation>Quantidade máxima de refeições por dia que o estabelecimento comercial consegue fornecer nesta loja física.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="valorAreaAtendimentoPublico" nillable="true" type="integer">
+        <annotation>
+          <documentation>Valor, em metros quadrado, da área destinado ao atendimento ao público que frequenta a loja física do estabelecimento comercial.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PatAlelo">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+        <annotation>
+          <documentation>Codigo interno que identifica um cliente na Cielo.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+        <annotation>
+          <documentation>Codigo do produto da Alelo para o programa de alimentação do trabalhador (VR e VA).</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dataAfiliacao" nillable="true" type="date">
+        <annotation>
+          <documentation>Data em que o cliente foi afiliado para o produto Alelo do programa de alimentação do trabalhador.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosLojaFisica" nillable="true" type="cds:LojaFisica">
+        <annotation>
+          <documentation>Dados sobre a característica física da loja do estabelecimento comercial.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorServicoDelivery" nillable="true" type="string">
+        <annotation>
+          <documentation>Indica (S/N) se a loja física possui serviço de entrega em domicílio para os clientes do estabelecimento comercial.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="IndicadorVendaInternet" nillable="true" type="string">
+        <annotation>
+          <documentation>Indica (S/N) se a loja física possui serviço de venda pela internet para os clientes do estabelecimento comercial.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorApresentacaoCartao" nillable="true" type="string">
+        <annotation>
+          <documentation>Indica (S/N) se o estabelecimento comercial aceita o cartão presencialmente.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:ass="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" xmlns:tns="http://service.cielo.com.br/cadastro/faturamento/faturamento/v1" xmlns:com="http://canonico.cielo.com.br/comum/v1" elementFormDefault="qualified" targetNamespace="http://service.cielo.com.br/cadastro/faturamento/faturamento/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="v1?WSDL&amp;interface=ServicoSOAP&amp;part=Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+  <import schemaLocation="v1?WSDL&amp;interface=ServicoSOAP&amp;part=SolicitacaoCentralAtendimento.xsd" namespace="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" />
+  <annotation>
+    <documentation>Versao: 1.0
+			Autor: Leandro Estrada</documentation>
+  </annotation>
+  <element name="solicitarNegociacaoTaxaProdutoComercialRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="protocolo" nillable="true" type="string">
+          <annotation>
+            <documentation>Numero Protocolo do CRM</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="nomeContato" nillable="true" type="string">
+          <annotation>
+            <documentation>Nome do Contato</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="percentualTaxaPropostaConcorrente" nillable="true" type="decimal">
+          <annotation>
+            <documentation>Percentual Taxa Proposta do Concorrente (Taxa Desejada)</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="celularContato" nillable="true" type="string">
+          <annotation>
+            <documentation>Telefone Celular de Contato.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="telefoneContato" nillable="true" type="string">
+          <annotation>
+            <documentation>Telefone Fixo de Contato</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="solicitarNegociacaoTaxaProdutoComercialResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="statusRetorno" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="sistemaLegado" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="solicitacaoCentralAtendimento" type="ass:SolicitacaoCentralAtendimento" />
+      </sequence>
+    </complexType>
+  </element>
+</schema>

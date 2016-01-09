@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:header="http://canonico.cielo.com.br/governancasoa/comum/v1" xmlns:tns="http://cielo.com.br/temporario/v1" xmlns:fault="http://canonico.cielo.com.br/comum/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TemporarioContract" targetNamespace="http://cielo.com.br/temporario/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://cielo.com.br/temporario/v1">
+      <xsd:include schemaLocation="TemporarioSchema.xsd" />
+      <xsd:import schemaLocation="CieloSoapHeader.xsd" namespace="http://canonico.cielo.com.br/governancasoa/comum/v1" />
+      <xsd:import schemaLocation="Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarElegibilidadeNegociacaoComercialRequest">
+    <wsdl:part name="parameters" element="tns:consultarElegibilidadeNegociacaoComercialRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarElegibilidadeNegociacaoComercialResponse">
+    <wsdl:part name="parameters" element="tns:consultarElegibilidadeNegociacaoComercialResponse" />
+  </wsdl:message>
+  <wsdl:message name="faultMessage">
+    <wsdl:part name="parameters" element="fault:fault" />
+  </wsdl:message>
+  <wsdl:message name="header">
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="TemporarioServicePortType">
+    <wsdl:operation name="consultarElegibilidadeNegociacaoComercial">
+      <wsdl:input message="tns:consultarElegibilidadeNegociacaoComercialRequest" />
+      <wsdl:output message="tns:consultarElegibilidadeNegociacaoComercialResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TemporarioServiceSOAPBinding" type="tns:TemporarioServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarElegibilidadeNegociacaoComercial">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:header" part="header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TemporarioService">
+    <wsdl:port name="TemporarioServiceSOAPPort" binding="tns:TemporarioServiceSOAPBinding">
+      <soap:address location="http://cielo.com.br/temporario/v1" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,420 @@
+﻿<ResourceDictionary  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+					 xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+
+    <!-- Buttons -->
+
+    <Style x:Key="ButtonBaseStyle" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Background" Value="{DynamicResource ButtonBase.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBase.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ButtonBase.Foreground}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+							BorderThickness="{TemplateBinding BorderThickness}" 
+							Background="{TemplateBinding Background}" 
+							SnapsToDevicePixels="true"
+							CornerRadius="5">
+                        <ContentPresenter Focusable="False" 
+										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  Margin="{TemplateBinding Padding}" 
+										  RecognizesAccessKey="True" 
+										  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+										  TextElement.Foreground="{TemplateBinding Foreground}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ButtonBase.MouseOver.Background}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ButtonBase.Pressed.Background}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" Value="{DynamicResource Disabled.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="RectangularButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="Background" Value="{DynamicResource RectangularButton.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource RectangularButton.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLight}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
+							BorderThickness="{TemplateBinding BorderThickness}" 
+							Background="{TemplateBinding Background}" 
+							SnapsToDevicePixels="true">
+                        <ContentPresenter Focusable="False" 
+										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  Margin="{TemplateBinding Padding}" 
+										  RecognizesAccessKey="True" 
+										  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+										  TextElement.Foreground="{TemplateBinding Foreground}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource RectangularButton.MouseOver.Background}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" Value="{DynamicResource RectangularButton.Pressed.Background}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" Value="{DynamicResource Disabled.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="MainActionButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Background" Value="{DynamicResource EndButton.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource EndButton.Foreground}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource EndButton.MouseOver.Background}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" Value="{DynamicResource EndButton.Pressed.Background}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ConferenceButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
+        <Setter Property="Background" Value="{DynamicResource ConferenceColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLight}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ConferenceColor2}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ConferenceColor}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="TransferenceButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
+        <Setter Property="Background" Value="{DynamicResource TransferColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLight}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource TransferColor2}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" Value="{DynamicResource TransferColor}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ActionButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLight}"/>
+        <Setter Property="Background" Value="{DynamicResource ActionButton.Background}"/>
+        <Setter Property="Height" Value="20"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ActionButton.MouseOver.Background}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ActionButton.Pressed.Background}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" Value="{DynamicResource Disabled.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ActionButtonOffersStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBaseStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource TxtInfoUra}"/>
+        <Setter Property="Background" Value="{DynamicResource SelectedInformativeBrush}"/>
+        <Setter Property="Height" Value="20"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding OffersIVRRouteCollapsed}" Value="True">
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding OffersIVRRouteCollapsed}" Value="false">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ActionButton.MouseOver.Background}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" Value="{DynamicResource ActionButton.Pressed.Background}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Pagination -->
+
+    <Style x:Key="PaginationNextButton" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource PaginationButton.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource PaginationButton.Foreground}"/>
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="{TemplateBinding Background}"/>
+                        <Path Data="M0,0L197.27686,0 397.76401,246.9906 399.46771,249.06265 400.3573,247.99635 498.99997,369.51013 400.3573,491.05371 199.85071,738 2.5647115,738 230.11415,457.75143 300.80618,370.59119 299.12131,368.50436 227.49289,280.29288z" 
+                              Stretch="Uniform" Fill="{TemplateBinding Foreground}" Width="4"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource PaginationButton.MouseOver.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PaginationButton.MouseOver.Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" Value="{DynamicResource PaginationButton.Disabled.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PaginationButton.Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--TODO: Ajustar estilo-->
+    <Style x:Key="PaginationLastButton" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource PaginationButton.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource PaginationButton.Foreground}"/>
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="{TemplateBinding Background}"/>
+                        <Path Margin="-3,0,0,0" Data="M0,0L197.27686,0 397.76401,246.9906 399.46771,249.06265 400.3573,247.99635 498.99997,369.51013 400.3573,491.05371 199.85071,738 2.5647115,738 230.11415,457.75143 300.80618,370.59119 299.12131,368.50436 227.49289,280.29288z" 
+                              Stretch="Uniform" Fill="{TemplateBinding Foreground}" Width="4"/>
+                        <Path Margin="3,0,0,0" Data="M0,0L197.27686,0 397.76401,246.9906 399.46771,249.06265 400.3573,247.99635 498.99997,369.51013 400.3573,491.05371 199.85071,738 2.5647115,738 230.11415,457.75143 300.80618,370.59119 299.12131,368.50436 227.49289,280.29288z" 
+                              Stretch="Uniform" Fill="{TemplateBinding Foreground}" Width="4"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource PaginationButton.MouseOver.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PaginationButton.MouseOver.Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" Value="{DynamicResource PaginationButton.Disabled.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PaginationButton.Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PaginationPreviewButton" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource PaginationButton.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource PaginationButton.Foreground}"/>
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="{TemplateBinding Background}"/>
+                        <Path Data="M299.152955025434,0L496.426178902388,0 268.890046089888,280.247772216797 198.190201729536,367.407897949219 199.87503144145,369.495361328125 271.502137154341,457.706451416016 498.999970406294,738 301.717621773481,738 101.234124153852,491.008697509766 99.5304498374462,488.936553955078 98.6409082114697,490.003173828125 0,368.488952636719 98.6409082114697,246.945526123047z" 
+                              Stretch="Uniform" Fill="{TemplateBinding Foreground}" Width="4"/>
+                      </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource PaginationButton.MouseOver.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PaginationButton.MouseOver.Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" Value="{DynamicResource PaginationButton.Disabled.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PaginationButton.Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--TODO: Ajustar Estilo-->
+    <Style x:Key="PaginationFirstButton" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource PaginationButton.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource PaginationButton.Foreground}"/>
+        <Setter Property="Width" Value="15"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="{TemplateBinding Background}"/>
+                        <Path Margin="-3,0,0,0" Data="M299.152955025434,0L496.426178902388,0 268.890046089888,280.247772216797 198.190201729536,367.407897949219 199.87503144145,369.495361328125 271.502137154341,457.706451416016 498.999970406294,738 301.717621773481,738 101.234124153852,491.008697509766 99.5304498374462,488.936553955078 98.6409082114697,490.003173828125 0,368.488952636719 98.6409082114697,246.945526123047z" 
+                              Stretch="Uniform" Fill="{TemplateBinding Foreground}" Width="4"/>
+                        <Path Margin="3,0,0,0" Data="M299.152955025434,0L496.426178902388,0 268.890046089888,280.247772216797 198.190201729536,367.407897949219 199.87503144145,369.495361328125 271.502137154341,457.706451416016 498.999970406294,738 301.717621773481,738 101.234124153852,491.008697509766 99.5304498374462,488.936553955078 98.6409082114697,490.003173828125 0,368.488952636719 98.6409082114697,246.945526123047z" 
+                              Stretch="Uniform" Fill="{TemplateBinding Foreground}" Width="4"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="{DynamicResource PaginationButton.MouseOver.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PaginationButton.MouseOver.Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" Value="{DynamicResource PaginationButton.Disabled.Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PaginationButton.Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- ToggleButtonCallAction -->
+
+    <Style x:Key="ToggleButtonMute" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Image x:Name="StateImage" 
+							   RenderOptions.BitmapScalingMode="HighQuality" 
+							   RenderOptions.EdgeMode="Aliased" 
+							   Source="{DynamicResource ImgMuteInativo}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="StateImage" Property="Source" Value="{DynamicResource ImgMuteAtivo}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="StateImage" Property="Source" Value="{DynamicResource ImgMuteMouseOver}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HoldToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Image x:Name="StateImage" 
+							   RenderOptions.BitmapScalingMode="HighQuality" 
+							   RenderOptions.EdgeMode="Aliased" 
+							   Source="{DynamicResource ImgEsperaInativo}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="StateImage" Property="Source" Value="{DynamicResource ImgEsperaAtivo}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="StateImage" Property="Source" Value="{DynamicResource ImgEsperaMouseOver}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ConferenceToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Image x:Name="StateImage" 
+							   RenderOptions.BitmapScalingMode="HighQuality" 
+							   RenderOptions.EdgeMode="Aliased" 
+							   Source="{DynamicResource ImgConferenciaInativo}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="StateImage" Property="Source" Value="{DynamicResource ImgConferenciaAtivo}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="StateImage" Property="Source" Value="{DynamicResource ImgConferenciaMouseOver}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TransferenceToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Image x:Name="StateImage" 
+							   RenderOptions.BitmapScalingMode="HighQuality" 
+							   RenderOptions.EdgeMode="Aliased" 
+							   Source="{DynamicResource ImgTransferenciaInativo}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter TargetName="StateImage" Property="Source" Value="{DynamicResource ImgTransferenciaAtivo}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="StateImage" Property="Source" Value="{DynamicResource ImgTransferenciaMouseOver}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ShortCutTitleButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource TitleShortCutBox}"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Panel.ZIndex" Value="2"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

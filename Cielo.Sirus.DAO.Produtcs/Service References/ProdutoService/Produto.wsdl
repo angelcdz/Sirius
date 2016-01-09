@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:header="http://canonico.cielo.com.br/governancasoa/comum/v1" xmlns:tns="http://service.cielo.com.br/cadastro/produto/produto/v3" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:comum="http://canonico.cielo.com.br/comum/v1" name="Produto" targetNamespace="http://service.cielo.com.br/cadastro/produto/produto/v3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Servico responsavel pelo processo de listar / manter do produto CRM x SEC
+		Versao: 1.0
+		Autor: Leandro Estrada</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.cielo.com.br/cadastro/produto/produto/v3">
+      <xsd:include schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=ProdutoServiceSchema.xsd" />
+      <xsd:import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=CieloSoapHeader.xsd" namespace="http://canonico.cielo.com.br/governancasoa/comum/v1" />
+      <xsd:import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarDetalheProdutoNaoElegivelClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarDetalheProdutoNaoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalheProdutoElegivelClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarDetalheProdutoElegivelClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutosElegiveisClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarProdutosElegiveisClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarInformacaoPatAleloResponse">
+    <wsdl:part name="parameters" element="tns:consultarInformacaoPatAleloResponse" />
+  </wsdl:message>
+  <wsdl:message name="faultMessage">
+    <wsdl:part name="parameters" element="comum:fault" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutosHabilitadoClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarProdutosHabilitadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="desabilitarProdutoResponse">
+    <wsdl:part name="parameters" element="tns:desabilitarProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutosElegiveisClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarProdutosElegiveisClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="habilitarProdutoResponse">
+    <wsdl:part name="parameters" element="tns:habilitarProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutoDesabilitadoResponse">
+    <wsdl:part name="parameters" element="tns:consultarProdutoDesabilitadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalheProdutoMultivanContratadoClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarDetalheProdutoMultivanContratadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="validarPermissaoVendaDigitadaRequest">
+    <wsdl:part name="parameters" element="tns:validarPermissaoVendaDigitadaRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutosPrazoFlexivelResponse">
+    <wsdl:part name="parameters" element="tns:consultarProdutosPrazoFlexivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="habilitarProdutoRequest">
+    <wsdl:part name="parameters" element="tns:habilitarProdutoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="alterarParcelaFaixaProdutoResponse">
+    <wsdl:part name="parameters" element="tns:alterarParcelaFaixaProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutosNaoElegiveisClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarProdutosNaoElegiveisClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalheProdutoMultivanContratadoClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarDetalheProdutoMultivanContratadoClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalheProdutoHabilitadoClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarDetalheProdutoHabilitadoClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="validarPermissaoVendaDigitadaResponse">
+    <wsdl:part name="parameters" element="tns:validarPermissaoVendaDigitadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalheProdutoNaoElegivelClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarDetalheProdutoNaoElegivelClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarOrdemProdutoRequest">
+    <wsdl:part name="parameters" element="tns:consultarOrdemProdutoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="desabilitarProdutoRequest">
+    <wsdl:part name="parameters" element="tns:desabilitarProdutoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarInformacaoPatAleloRequest">
+    <wsdl:part name="parameters" element="tns:consultarInformacaoPatAleloRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalheProdutoHabilitadoClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarDetalheProdutoHabilitadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutosPrazoFlexivelRequest">
+    <wsdl:part name="parameters" element="tns:consultarProdutosPrazoFlexivelRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutosHabilitadoClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarProdutosHabilitadoClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="alterarParcelaFaixaProdutoRequest">
+    <wsdl:part name="parameters" element="tns:alterarParcelaFaixaProdutoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarDetalheProdutoElegivelClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarDetalheProdutoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="habilitarDesabilitarVendaDigitadaResponse">
+    <wsdl:part name="parameters" element="tns:habilitarDesabilitarVendaDigitadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="habilitarDesabilitarVendaDigitadaRequest">
+    <wsdl:part name="parameters" element="tns:habilitarDesabilitarVendaDigitadaRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutosNaoElegiveisClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarProdutosNaoElegiveisClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarOrdemProdutoResponse">
+    <wsdl:part name="parameters" element="tns:consultarOrdemProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarProdutoDesabilitadoRequest">
+    <wsdl:part name="parameters" element="tns:consultarProdutoDesabilitadoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="Produto">
+    <wsdl:operation name="consultarProdutosHabilitadoCliente">
+      <wsdl:input message="tns:consultarProdutosHabilitadoClienteRequest" />
+      <wsdl:output message="tns:consultarProdutosHabilitadoClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalheProdutoHabilitadoCliente">
+      <wsdl:input message="tns:consultarDetalheProdutoHabilitadoClienteRequest" />
+      <wsdl:output message="tns:consultarDetalheProdutoHabilitadoClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarProdutosElegiveisCliente">
+      <wsdl:input message="tns:consultarProdutosElegiveisClienteRequest" />
+      <wsdl:output message="tns:consultarProdutosElegiveisClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalheProdutoElegivelCliente">
+      <wsdl:input message="tns:consultarDetalheProdutoElegivelClienteRequest" />
+      <wsdl:output message="tns:consultarDetalheProdutoElegivelClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarProdutosNaoElegiveisCliente">
+      <wsdl:input message="tns:consultarProdutosNaoElegiveisClienteRequest" />
+      <wsdl:output message="tns:consultarProdutosNaoElegiveisClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalheProdutoNaoElegivelCliente">
+      <wsdl:input message="tns:consultarDetalheProdutoNaoElegivelClienteRequest" />
+      <wsdl:output message="tns:consultarDetalheProdutoNaoElegivelClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalheProdutoMultivanContratadoCliente">
+      <wsdl:input message="tns:consultarDetalheProdutoMultivanContratadoClienteRequest" />
+      <wsdl:output message="tns:consultarDetalheProdutoMultivanContratadoClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="habilitarProduto">
+      <wsdl:input message="tns:habilitarProdutoRequest" />
+      <wsdl:output message="tns:habilitarProdutoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="desabilitarProduto">
+      <wsdl:input message="tns:desabilitarProdutoRequest" />
+      <wsdl:output message="tns:desabilitarProdutoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarParcelaFaixaProduto">
+      <wsdl:input message="tns:alterarParcelaFaixaProdutoRequest" />
+      <wsdl:output message="tns:alterarParcelaFaixaProdutoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="habilitarDesabilitarVendaDigitada">
+      <wsdl:input message="tns:habilitarDesabilitarVendaDigitadaRequest" />
+      <wsdl:output message="tns:habilitarDesabilitarVendaDigitadaResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="validarPermissaoVendaDigitada">
+      <wsdl:input message="tns:validarPermissaoVendaDigitadaRequest" />
+      <wsdl:output message="tns:validarPermissaoVendaDigitadaResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarProdutosPrazoFlexivel">
+      <wsdl:input message="tns:consultarProdutosPrazoFlexivelRequest" />
+      <wsdl:output message="tns:consultarProdutosPrazoFlexivelResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarInformacaoPatAlelo">
+      <wsdl:input message="tns:consultarInformacaoPatAleloRequest" />
+      <wsdl:output message="tns:consultarInformacaoPatAleloResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarProdutoDesabilitado">
+      <wsdl:input message="tns:consultarProdutoDesabilitadoRequest" />
+      <wsdl:output message="tns:consultarProdutoDesabilitadoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarOrdemProduto">
+      <wsdl:input message="tns:consultarOrdemProdutoRequest" />
+      <wsdl:output message="tns:consultarOrdemProdutoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProdutoSOAP" type="tns:Produto">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarProdutosHabilitadoCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarProdutosHabilitadoCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarProdutosHabilitadoClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalheProdutoHabilitadoCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarDetalheProdutoHabilitadoCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarDetalheProdutoHabilitadoClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProdutosElegiveisCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarProdutoElegivelCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarProdutosElegiveisClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalheProdutoElegivelCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarDetalheProdutoElegivelCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarDetalheProdutoElegivelClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProdutosNaoElegiveisCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarProdutosNaoElegiveisCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarProdutosNaoElegiveisClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalheProdutoNaoElegivelCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarDetalheProdutoNaoElegivelCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarDetalheProdutoNaoElegivelClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalheProdutoMultivanContratadoCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarDetalheProdutoMultivanContratadoCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarDetalheProdutoMultivanContratadoClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="habilitarProduto">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/habilitarProduto" />
+      <wsdl:input>
+        <soap:header message="tns:habilitarProdutoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="desabilitarProduto">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/desabilitarProduto" />
+      <wsdl:input>
+        <soap:header message="tns:desabilitarProdutoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="alterarParcelaFaixaProduto">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/alterarParcelaFaixaProduto" />
+      <wsdl:input>
+        <soap:header message="tns:alterarParcelaFaixaProdutoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="habilitarDesabilitarVendaDigitada">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/habilitarDesabilitarVendaDigitada" />
+      <wsdl:input>
+        <soap:header message="tns:habilitarDesabilitarVendaDigitadaRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validarPermissaoVendaDigitada">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/validarPermissaoVendaDigitada" />
+      <wsdl:input>
+        <soap:header message="tns:validarPermissaoVendaDigitadaRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProdutosPrazoFlexivel">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarProdutosPrazoFlexivel" />
+      <wsdl:input>
+        <soap:header message="tns:consultarProdutosPrazoFlexivelRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarInformacaoPatAlelo">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarInformacaoPatAlelo" />
+      <wsdl:input>
+        <soap:header message="tns:consultarInformacaoPatAleloRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProdutoDesabilitado">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarProdutoDesabilitado" />
+      <wsdl:input>
+        <soap:header message="tns:consultarProdutoDesabilitadoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOrdemProduto">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/produto/produto/v3/consultarOrdemProduto" />
+      <wsdl:input>
+        <soap:header message="tns:consultarOrdemProdutoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Produto">
+    <wsdl:port name="ProdutoSOAP" binding="tns:ProdutoSOAP">
+      <soap:address location="http://Cielo-OSB:8080/cadastro/produto/produto/v3" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

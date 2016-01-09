@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cielo.Sirius.DAO.Products.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServiceURL_Produto" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/Cadastro/Produto/Produto/v3</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Servico" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://osb-cielo.cloudapp.net/Cadastro/Servico/Servico/v1</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Cliente" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/Cadastro/Cliente/Cliente/v3</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Material" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Equipamento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/Operacao/Logistica/Equipamento/v2</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Faturamento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/Cadastro/Faturamento/Faturamento/v1</Value>
+    </Setting>
+    <Setting Name="Cielo_Sirius_DAO_Products_WR_Cliente_ClienteService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/</Value>
+    </Setting>
+    <Setting Name="Cielo_Sirius_DAO_Products_WR_Servico_Servico" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://WIN-LT2STD568DD:8080/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

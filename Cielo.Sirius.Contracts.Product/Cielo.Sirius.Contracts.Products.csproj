@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF68DD91-542F-4A49-88A7-E23D8BBC8405}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cielo.Sirius.Contracts.Products</RootNamespace>
+    <AssemblyName>Cielo.Sirius.Contracts.Products</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Assets\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlterarProdutoAVista.cs" />
+    <Compile Include="CommercialNegotiation.cs" />
+    <Compile Include="GetCommercialDealRequestTypes.cs" />
+    <Compile Include="NegociacaoComercial.cs" />
+    <Compile Include="AlterarProdutoCreditoParcelado.cs" />
+    <Compile Include="ChangeProductInstallmentCredit.cs" />
+    <Compile Include="ChangeProductOneLump.cs" />
+    <Compile Include="ChangeProductSegmentedParcelledCredit.cs" />
+    <Compile Include="AlterarProdutoCreditoParceladoSegmentado.cs" />
+    <Compile Include="AlterarParcelaFaixaProduto.cs" />
+    <Compile Include="AlterarPrazoFlexivel.cs" />
+    <Compile Include="AlterarTaxasProdutoCreditoParceladoSegmentado.cs" />
+    <Compile Include="CalcularAlcadaFaixasParceladoSegmentado.cs" />
+    <Compile Include="GetNegotiationData.cs" />
+    <Compile Include="ConsultarDetalheProdutoMultivanContratadoCliente.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="ConsultarInformacoesPatAlelo.cs" />
+    <Compile Include="ConsultarElegibilidadeCriacaoDemanda.cs" />
+    <Compile Include="ConsultarSLAPadrao.cs" />
+    <Compile Include="DesabilitarPrazoFlexivel.cs" />
+    <Compile Include="DesabilitarProduto.cs" />
+    <Compile Include="DisableProduct.cs" />
+    <Compile Include="GetDealItems.cs" />
+    <Compile Include="GetAvailableCustomerOffers.cs" />
+    <Compile Include="ConsultarDadosNegociacao.cs" />
+    <Compile Include="GetCompetitors.cs" />
+    <Compile Include="GetRequestReasonMetricas.cs" />
+    <Compile Include="GetRequestReason.cs" />
+    <Compile Include="ConsultarPrazosTaxasPrazoFlexivel.cs" />
+    <Compile Include="ConsultarServicoDesabilitadoCliente.cs" />
+    <Compile Include="ConsultarProdutosPrazoFlexivel.cs" />
+    <Compile Include="ConsultarServicoElegivelCliente.cs" />
+    <Compile Include="ConsultarServicoHabilitadoCliente.cs" />
+    <Compile Include="ConsultarServicoNaoElegivelCliente.cs" />
+    <Compile Include="CreateDocumentAnalysisRequest.cs" />
+    <Compile Include="EnableServiceOrder.cs" />
+    <Compile Include="DisableService.cs" />
+    <Compile Include="EnableService.cs" />
+    <Compile Include="ExistsServiceOpenDemand.cs" />
+    <Compile Include="DesabilitarServico.cs" />
+    <Compile Include="GetCommercialEstablishmentInformation.cs" />
+    <Compile Include="GetNonEligibleServiceRequestTypes.cs" />
+    <Compile Include="GetNonEnabledServiceRequestTypes.cs" />
+    <Compile Include="GetDiscountRateRestriction.cs" />
+    <Compile Include="ConsultarDetalheProdutoElegivelCliente.cs" />
+    <Compile Include="ConsultarDetalheProdutoHabilitadoCliente.cs" />
+    <Compile Include="ConsultarDetalheProdutoNaoElegivelCliente.cs" />
+    <Compile Include="ConsultarPrazoPadrao.cs" />
+    <Compile Include="ConsultarProdutoElegivelCliente.cs" />
+    <Compile Include="ConsultarProdutoHabilitadoCliente.cs" />
+    <Compile Include="ConsultarProdutoNaoElegivelCliente.cs" />
+    <Compile Include="CreateCaseProductSegmentedInstallments.cs" />
+    <Compile Include="ExistsProductOpenDemand.cs" />
+    <Compile Include="GetNonEligibleProductRequestTypes.cs" />
+    <Compile Include="GetEnabledServiceRequestTypes.cs" />
+    <Compile Include="GetProductRequestsHistory.cs" />
+    <Compile Include="GetEnabledProductRequestTypes.cs" />
+    <Compile Include="GetNonEnabledProductRequestTypes.cs" />
+    <Compile Include="GetServiceRequestsHistory.cs" />
+    <Compile Include="EnableDisableTypedSale.cs" />
+    <Compile Include="HabilitarDesabilitarVendaDigitada.cs" />
+    <Compile Include="HabilitarProduto.cs" />
+    <Compile Include="HabilitarPrazoFlexivel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RateChangeNegotiationRequest.cs" />
+    <Compile Include="SolicitaAnaliseAlvara.cs" />
+    <Compile Include="SolicitarExclusaoProduto.cs" />
+    <Compile Include="HabilitarServico.cs" />
+    <Compile Include="SolicitarNegociacaoTaxa.cs" />
+    <Compile Include="ProductRequestSegmentedInstallments.cs" />
+    <Compile Include="ValidarPermissaoVendaDigitada.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cielo.Sirius.Foundation\Avanade.SmartApps.csproj">
+      <Project>{0995c250-a3bd-4973-82e7-a43f8b23493a}</Project>
+      <Name>Avanade.SmartApps</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagrams\AlterarProdutoAVista.cd" />
+    <None Include="ClassDiagrams\ChangeProductOneLumpCRM.cd" />
+    <None Include="ClassDiagrams\RateChangeNegociationRequest.cd" />
+    <None Include="ClassDiagrams\EnableServiceOrder.cd" />
+    <None Include="ClassDiagrams\HabilitarProdutoDiagrama.cd" />
+    <None Include="ClassDiagrams\ConsultarInformacaoesPATAleloDTODiagram.cd" />
+    <None Include="ClassDiagrams\AnaliseDocumentacaoAlvara.cd" />
+    <None Include="ClassDiagrams\ConsultarInformacoesPatAleloBaseCliente.cd" />
+    <None Include="ClassDiagrams\ConsultarInformacoesPatAleloRefeicaoCliente.cd" />
+    <None Include="ClassDiagrams\ConsultarServicoHabilitadoCliente.cd" />
+    <None Include="ClassDiagrams\ConsultarServicoNaoElegivelCliente.cd" />
+    <None Include="ClassDiagrams\GetServiceRequestHistory.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)build.cmd" "$(TargetPath)" "$(ProjectDir)" Applications</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

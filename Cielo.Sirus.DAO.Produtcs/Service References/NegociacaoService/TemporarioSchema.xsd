@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://cielo.com.br/temporario/v1" elementFormDefault="qualified" targetNamespace="http://cielo.com.br/temporario/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="consultarElegibilidadeNegociacaoComercialRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" type="long" />
+        <element minOccurs="1" name="codigoTipoDemanda" type="long" />
+        <element minOccurs="0" name="codigoSubTipoDemanda" type="long" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarElegibilidadeNegociacaoComercialResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" name="indicadorElegibilidade" type="boolean" />
+        <element minOccurs="0" maxOccurs="unbounded" name="listaDemanda" type="tns:listaDemandaType" />
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="listaDemandaType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="numeroReferencia" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="tipoDemanda" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoItemDemanda" type="string" />
+    </sequence>
+  </complexType>
+</schema>

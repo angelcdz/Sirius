@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:header="http://canonico.cielo.com.br/governancasoa/comum/v1" xmlns:tns="http://service.cielo.com.br/cadastro/faturamento/faturamento/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:comum="http://canonico.cielo.com.br/comum/v1" name="Faturamento" targetNamespace="http://service.cielo.com.br/cadastro/faturamento/faturamento/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Servico responsavel pelo processo de Faturamento
+		Versao: 1.0
+		Autor: Leandro Estrada</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.cielo.com.br/cadastro/faturamento/faturamento/v1">
+      <xsd:include schemaLocation="v1?WSDL&amp;interface=ServicoSOAP&amp;part=FaturamentoServiceSchema.xsd" />
+      <xsd:import schemaLocation="v1?WSDL&amp;interface=ServicoSOAP&amp;part=CieloSoapHeader.xsd" namespace="http://canonico.cielo.com.br/governancasoa/comum/v1" />
+      <xsd:import schemaLocation="v1?WSDL&amp;interface=ServicoSOAP&amp;part=Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="faultMessage">
+    <wsdl:part name="parameters" element="comum:fault" />
+  </wsdl:message>
+  <wsdl:message name="solicitarNegociacaoTaxaProdutoComercialResponse">
+    <wsdl:part name="parameters" element="tns:solicitarNegociacaoTaxaProdutoComercialResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitarNegociacaoTaxaProdutoComercialRequest">
+    <wsdl:part name="parameters" element="tns:solicitarNegociacaoTaxaProdutoComercialRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="Servico">
+    <wsdl:operation name="solicitarNegociacaoTaxaProdutoComercial">
+      <wsdl:input message="tns:solicitarNegociacaoTaxaProdutoComercialRequest" />
+      <wsdl:output message="tns:solicitarNegociacaoTaxaProdutoComercialResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicoSOAP" type="tns:Servico">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="solicitarNegociacaoTaxaProdutoComercial">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/faturamento/faturamento/v1/solicitarNegociacaoTaxaProdutoComercial" />
+      <wsdl:input>
+        <soap:header message="tns:solicitarNegociacaoTaxaProdutoComercialRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servico">
+    <wsdl:port name="ServicoSOAP" binding="tns:ServicoSOAP">
+      <soap:address location="http://localhost:8080/Cadastro/Faturamento/Faturamento/v1" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

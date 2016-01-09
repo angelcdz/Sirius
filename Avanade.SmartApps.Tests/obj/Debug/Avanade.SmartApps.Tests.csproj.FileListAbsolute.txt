@@ -1,0 +1,12 @@
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\config\applicationCatalog.config
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\config\dataAccess.config
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\Avanade.SmartApps.Tests.dll.config
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\Avanade.SmartApps.Tests.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\Avanade.SmartApps.Tests.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\Cielo.Sirius.Foundation.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\NLog.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\Cielo.Sirius.Foundation.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\bin\Debug\NLog.xml
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\obj\Debug\Avanade.SmartApps.Tests.csprojResolveAssemblyReference.cache
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\obj\Debug\Avanade.SmartApps.Tests.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Tests\obj\Debug\Avanade.SmartApps.Tests.pdb

@@ -1,0 +1,44 @@
+﻿<base:ViewBaseControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.ServiceRequestsHistory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:Cielo.Sirius.Foundation.USD.Controls;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD"
+             Style="{DynamicResource ViewBaseControlStyle}">
+    <StackPanel>
+        <TextBlock Text="Histórico de Demandas" Margin="0,14,0,0" Style="{DynamicResource ScreenSubtitle}"/>
+
+        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" 
+					          Margin="0,13,0,24" MaxHeight="120" Width="408"
+					          ItemsSource="{Binding RequestsHistory}" 
+					          Style="{DynamicResource DataGridDefault}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="PROTOCOLO" Width="4*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                 <Hyperlink Style="{DynamicResource DataGridHyperlinkWithRequestStyle}">
+									<TextBlock Text="{Binding ServiceCallNumber}"/>
+								</Hyperlink>
+                             </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="DESCRIÇÃO" Width="4*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                            <Hyperlink Style="{DynamicResource DataGridHyperlinkWithRequestStyle}">
+												<TextBlock Text="{Binding ProductRequestName}"/>
+											</Hyperlink>
+                                        </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="ABERTURA" Width="3*" Binding="{Binding CreatedOn}"/>
+                <DataGridTextColumn Header="SOLUÇÃO" Width="3*" Binding="{Binding ClosedOn}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</base:ViewBaseControl>

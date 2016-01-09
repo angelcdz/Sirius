@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Cielo.Sirius.Integration.OutboundService.ProdutosService" CodeBehind="ProdutosService.svc.cs" %>

@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24F056E9-3083-4FF9-9895-C967A98D4910}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MockGenerator</RootNamespace>
+    <AssemblyName>MockGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="AlteracaoDeTaxaSucessoMock.cs" />
+    <Compile Include="Base\MockBase.cs" />
+    <Compile Include="ConsultarDetalheProdutoMultivanContratadoClienteMock.cs" />
+    <Compile Include="ConsultarDetalheProdutoNaoHabilitadoClienteMock.cs" />
+    <Compile Include="ConsultarInformacoesPatAleloAlimentacaoBusinessErrorMock.cs" />
+    <Compile Include="ConsultarInformacoesPatAleloAlimentacao.cs" />
+    <Compile Include="ConsultarInformacoesPatAleloAlimentacaoTechnicalErrorMock.cs" />
+    <Compile Include="ConsultarInformacoesPatAleloMock.cs" />
+    <Compile Include="ConsultarPrazoPadraoMock.cs" />
+    <Compile Include="ConsultarPrazosTaxasPrazoFlexivelMock.cs" />
+    <Compile Include="ConsultarProdutoHabilitadoClienteMock.cs" />
+    <Compile Include="ConsultarProdutosPrazoFlexivelMock.cs" />
+    <Compile Include="ConsultarServicoNaoElegivelClienteMock.cs" />
+    <Compile Include="ConsultarServicoElegivelClienteMock.cs" />
+    <Compile Include="DesabilitarProdutoMock.cs" />
+    <Compile Include="DesabilitarServicoMock.cs" />
+    <Compile Include="ExistsServiceOpenRequests.cs" />
+    <Compile Include="GetServiceRequestsHistoryMock.cs" />
+    <Compile Include="HabilitarDesabilitarVendaDigitadaMock.cs" />
+    <Compile Include="HabilitarProdutoMock.cs" />
+    <Compile Include="ManterPrazoFlexivelMock.cs" />
+    <Compile Include="Metricas\ConsultarSLAPadraoMock.cs" />
+    <Compile Include="Metricas\ConsultarElegibilidadeCriacaoDemandaMock.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConsultarDetalheProdutoElegivelClienteMock.cs" />
+    <Compile Include="ConsultarDetalheProdutoHabilitadoClienteMock.cs" />
+    <Compile Include="ConsultarDetalheProdutoNaoElegivelClienteMock.cs" />
+    <Compile Include="ConsultarProdutoElegivelClienteMock.cs" />
+    <Compile Include="ConsultarProdutoNaoElegivelClienteMock.cs" />
+    <Compile Include="ExistsProductOpenRequests.cs" />
+    <Compile Include="GetProductRequestsHistoryMock.cs" />
+    <Compile Include="GetProductRequestTypesMock.cs" />
+    <Compile Include="SolicitarExclusaoProdutoMock.cs" />
+    <Compile Include="HabilitarServicoMock.cs" />
+    <Compile Include="SolicitarNegociacaoTaxaMock.cs" />
+    <Compile Include="ConsultarServicoHabilitadoClienteMock.cs" />
+    <Compile Include="SolicitaAnaliseAlvaraMock.cs" />
+    <Compile Include="DesabilitarVendaDigitadaMock.cs" />
+    <Compile Include="ValidarPermissaoVendaDigitadaMock.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avanade.SmartApps.Foundation.Communication\Avanade.SmartApps.Communication.csproj">
+      <Project>{5b9ddbab-1ca9-4807-82b0-856459cb8b53}</Project>
+      <Name>Avanade.SmartApps.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Contracts.Product\Cielo.Sirius.Contracts.Products.csproj">
+      <Project>{df68dd91-542f-4a49-88a7-e23d8bbc8405}</Project>
+      <Name>Cielo.Sirius.Contracts.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Foundation\Avanade.SmartApps.csproj">
+      <Project>{0995c250-a3bd-4973-82e7-a43f8b23493a}</Project>
+      <Name>Avanade.SmartApps</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Generated\AlteracaoDeTaxaSucessoMock.xml" />
+    <Content Include="Generated\ConsultarInformacoesPatAleloAlimentacao.xml" />
+    <Content Include="Generated\ConsultarInformacoesPatAleloAlimentacaoError.xml" />
+    <Content Include="Generated\ConsultarInformacoesPatAleloMock.xml" />
+    <Content Include="Generated\ConsultarServicoElegivelClienteMock.xml" />
+    <Content Include="Generated\ConsultarServicoElegivelClienteMockError.xml" />
+    <Content Include="Generated\ConsultarServicoHabilitadoClienteMock.xml" />
+    <Content Include="Generated\ConsultarServicoHabilitadoClienteMockError.xml" />
+    <Content Include="Generated\ConsultarServicoNaoElegivelClienteMock.xml" />
+    <Content Include="Generated\ConsultarServicoNaoElegivelClienteMockError.xml" />
+    <Content Include="Generated\HabilitarDesabilitarVendaDigitadaMock.xml" />
+    <Content Include="Generated\HabilitarDesabilitarVendaDigitadaMockError.xml" />
+    <Content Include="Generated\HabilitarProdutoMock.xml" />
+    <Content Include="Generated\HabilitarServicoMock.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoElegivelClienteError.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoElegivelClientePadrao.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoElegivelClienteParcelado.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoElegivelClientePredatado.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoElegivelClienteSegmentado.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoHabilitadoCliente.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoHabilitadoClienteError.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoHabilitadoClientePadrao.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoHabilitadoClienteParcelado.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoHabilitadoClientePredatado.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoHabilitadoClienteSegmentado.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoHabilitadoDesabilitarProduto.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoMultivanContratadoCliente.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoNaoElegivelClienteError.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoNaoElegivelClientePadrao.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoNaoElegivelClienteParcelado.xml" />
+    <Content Include="Generated\MockConsultarDetalheProdutoNaoElegivelClienteSegmentado.xml" />
+    <Content Include="Generated\MockConsultarPrazoPadrao.xml" />
+    <Content Include="Generated\MockConsultarPrazoPadraoBusinessError.xml" />
+    <Content Include="Generated\MockConsultarPrazoPadraoError.xml" />
+    <Content Include="Generated\MockConsultarPrazoPadraoSuccess.xml" />
+    <Content Include="Generated\MockConsultarProdutoElegivelCliente.xml" />
+    <Content Include="Generated\MockConsultarProdutoElegivelClienteError.xml" />
+    <Content Include="Generated\MockConsultarProdutoHabilitadoCliente.xml" />
+    <Content Include="Generated\MockConsultarProdutoHabilitadoClienteError.xml" />
+    <Content Include="Generated\MockConsultarProdutoNaoElegivelCliente.xml" />
+    <Content Include="Generated\MockConsultarProdutoNaoElegivelClienteError.xml" />
+    <Content Include="Generated\MockConsultarServicoElegivelClienteMock.xml" />
+    <Content Include="Generated\MockConsultarServicoNaoElegivelClienteMock.xml" />
+    <Content Include="Generated\MockDesabilitarProdutoError.xml" />
+    <Content Include="Generated\MockDesabilitarProdutoSuccess.xml" />
+    <Content Include="Generated\MockDesabilitarProdutoTechnicalError.xml" />
+    <Content Include="Generated\MockDesabilitarServico.xml" />
+    <Content Include="Generated\MockExistsProductOpenDemand.xml" />
+    <Content Include="Generated\MockExistsProductOpenDemandError.xml" />
+    <Content Include="Generated\MockExistsServiceOpenDemand.xml" />
+    <Content Include="Generated\MockExistsServiceOpenDemandENH.xml" />
+    <Content Include="Generated\MockGetProductRequestsHistory.xml" />
+    <Content Include="Generated\MockGetProductRequestsHistoryError.xml" />
+    <Content Include="Generated\MockGetProductRequestTypes.xml" />
+    <Content Include="Generated\MockGetProductRequestTypesError.xml" />
+    <Content Include="Generated\MockGetServiceRequestsHistory.xml" />
+    <Content Include="Generated\MockHabilitarServico.xml" />
+    <Content Include="Generated\MockManterPrazoFlexivel.xml" />
+    <Content Include="Generated\MockManterPrazoFlexivelError.xml" />
+    <Content Include="Generated\MockSolicitarInclusaoServico.xml" />
+    <Content Include="Generated\MockSolicitarNegociacaoTaxa.xml" />
+    <Content Include="Generated\MockSolicitarNegociacaoTaxaError.xml" />
+    <Content Include="Generated\MockUnitTestConsultarPrazosTaxasPrazoFlexivel.xml" />
+    <Content Include="Generated\SolicitarExclusaoProdutoMock.xml" />
+    <Content Include="Generated\SolicitarExclusaoProdutoMockError.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

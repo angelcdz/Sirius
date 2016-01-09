@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Interface Name="Cielo.Sirius.Integration.OutboundService.IProdutosService">
+    <Position X="0.5" Y="0.5" Width="6.75" />
+    <Members>
+      <Method Name="AlterarTaxa" Hidden="true" />
+      <Method Name="ConsultarDetalheProdutoElegivelCliente" Hidden="true" />
+      <Method Name="ConsultarDetalheProdutoHabilitadoCliente" Hidden="true" />
+      <Method Name="ConsultarDetalheProdutoMultivanContratadoCliente" Hidden="true" />
+      <Method Name="ConsultarDetalheProdutoNaoElegivelCliente" Hidden="true" />
+      <Method Name="ConsultarPrazoPadrao" Hidden="true" />
+      <Method Name="ConsultarProdutoElegivelCliente" Hidden="true" />
+      <Method Name="ConsultarProdutoHabilitadoCliente" Hidden="true" />
+      <Method Name="ConsultarProdutoNaoElegivelCliente" Hidden="true" />
+      <Method Name="ConsultarServicoElegivelCliente" Hidden="true" />
+      <Method Name="ConsultarServicoHabilitadoCliente" Hidden="true" />
+      <Method Name="ConsultarServicoNaoElegivelCliente" Hidden="true" />
+      <Method Name="GetDiscountRateRestriction" Hidden="true" />
+      <Method Name="GetProductRequestsHistory" Hidden="true" />
+      <Method Name="GetProductRequestTypesEligible" Hidden="true" />
+      <Method Name="GetProductRequestTypesEnabled" Hidden="true" />
+      <Method Name="GetProductRequestTypesNonEligible" Hidden="true" />
+      <Method Name="HabilitarDesabilitarVendaDigitada" Hidden="true" />
+      <Method Name="HabilitarProduto" Hidden="true" />
+      <Method Name="ManterPrazoFlexivel" Hidden="true" />
+      <Method Name="SolicitaAnaliseAlvara" Hidden="true" />
+      <Method Name="SolicitarExclusaoProduto" Hidden="true" />
+      <Method Name="SolicitarInclusaoServico" Hidden="true" />
+      <Method Name="SolicitarNegociacaoTaxaProdutoComercial" Hidden="true" />
+      <Method Name="ValidarPermissaoVendaDigitiada" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CACQAAAiAJAAgAIWASBAAADAAIAAQAogAIBAAAAAAAQ=</HashCode>
+      <FileName>IProdutosService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

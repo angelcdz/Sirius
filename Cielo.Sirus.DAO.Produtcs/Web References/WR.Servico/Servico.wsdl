@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:header="http://canonico.cielo.com.br/governancasoa/comum/v1" xmlns:tns="http://service.cielo.com.br/cadastro/servico/servico/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:comum="http://canonico.cielo.com.br/comum/v1" name="Servico" targetNamespace="http://service.cielo.com.br/cadastro/servico/servico/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Servico responsavel pelo processo de habilitacao do Servico
+		Versao: 1.0
+		Autor: Leandro Estrada</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.cielo.com.br/cadastro/servico/servico/v1">
+      <xsd:include schemaLocation="?WSDL&amp;interface=ServicoSOAP&amp;part=ServicoServiceSchema.xsd" />
+      <xsd:import schemaLocation="?WSDL&amp;interface=ServicoSOAP&amp;part=CieloSoapHeader.xsd" namespace="http://canonico.cielo.com.br/governancasoa/comum/v1" />
+      <xsd:import schemaLocation="?WSDL&amp;interface=ServicoSOAP&amp;part=Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="faultMessage">
+    <wsdl:part name="parameters" element="comum:fault" />
+  </wsdl:message>
+  <wsdl:message name="desabilitarServicoResponse">
+    <wsdl:part name="parameters" element="tns:desabilitarServicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarServicoHabilitadoClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarServicoHabilitadoClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarServicoNaoElegivelClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarServicoNaoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarServicoHabilitadoClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarServicoHabilitadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="habilitarServicoResponse">
+    <wsdl:part name="parameters" element="tns:habilitarServicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="habilitarServicoRequest">
+    <wsdl:part name="parameters" element="tns:habilitarServicoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarServicoElegivelClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarServicoElegivelClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarServicoNaoElegivelClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarServicoNaoElegivelClienteRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="desabilitarServicoRequest">
+    <wsdl:part name="parameters" element="tns:desabilitarServicoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarServicoElegivelClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarServicoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Servico">
+    <wsdl:operation name="consultarServicoHabilitadoCliente">
+      <wsdl:input message="tns:consultarServicoHabilitadoClienteRequest" />
+      <wsdl:output message="tns:consultarServicoHabilitadoClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicoElegivelCliente">
+      <wsdl:input message="tns:consultarServicoElegivelClienteRequest" />
+      <wsdl:output message="tns:consultarServicoElegivelClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicoNaoElegivelCliente">
+      <wsdl:input message="tns:consultarServicoNaoElegivelClienteRequest" />
+      <wsdl:output message="tns:consultarServicoNaoElegivelClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="habilitarServico">
+      <wsdl:input message="tns:habilitarServicoRequest" />
+      <wsdl:output message="tns:habilitarServicoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="desabilitarServico">
+      <wsdl:input message="tns:desabilitarServicoRequest" />
+      <wsdl:output message="tns:desabilitarServicoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicoSOAP" type="tns:Servico">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarServicoHabilitadoCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/servico/servico/v1/consultarServicoHabilitadoCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarServicoHabilitadoClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicoElegivelCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/servico/servico/v1/consultarServicoElegivelCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarServicoElegivelClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarServicoNaoElegivelCliente">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/servico/servico/v1/consultarServicoNaoElegivelCliente" />
+      <wsdl:input>
+        <soap:header message="tns:consultarServicoNaoElegivelClienteRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="habilitarServico">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/servico/servico/v1/habilitarServico" />
+      <wsdl:input>
+        <soap:header message="tns:habilitarServicoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="desabilitarServico">
+      <soap:operation soapAction="http://service.cielo.com.br/cadastro/servico/servico/v1/desabilitarServico" />
+      <wsdl:input>
+        <soap:header message="tns:desabilitarServicoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servico">
+    <wsdl:port name="ServicoSOAP" binding="tns:ServicoSOAP">
+      <soap:address location="http://WIN-LT2STD568DD:8080/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

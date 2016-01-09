@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b98a3b7e-f7da-4ade-8e45-c2e05bc0dd86" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb-cielo.cloudapp.net/cadastro/solucaocaptura/material/v2?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="v2.xsd" MetadataType="Schema" ID="f5dff476-6b83-4469-ac2d-f6caef5a4f90" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/solucaocaptura/material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=Material.xsd" />
+    <MetadataFile FileName="MaterialServiceContract.wsdl" MetadataType="Wsdl" ID="7fa3b631-ee33-4cbb-9f64-f0bd86b3981c" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/solucaocaptura/material/v2?wsdl" />
+    <MetadataFile FileName="v21.xsd" MetadataType="Schema" ID="b5712514-5524-4b02-ace6-9b55f96b0276" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/solucaocaptura/material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" />
+    <MetadataFile FileName="v22.xsd" MetadataType="Schema" ID="58761ea2-d38f-4553-b687-737d7ef6652b" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/solucaocaptura/material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=MaterialSolicitadoCliente.xsd" />
+    <MetadataFile FileName="v23.xsd" MetadataType="Schema" ID="4eeaeeb5-de60-4148-9718-ed21a26d37a6" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/solucaocaptura/material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=Comum.xsd" />
+    <MetadataFile FileName="v24.xsd" MetadataType="Schema" ID="e92e436a-d1e1-43f9-a0c0-5c67ee3eb06a" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/solucaocaptura/material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=MaterialServiceSchema.xsd" />
+    <MetadataFile FileName="v25.xsd" MetadataType="Schema" ID="a5408fb9-27bf-455a-8c51-6fd01e6d915d" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/solucaocaptura/material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=SolicitacaoCentralAtendimento.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

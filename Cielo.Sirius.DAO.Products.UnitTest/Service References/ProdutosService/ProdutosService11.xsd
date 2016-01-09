@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="ValidarPermissaoVendaDigitadaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoRamoAtividade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdMotivo" type="ser:guid" />
+          <xs:element minOccurs="0" name="IndicaOperacao" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidarPermissaoVendaDigitadaRequest" nillable="true" type="tns:ValidarPermissaoVendaDigitadaRequest" />
+  <xs:complexType name="ValidarPermissaoVendaDigitadaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TipoDeMensagem" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidarPermissaoVendaDigitadaResponse" nillable="true" type="tns:ValidarPermissaoVendaDigitadaResponse" />
+</xs:schema>

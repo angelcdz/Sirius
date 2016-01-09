@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cc9d1391-095b-4fe2-b35f-17ec65554b71" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="v315.xsd" MetadataType="Schema" ID="1b371836-6207-49f2-b021-526dbae3680a" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Contato.xsd" />
+    <MetadataFile FileName="v3151.xsd" MetadataType="Schema" ID="a710d9d5-9e0b-4c44-8e43-5065dd9c02e2" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=SituacaoFuncionamentoCliente.xsd" />
+    <MetadataFile FileName="v3152.xsd" MetadataType="Schema" ID="1a091507-87b0-4c0a-b84b-4adf9c77f006" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Produto.xsd" />
+    <MetadataFile FileName="v3153.xsd" MetadataType="Schema" ID="767a0c0f-714a-4746-8fd5-1bf6530450b3" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=DadosBancarios.xsd" />
+    <MetadataFile FileName="v3154.xsd" MetadataType="Schema" ID="379c89f3-2df1-476e-a17f-6d52c7f0d6ab" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=ClienteServiceSchema.xsd" />
+    <MetadataFile FileName="v3155.xsd" MetadataType="Schema" ID="c176976a-dbab-4aec-bff1-3b1f5c89a28f" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" />
+    <MetadataFile FileName="v3156.xsd" MetadataType="Schema" ID="fc87e3ff-6897-486b-a898-5ba9ccf04278" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Credenciamento.xsd" />
+    <MetadataFile FileName="v3157.xsd" MetadataType="Schema" ID="d4349c91-044b-4028-9987-5b09d8ed6807" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Endereco.xsd" />
+    <MetadataFile FileName="v3158.xsd" MetadataType="Schema" ID="a26a46b0-ec43-4bba-a67e-4676681c8585" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Filial.xsd" />
+    <MetadataFile FileName="v3159.xsd" MetadataType="Schema" ID="c4e09d48-c86f-4d82-8933-7dce01e070ac" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Cliente.xsd" />
+    <MetadataFile FileName="ClienteServiceContract1.wsdl" MetadataType="Wsdl" ID="0b6914b4-043c-488f-a749-2541c70c8ad3" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL" />
+    <MetadataFile FileName="v31510.xsd" MetadataType="Schema" ID="9dc8fc19-f400-45cf-bc03-607fcefbb698" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Proprietario.xsd" />
+    <MetadataFile FileName="v31511.xsd" MetadataType="Schema" ID="1471c59d-fa58-4750-9be0-a85ffee50903" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Moeda.xsd" />
+    <MetadataFile FileName="v31512.xsd" MetadataType="Schema" ID="4d77bb6f-821f-464b-afd4-0149107f863e" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=PrazoAtendimento.xsd" />
+    <MetadataFile FileName="v31513.xsd" MetadataType="Schema" ID="4c75b863-9150-4c29-8da0-ce5f626a90b9" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=SolicitacaoCentralAtendimento.xsd" />
+    <MetadataFile FileName="v31514.xsd" MetadataType="Schema" ID="60bd1ead-365a-4816-8b98-c9a253744767" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/cliente/cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Comum.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

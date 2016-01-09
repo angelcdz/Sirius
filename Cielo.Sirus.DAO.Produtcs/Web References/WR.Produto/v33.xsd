@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="ProdutoMultivanContratadoCliente">
+    <annotation>
+      <documentation>Produtos contratados pelo cliente que podem ser trasacionados por outras vans.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="CodigoCliente" nillable="true" type="long">
+        <annotation>
+          <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="CodigoProduto" nillable="true" type="integer">
+        <annotation>
+          <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="DadosEmpresaReceptora" nillable="true" type="cds:Empresa_Receptora">
+        <annotation>
+          <documentation>Dados da empresa receptora.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="CodigoClienteEmpresaReceptora" nillable="true" type="string">
+        <annotation>
+          <documentation>Codigo do cadastro do cliente na empresa adquirente receptora (empresa terceira).</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="DataInicioVigencia" nillable="true" type="date">
+        <annotation>
+          <documentation>Data de início da vigência que o cliente/produto está autorizado a transacionar na empresa adquirente receptora (empresa terceira).</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="DataFimVigencia" nillable="true" type="date">
+        <annotation>
+          <documentation>Data de fim da vigência que o cliente/produto está autorizado a transacionar na empresa adquirente receptora (empresa terceira).</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="Empresa_Receptora">
+    <annotation>
+      <documentation>Cadastro de empresas adquirentes que podem capturar transações que serão liquidadas pela Cielo. Estas empresas são chamdas pela área de produtos da Cielo como Vans.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="NomeEmpresaReceptora" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome da empresa adquirente terceira que está autorizada a transacionar o produto Cielo.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="ProdutosMultivanContratadoCliente">
+    <annotation>
+      <documentation>Lista de produtos contratados pelo cliente que podem ser trasacionados por outras vans.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="DadosProdutoMultivanContratadoCliente" nillable="true" type="cds:ProdutoMultivanContratadoCliente" />
+    </sequence>
+  </complexType>
+</schema>

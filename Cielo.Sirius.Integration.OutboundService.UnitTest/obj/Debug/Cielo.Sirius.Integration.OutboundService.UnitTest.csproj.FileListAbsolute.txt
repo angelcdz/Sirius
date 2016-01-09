@@ -1,0 +1,6 @@
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Integration.OutboundService.UnitTest\bin\Debug\Cielo.Sirius.Integration.OutboundService.UnitTest.dll.config
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Integration.OutboundService.UnitTest\bin\Debug\Cielo.Sirius.Integration.OutboundService.UnitTest.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Integration.OutboundService.UnitTest\bin\Debug\Cielo.Sirius.Integration.OutboundService.UnitTest.pdb
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Integration.OutboundService.UnitTest\obj\Debug\Cielo.Sirius.Integration.OutboundService.UnitTest.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Integration.OutboundService.UnitTest\obj\Debug\Cielo.Sirius.Integration.OutboundService.UnitTest.pdb
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Integration.OutboundService.UnitTest\obj\Debug\Cielo.Sirius.Integration.OutboundService.UnitTest.csprojResolveAssemblyReference.cache

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://service.cielo.com.br/cadastro/servico/servico/v1" xmlns:com="http://canonico.cielo.com.br/comum/v1" xmlns:serv="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://service.cielo.com.br/cadastro/servico/servico/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="v1?WSDL&amp;interface=ServicoSOAP&amp;part=Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+  <import schemaLocation="v1?WSDL&amp;interface=ServicoSOAP&amp;part=Servico.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <annotation>
+    <documentation>Versao: 1.0
+			Autor: Leandro Estrada</documentation>
+  </annotation>
+  <element name="consultarServicoHabilitadoClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarServicoHabilitadoClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="servicos" type="serv:Servicos" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTotalRegistros" type="long" />
+        <element minOccurs="0" maxOccurs="1" name="dataUltimaTransacao" type="dateTime" />
+        <element minOccurs="0" maxOccurs="1" name="indicadorVendaUltimoMes" type="boolean" />
+        <element minOccurs="0" maxOccurs="1" name="vantagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarServicoElegivelClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarServicoElegivelClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="servicos" type="serv:Servicos" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTotalRegistros" type="long" />
+        <element minOccurs="0" maxOccurs="1" name="vantagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarServicoNaoElegivelClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarServicoNaoElegivelClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="servicos" type="serv:Servicos" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTotalRegistros" type="long" />
+        <element minOccurs="0" maxOccurs="1" name="vantagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="habilitarServicoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoServico" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo que identifica o servico disponibilizado pela Cielo aos clientes (estabelecimento comercial).</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="habilitarServicoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="desabilitarServicoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoServico" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo que identifica o servico disponibilizado pela Cielo aos clientes (estabelecimento comercial).</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="desabilitarServicoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+</schema>

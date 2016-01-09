@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Cielo.Sirius.Contracts.ConsultarInformacoesPatAleloRefeicaoCliente.ConsultarInformacoesPatAleloRefeicaoClienteRequest">
+    <Position X="0.5" Y="5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsultarInformacoesPatAleloRefeicaoCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Contracts.ConsultarInformacoesPatAleloRefeicaoCliente.ConsultarInformacoesPatAleloRefeicaoClienteResponse">
+    <Position X="0.5" Y="2.75" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>ConsultarInformacoesPatAleloRefeicaoCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Contracts.ConsultarInformacoesPatAleloRefeicaoCliente.ConsultarInformacoesPatAleloRefeicaoClienteDTO">
+    <Position X="0.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAABEAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsultarInformacoesPatAleloRefeicaoCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Contracts.ConsultarInformacoesPatAleloRefeicaoCliente.ConsultarInformacoesPatAleloRefeicaoClienteDTO2">
+    <Position X="4.75" Y="4.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAABAAAAAAAIAAAAAAAIAEAAAAAAAAAABAIA=</HashCode>
+      <FileName>ConsultarInformacoesPatAleloRefeicaoCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Contracts.ConsultarInformacoesPatAleloRefeicaoCliente.ConsultarInformacoesPatAleloRefeicaoClienteDTO3">
+    <Position X="6.25" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAABAAAAAAABACAAAAAAA=</HashCode>
+      <FileName>ConsultarInformacoesPatAleloRefeicaoCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

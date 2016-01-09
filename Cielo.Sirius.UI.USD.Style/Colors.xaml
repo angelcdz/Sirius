@@ -1,0 +1,179 @@
+﻿<ResourceDictionary  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+					 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" >
+
+    <!-- Fonts -->
+    <SolidColorBrush x:Key="ForegroundLight" Color="White"/>
+    <SolidColorBrush x:Key="ForegroundLight2" Color="#FFCCCCCC"/>
+    <SolidColorBrush x:Key="ForegroundLight3" Color="#666666"/>
+    <SolidColorBrush x:Key="ForegroundLight4" Color="#FF898888"/>
+    <SolidColorBrush x:Key="ForegroundDark" Color="#FF000000"/>
+    <!-- TextBox -->
+    <SolidColorBrush x:Key="TextBox.BorderBrush" Color="#232B34"/>
+    <SolidColorBrush x:Key="BorderTextBoxBlockScreen" Color="#FFD8D8D8"/>
+
+    <!-- States -->
+    <SolidColorBrush x:Key="Disabled.Background" Color="#FF666B71"/>
+    <SolidColorBrush x:Key="Disabled.Foreground" Color="#FF898888"/>
+    <SolidColorBrush x:Key="ErrorColor" Color="Red"/>
+
+    <!-- Breadcrumb -->
+    <SolidColorBrush x:Key="Breadcrumb.Foreground" Color="#FF4D869A"/>
+    <SolidColorBrush x:Key="Breadcrumb.DisabledForeground" Color="#FFC9C9C9"/>
+
+    <!-- Elements -->
+    <SolidColorBrush x:Key="ColorSeparator" Color="#FF666B71"/>
+    <SolidColorBrush x:Key="ColorSeparator2" Color="#FF4E5F71"/>
+    <SolidColorBrush x:Key="BackgroundColorFrame" Color="#FF3B4857"/>
+    <SolidColorBrush x:Key="LabelTextColorBrush" Color="#CCCCCC"/>
+    <SolidColorBrush x:Key="ColorBrush" Color="#EAEAEA" />
+    <SolidColorBrush x:Key="LabelTextBlockScreen" Color="#FFD8D8D8" />
+    <SolidColorBrush x:Key="NotesScriptBackground" Color="#586B80" />
+    <SolidColorBrush x:Key="NotesBoxBorder" Color="#586B80" />
+    <SolidColorBrush x:Key="WaterMarkForeground" Color="#646464" />
+    <SolidColorBrush x:Key="MainGridBackground" Color="#666666" />
+    <SolidColorBrush x:Key="CieloSealBackground" Color="#2A333E" />
+    <SolidColorBrush x:Key="IndicatorsDivisionBorder" Color="#C9C9C9" />
+    <SolidColorBrush x:Key="CounterBackground" Color="#00AEEF" />
+    <SolidColorBrush x:Key="CallTypeForeground" Color="#CDCDCD"/>
+
+    <!-- GroupBox -->
+    <SolidColorBrush x:Key="GroupBox.Background" Color="#FFF1F1F1" />
+    <SolidColorBrush x:Key="GroupBox.SeparatorBrush" Color="#FFE2E2E2" />
+
+    <!-- Help -->
+    <SolidColorBrush x:Key="Help.BackgroundLight" Color="#FFB0D1DE"/>
+    <SolidColorBrush x:Key="Help.BackgroundDark" Color="#FF666B71"/>
+    <SolidColorBrush x:Key="Help.ForegroundLight" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Help.ForegroundDark" Color="#FF538294" />
+    <SolidColorBrush x:Key="Help.BackgroundMouseOver" Color="#FF4C859B"/>
+    <SolidColorBrush x:Key="Help.ForegroundMouseOver" Color="#FEFEFE"/>
+
+    <!-- Loading -->
+    <SolidColorBrush x:Key="SpinnerColor" Color="DarkGray"/>
+
+    <!-- DataGrid -->
+    <SolidColorBrush x:Key="DataGridHeaderColor" Color="#4C859B"/>
+    
+    <!-- Telephony -->
+    <SolidColorBrush x:Key="HoldColor" Color="#FFFE3333"/>
+    <SolidColorBrush x:Key="MuteColor" Color="#FFFD8F02"/>
+    <SolidColorBrush x:Key="ActiveCallColor" Color="#FF16C75D"/>
+    <SolidColorBrush x:Key="ConferenceColor" Color="#FF943FE3"/>
+    <SolidColorBrush x:Key="ConferenceColor2" Color="#FF5F0DAB"/>
+    <SolidColorBrush x:Key="ConferenceColor3" Color="#FF7F37C2"/>
+    <SolidColorBrush x:Key="TransferColor" Color="#FF8E9B00"/>
+    <SolidColorBrush x:Key="TransferColor2" Color="#FF666F06"/>
+    <SolidColorBrush x:Key="TransferColor3" Color="#FF868E2B"/>
+
+    <!-- Tabulation Combo -->
+    <SolidColorBrush x:Key="TabulationComboBox.Background" Color="#FF4C859B"/>
+    <SolidColorBrush x:Key="TabulationComboBox.Foreground" Color="White"/>
+    <SolidColorBrush x:Key="TabulationComboBox.PopupBackground" Color="#FF016D95"/>
+    <SolidColorBrush x:Key="TabulationComboBox.SelectedItem.Background" Color="#FF004A66"/>
+    <SolidColorBrush x:Key="TabulationComboBox.MouseOver.ItemBackground" Color="#FF004A66"/>
+
+    <!-- Search Combo -->
+    <SolidColorBrush x:Key="SearchComboBox.Background" Color="#3B4857"/>
+    <SolidColorBrush x:Key="SearchComboBox.IsOpen.Background" Color="#FF666666"/>
+    <SolidColorBrush x:Key="SearchComboBox.SelectedItem.Background" Color="#3B4857"/>
+    <SolidColorBrush x:Key="SearchComboBox.MouseOver.ItemBackground" Color="#3B4857"/>
+    <SolidColorBrush x:Key="SearchComboBox.SeparadoresBrush" Color="#FF4E5F71"/>
+    <SolidColorBrush x:Key="SearchComboBox.PathsFill" Color="#FF00AFF0"/>
+
+    <!-- Buttons -->
+    <SolidColorBrush x:Key="ButtonBase.Background" Color="LightGray"/>
+    <SolidColorBrush x:Key="ButtonBase.Foreground" Color="Black"/>
+    <SolidColorBrush x:Key="ButtonBase.Border" Color="Transparent"/>
+    <SolidColorBrush x:Key="ButtonBase.MouseOver.Background" Color="Gray"/>
+    <SolidColorBrush x:Key="ButtonBase.Pressed.Background" Color="Gray"/>
+    <SolidColorBrush x:Key="RectangularButton.Background" Color="#FF999999"/>
+    <SolidColorBrush x:Key="RectangularButton.Border" Color="Transparent"/>
+    <SolidColorBrush x:Key="RectangularButton.MouseOver.Background" Color="#FF7A7A7A"/>
+    <SolidColorBrush x:Key="RectangularButton.Pressed.Background" Color="#FF7A7A7A"/>
+    <SolidColorBrush x:Key="EndButton.Background" Color="#FF00AEEF"/>
+    <SolidColorBrush x:Key="EndButton.Foreground" Color="White"/>
+    <SolidColorBrush x:Key="EndButton.MouseOver.Background" Color="#FF0092C9"/>
+    <SolidColorBrush x:Key="EndButton.Pressed.Background" Color="#FF0092C9"/>
+    <SolidColorBrush x:Key="ActionButton.Background" Color="#FF4C859B"/>
+    <SolidColorBrush x:Key="ActionButton.MouseOver.Background" Color="#3B4857"/>
+    <SolidColorBrush x:Key="ActionButton.Pressed.Background" Color="#3B4857"/>
+    <SolidColorBrush x:Key="PaginationButton.Background" Color="#FFB0D1DE"/>
+    <SolidColorBrush x:Key="PaginationButton.Foreground" Color="#FF538294"/>
+    <SolidColorBrush x:Key="PaginationButton.MouseOver.Background" Color="#FF4C859B"/>
+    <SolidColorBrush x:Key="PaginationButton.MouseOver.Foreground" Color="#FEFEFE"/>
+    <SolidColorBrush x:Key="PaginationButton.Disabled.Background" Color="#FFEAEAEA"/>
+    <SolidColorBrush x:Key="PaginationButton.Disabled.Foreground" Color="#646464"/>
+
+    <!-- Scroll -->
+    <SolidColorBrush x:Key="ScrollBar.MouseOver.Thumb" Color="#FF666666"/>
+    <SolidColorBrush x:Key="ScrollBar.Pressed.Thumb" Color="#FF666666"/>
+    <SolidColorBrush x:Key="ScrollBar.Static.Thumb" Color="#FF666666"/>
+    <SolidColorBrush x:Key="ScrollBar.Static.Background" Color="#FFCCCCCC"/>
+    <SolidColorBrush x:Key="ScrollBar.Static.Border" Color="#FFCCCCCC"/>
+
+    <!-- IVR Route -->
+    <SolidColorBrush x:Key="ForegroundBox" Color="#000000" />
+    <SolidColorBrush x:Key="DisabledColor" Color="#FF777777" />
+    <SolidColorBrush x:Key="TxtInfoUra" Color="#777777" />
+    <SolidColorBrush x:Key="LineBrush" Color="#FFCCCCCC" />
+    <SolidColorBrush x:Key="SelectedInformativeBrush" Color="#FF0F6A8E" />
+    <SolidColorBrush x:Key="CircleColor" Color="#107DA8"/>
+
+    <!-- ARV Balance -->
+    <SolidColorBrush x:Key="NetValueBackground" Color="Black" />
+    <SolidColorBrush x:Key="GrossValueBackground" Color="Black" />
+    <SolidColorBrush x:Key="DateTimeBalanceForeground" Color="#666666"/>
+    <SolidColorBrush x:Key="DescriptionValueForeground" Color="#646464" />
+
+    <!-- Occurrences -->
+    <SolidColorBrush x:Key="OccurrencesForeground" Color="#3E6E81" />
+    <SolidColorBrush x:Key="DivisionBrushColor" Color="#FFB7B7B7"/>
+
+    <!-- Operator Pause -->
+    <SolidColorBrush x:Key="OperatorPause.BackgroundHeader" Color="#00AEEF" />
+    
+    <!-- Title Short Cut Box -->
+    <SolidColorBrush x:Key="TitleShortCutBox" Color="#FF313F51" />
+
+    <!-- TabControl -->
+    <SolidColorBrush x:Key="TabItemMainMenuBackground" Color="#0F7CA7" />
+    <SolidColorBrush x:Key="TabItemNormalBorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="TabItemNormalDivisorTabsBrush" Color="#FF363C42" />
+    <SolidColorBrush x:Key="TabItemOccurrenceBorderBrush" Color="#FFB7B7B7" />
+    <SolidColorBrush x:Key="TabItemNormalForeground" Color="#586573" />
+    <SolidColorBrush x:Key="TabItemNormalBackground" Color="#232B34" />
+    <SolidColorBrush x:Key="TabItemSelectedBackground" Color="#3B4857" />
+    <SolidColorBrush x:Key="TabItemSelectedForeground" Color="White" />
+    <SolidColorBrush x:Key="TabItemNormalBackgroundSearch" Color="#315360" />
+    <SolidColorBrush x:Key="TabItemSelectedBackgroundSearch" Color="#00AEEF" />
+    <SolidColorBrush x:Key="TabItemNormalForegroundSearch" Color="#CCCCCC"/>
+    <SolidColorBrush x:Key="TabItemHotBackground" Color="DarkRed" />
+    <SolidColorBrush x:Key="TabItemHotForeground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="TabItemDisabledBackground" Color="#F4F4F4" />
+    <SolidColorBrush x:Key="TabItemDisabledBorderBrush" Color="#FFC9C7BA" />
+    <SolidColorBrush x:Key="MainMenuToolTipBackground" Color="#00AEEF" />
+    
+    <!-- Performance Indicator -->
+    <SolidColorBrush x:Key="PerformanceIndicator.BackgroundColor" Color="#00AEEF" />
+    <SolidColorBrush x:Key="PerformanceIndicator.ForegroundColor" Color="#3B4857" />
+    <SolidColorBrush x:Key="PerformanceIndicator.AmountForegroundColor" Color="White" />
+    
+    <!-- Offers -->
+    <SolidColorBrush x:Key="Offers.ForegroundColor" Color="#313F51" />
+    <SolidColorBrush x:Key="Offers.ForegroundTabItem" Color="#646464"/>
+    <SolidColorBrush x:Key="Offers.BackgroundColor" Color="#F1F1F1"/>
+    <SolidColorBrush x:Key="Offers.BorderBrushColor" Color="#DDDDDD"/>
+    <SolidColorBrush x:Key="Offers.ForegroundOptionsTabulation" Color="#646464"/>
+    <SolidColorBrush x:Key="OfferTabulationBorderBrush" Color="#BEBDC3"/>
+    <SolidColorBrush x:Key="Offer.WaterMark" Color="#CCCCCC"/>
+    
+    <!-- Products and Services -->
+    <SolidColorBrush x:Key="ProductsServices.HasRequestForeground" Color="#4C859B"/>
+    <SolidColorBrush x:Key="ProductsServices.HasRequestMouseOver" Color="#6A98AA"/>
+
+    <!-- Products and Services Detail -->
+    <SolidColorBrush x:Key="ProductsServicesDetail.SendMessage" Color="#009900"/>
+
+</ResourceDictionary>

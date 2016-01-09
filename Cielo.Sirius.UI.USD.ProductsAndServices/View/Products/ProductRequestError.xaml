@@ -1,0 +1,9 @@
+﻿<base:ViewBaseControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.Products.ProductRequestError"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD">
+    <StackPanel>
+        <Label Content="{Binding Message}" Style="{DynamicResource ErrorLabelText}"/>
+        <TextBlock Text="{Binding MessageDetail}" Style="{DynamicResource DetailText}"/>
+    </StackPanel>
+</base:ViewBaseControl>

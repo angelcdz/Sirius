@@ -1,0 +1,142 @@
+﻿<base:ViewBaseControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.RateChange"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:controls="clr-namespace:Cielo.Sirius.Foundation.USD.Controls;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:converters="clr-namespace:Cielo.Sirius.Foundation.USD.Converters;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:behaviors="clr-namespace:Cielo.Sirius.Foundation.USD.Behaviors;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD"
+             Style="{DynamicResource ViewBaseControlStyle}">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converters:StringNullOrEmptyToVisibilityConverter x:Key="StringNullOrEmptyToVisibilityConverter"/>
+        <converters:BoolNotConverter x:Key="BoolNotConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Left" Width="565">
+            <TextBlock Text="{Binding SolutionEstimatedDate}" 
+                   Style="{DynamicResource DetailTextDark}" 
+                   Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <i:Interaction.Triggers>
+                <ei:DataTrigger Binding="{Binding HasError}" Value="true">
+                    <ei:ChangePropertyAction PropertyName="Style" Value="{DynamicResource ErrorTextDetail}"/>
+                </ei:DataTrigger>
+                 <ei:DataTrigger Binding="{Binding HasError}" Value="false">
+                    <ei:ChangePropertyAction PropertyName="Style" Value="{DynamicResource DetailTextDark}"/>
+                </ei:DataTrigger>
+            </i:Interaction.Triggers>
+            </TextBlock>
+
+            <TextBlock Margin="0,30,0,0" Text="Taxas" Style="{DynamicResource ScreenSubtitle}" />
+            <DataGrid Margin="0,52,10,167" Style="{DynamicResource DataGridCheck}" 
+                      RowStyle="{DynamicResource DataGridCheckRowStyle}"
+                      ItemsSource="{Binding Rates}">
+                <i:Interaction.Behaviors>
+                    <behaviors:DataGridVerifyLoadRowBehavior/>
+                    <behaviors:DataGridMultipleSelectionBehavior/>
+                </i:Interaction.Behaviors>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Faixa de Parcelas" Width="110">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock IsHitTestVisible="False"
+                                           Style="{DynamicResource BaseTextDark}"
+                                           Text="{Binding Portion}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Taxa Padrão" Width="90">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DefaultValue, StringFormat='{}{0:N2}%'}" 
+                                                   Style="{DynamicResource BaseTextDark}"
+                                                   />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Taxa Contratada" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ContractedValue, StringFormat='{}{0:N2}%'}"
+                                                   Style="{DynamicResource BaseTextDark}"
+                                                   />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Nova Taxa">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="22"/>
+                                        <RowDefinition Height="20"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBox Height="16" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,5,2,0" FontSize="10"
+                                                     Text="{Binding NewCustomValue, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"
+                                                     IsEnabled="{Binding IsChecked, ElementName=MatrixRateCheck, Converter={StaticResource BoolNotConverter}}">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="TextChanged">
+                                                <i:InvokeCommandAction Command="{Binding DataContext.CheckRatesErros, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </TextBox>
+
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="2,0" VerticalAlignment="Top">
+                                        <TextBlock Text="{Binding MinValue, StringFormat='Min: {0:N2}%'}" VerticalAlignment="Top" Height="Auto"
+                                                           Style="{DynamicResource BaseTextDark}" FontSize="8" IsEnabled="False"/>
+                                        <TextBlock Text="{Binding MaxValue, StringFormat='Max: {0:N2}%'}" VerticalAlignment="Top" Height="Auto" Margin="6,0"
+                                                           Style="{DynamicResource BaseTextDark}" FontSize="8" IsEnabled="False"/>
+                                    </StackPanel>
+
+                                    <CheckBox x:Name="MatrixRateCheck" Grid.Column="1" Grid.RowSpan="2" Margin="2,5" 
+                                                      IsChecked="{Binding UseMatrixValue, Mode=TwoWay}">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Checked">
+                                                <i:InvokeCommandAction Command="{Binding DataContext.SelectMatrixValue, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+
+                                        <TextBlock IsHitTestVisible="False" Style="{DynamicResource BaseTextDark}">
+                                                    <Run Text="Utilizar taxa da"/>
+                                                    <LineBreak/>
+                                                    <Run Text="matriz:"/><Run Text="{Binding MatrixValue, StringFormat='{}{0:N2}%'}"/>
+                                        </TextBlock>
+                                    </CheckBox>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Vertical" Margin="0,248,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <TextBlock Text="Motivo" Style="{DynamicResource ScreenSubtitle}" />
+                <controls:TabulationComboBox Width="290" 
+                                             Height="20"
+                                             Margin="0,10,0,0" 
+                                             HorizontalAlignment="Left"
+                                             VerticalAlignment="Top"
+                                             WaterMarkTabulation="Selecione o motivo" 
+                                             ItemsSource="{Binding ReasonList}" 
+                                             SelectedItem=""
+                                             Style="{DynamicResource FilterTabulation}" Cursor="Hand"/>
+
+                <StackPanel Visibility="{Binding HasRatesErros, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                                            Margin="0,10,0,0" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
+                    <TextBlock Text="Atenção" Style="{DynamicResource ErrorText}"/>
+                    <TextBlock Text="*Taxa inserida para a parcela está fora do intervalo de valores permitidos." Style="{DynamicResource DetailTextDarkMessage}"/>
+                </StackPanel>
+
+                <Button Content="ENVIAR" Width="111" Height="25" Margin="0,15,0,0" Style="{DynamicResource MainActionButtonStyle}" VerticalAlignment="Top" HorizontalAlignment="Left" Command="{Binding SendDemand}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</base:ViewBaseControl>

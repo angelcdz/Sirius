@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=TerminalLogico.xsd" />
+  <complexType name="TerminalLogicoCliente">
+    <annotation>
+      <documentation>Relacao dos terminais logicos associados a um equipamento ou dispositivo de um cliente Cielo.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+        <annotation>
+          <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosTerminalLogico" nillable="true" type="cds:TerminaisLogicos">
+        <annotation>
+          <documentation>Contem os elementos definidos na entidade TerminalLogico</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

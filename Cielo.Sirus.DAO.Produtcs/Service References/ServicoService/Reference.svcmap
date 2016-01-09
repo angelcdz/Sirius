@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8841436c-a23b-4dd1-b391-dc4ef44def0d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb-cielo.cloudapp.net/cadastro/servico/servico/v1?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="v1.xsd" MetadataType="Schema" ID="0ee7e756-0bcb-4db7-b4c1-ff2ffb67b53d" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/servico/servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=Comum.xsd" />
+    <MetadataFile FileName="v11.xsd" MetadataType="Schema" ID="7d338ccf-dd3b-4a86-ab5b-dd7a00892dcb" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/servico/servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=ServicoServiceSchema.xsd" />
+    <MetadataFile FileName="Servico1.wsdl" MetadataType="Wsdl" ID="cb637eef-b759-4f59-a073-5d5cfd19bc62" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/servico/servico/v1?WSDL" />
+    <MetadataFile FileName="v12.xsd" MetadataType="Schema" ID="87e97a02-ada5-4fcb-93ee-36633d15574a" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/servico/servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=CieloSoapHeader.xsd" />
+    <MetadataFile FileName="v13.xsd" MetadataType="Schema" ID="230f3499-c495-48e1-8c8b-9dcea831e876" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/cadastro/servico/servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=Servico.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

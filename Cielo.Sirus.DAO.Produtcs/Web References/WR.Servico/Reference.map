@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://win-lt2std568dd:8080/Cadastro/Servico/Servico/v1?wsdl" filename="Servico.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Servico/Servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=Servico.xsd" filename="v1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Servico/Servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=Comum.xsd" filename="v10.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Servico/Servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=SolicitacaoCentralAtendimento.xsd" filename="v11.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Servico/Servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=CieloSoapHeader.xsd" filename="v12.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Servico/Servico/v1?WSDL&amp;interface=ServicoSOAP&amp;part=ServicoServiceSchema.xsd" filename="v13.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

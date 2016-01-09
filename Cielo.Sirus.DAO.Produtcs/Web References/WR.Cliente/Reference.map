@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=SolicitacaoCentralAtendimento.xsd" filename="v3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Credenciamento.xsd" filename="v30.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Filial.xsd" filename="v31.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Comum.xsd" filename="v32.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Cliente.xsd" filename="v33.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" filename="v34.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?wsdl" filename="ClienteServiceContract.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Moeda.xsd" filename="v35.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Endereco.xsd" filename="v36.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Proprietario.xsd" filename="v37.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=ClienteServiceSchema.xsd" filename="v38.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=DadosBancarios.xsd" filename="v39.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=SituacaoFuncionamentoCliente.xsd" filename="v310.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Produto.xsd" filename="v311.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Contato.xsd" filename="v312.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

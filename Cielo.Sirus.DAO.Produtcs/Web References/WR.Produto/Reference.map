@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=ProdutoContratadoCliente.xsd" filename="v3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=CieloSoapHeader.xsd" filename="v30.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Comum.xsd" filename="v31.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Moeda.xsd" filename="v32.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=ProdutoMultivanContratadoCliente.xsd" filename="v33.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?wsdl" filename="Produto.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=PatAlelo.xsd" filename="v34.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Cliente.xsd" filename="v35.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Banco.xsd" filename="v36.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=SolicitacaoCentralAtendimento.xsd" filename="v37.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=ProdutoServiceSchema.xsd" filename="v38.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=SituacaoFuncionamentoCliente.xsd" filename="v39.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Produto.xsd" filename="v310.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Contato.xsd" filename="v311.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=DadosBancarios.xsd" filename="v312.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Proprietario.xsd" filename="v313.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Endereco.xsd" filename="v314.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

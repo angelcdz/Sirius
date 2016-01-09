@@ -1,0 +1,2102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProdutosService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:ProtectionToken>
+              <wsp:Policy>
+                <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireDerivedKeys />
+                    <sp:BootstrapPolicy>
+                      <wsp:Policy>
+                        <sp:SignedParts>
+                          <sp:Body />
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                        <sp:EncryptedParts>
+                          <sp:Body />
+                        </sp:EncryptedParts>
+                        <sp:SymmetricBinding>
+                          <wsp:Policy>
+                            <sp:ProtectionToken>
+                              <wsp:Policy>
+                                <sp:SpnegoContextToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                                  <wsp:Policy>
+                                    <sp:RequireDerivedKeys />
+                                  </wsp:Policy>
+                                </sp:SpnegoContextToken>
+                              </wsp:Policy>
+                            </sp:ProtectionToken>
+                            <sp:AlgorithmSuite>
+                              <wsp:Policy>
+                                <sp:Basic256 />
+                              </wsp:Policy>
+                            </sp:AlgorithmSuite>
+                            <sp:Layout>
+                              <wsp:Policy>
+                                <sp:Strict />
+                              </wsp:Policy>
+                            </sp:Layout>
+                            <sp:IncludeTimestamp />
+                            <sp:EncryptSignature />
+                            <sp:OnlySignEntireHeadersAndBody />
+                          </wsp:Policy>
+                        </sp:SymmetricBinding>
+                        <sp:Wss11>
+                          <wsp:Policy />
+                        </sp:Wss11>
+                        <sp:Trust10>
+                          <wsp:Policy>
+                            <sp:MustSupportIssuedTokens />
+                            <sp:RequireClientEntropy />
+                            <sp:RequireServerEntropy />
+                          </wsp:Policy>
+                        </sp:Trust10>
+                      </wsp:Policy>
+                    </sp:BootstrapPolicy>
+                  </wsp:Policy>
+                </sp:SecureConversationToken>
+              </wsp:Policy>
+            </sp:ProtectionToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+            <sp:EncryptSignature />
+            <sp:OnlySignEntireHeadersAndBody />
+          </wsp:Policy>
+        </sp:SymmetricBinding>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarInformacoesPatAleloCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarInformacoesPatAleloCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarProdutoHabilitadoCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarProdutoHabilitadoCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoHabilitadoCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoHabilitadoCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarProdutoElegivelCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarProdutoElegivelCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoElegivelCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoElegivelCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarProdutoNaoElegivelCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarProdutoNaoElegivelCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoNaoElegivelCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoNaoElegivelCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetProductRequestsHistory_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetProductRequestsHistory_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetServiceRequestsHistory_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetServiceRequestsHistory_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesEnabled_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesEnabled_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesEnabled_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesEnabled_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesNonEnabled_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesNonEnabled_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesNonElegible_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesNonElegible_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesNonEligible_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesNonEligible_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesEligible_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesEligible_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarPrazoPadrao_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarPrazoPadrao_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_AlterarTaxa_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_AlterarTaxa_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_SolicitarNegociacaoTaxaProdutoComercial_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_SolicitarNegociacaoTaxaProdutoComercial_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetDiscountRateRestriction_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetDiscountRateRestriction_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ManterPrazoFlexivel_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ManterPrazoFlexivel_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_HabilitarDesabilitarVendaDigitada_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_HabilitarDesabilitarVendaDigitada_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_SolicitarExclusaoProduto_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_SolicitarExclusaoProduto_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarServicoHabilitadoCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarServicoHabilitadoCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoMultivanContratadoCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoMultivanContratadoCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_SolicitaAnaliseAlvara_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_SolicitaAnaliseAlvara_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_HabilitarProduto_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_HabilitarProduto_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarServicoElegivelCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarServicoElegivelCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarServicoNaoElegivelCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarServicoNaoElegivelCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ValidarPermissaoVendaDigitiada_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ValidarPermissaoVendaDigitiada_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_HabilitarServico_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_HabilitarServico_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_DesabilitarServico_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_DesabilitarServico_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarPrazosTaxasPrazoFlexivel_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_ConsultarPrazosTaxasPrazoFlexivel_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetEligibleServiceRequestTypes_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="wsHttpEndpointBinding_IProdutosService_GetEligibleServiceRequestTypes_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoHabilitadoCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoElegivelCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoNaoElegivelCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoNaoElegivelCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetProductRequestsHistory" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetServiceRequestsHistory" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEnabledProductRequestTypes" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEnabledServiceRequestTypes" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.Products" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetNonEligibleProductRequestTypes" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEligibleProductRequestTypes" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazoPadrao" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.AlterarParcelaFaixaProduto" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarNegociacaoTaxa" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetDiscountRateRestriction" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ManterPrazoFlexivel" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarExclusaoProduto" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoHabilitadoCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitaAnaliseAlvara" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarProduto" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd28" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoNaoElegivelCliente" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarServico" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd32" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.DesabilitarServico" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd33" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel" />
+      <xsd:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd34" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEligibleServiceRequestTypes" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProdutosService_ConsultarInformacoesPatAleloCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacoesPatAleloCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarInformacoesPatAleloCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacoesPatAleloClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarProdutoHabilitadoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoHabilitadoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarProdutoHabilitadoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoHabilitadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarDetalheProdutoHabilitadoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDetalheProdutoHabilitadoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarDetalheProdutoHabilitadoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDetalheProdutoHabilitadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarProdutoElegivelCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoElegivelCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarProdutoElegivelCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarDetalheProdutoElegivelCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDetalheProdutoElegivelCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarDetalheProdutoElegivelCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDetalheProdutoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarProdutoNaoElegivelCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoNaoElegivelCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarProdutoNaoElegivelCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoNaoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarDetalheProdutoNaoElegivelCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDetalheProdutoNaoElegivelCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarDetalheProdutoNaoElegivelCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDetalheProdutoNaoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetProductRequestsHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRequestsHistory" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetProductRequestsHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRequestsHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetServiceRequestsHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestsHistory" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetServiceRequestsHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestsHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetProductRequestTypesEnabled_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRequestTypesEnabled" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetProductRequestTypesEnabled_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRequestTypesEnabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetServiceRequestTypesEnabled_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestTypesEnabled" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetServiceRequestTypesEnabled_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestTypesEnabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetServiceRequestTypesNonEnabled_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestTypesNonEnabled" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetServiceRequestTypesNonEnabled_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestTypesNonEnabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetServiceRequestTypesNonElegible_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestTypesNonElegible" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetServiceRequestTypesNonElegible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceRequestTypesNonElegibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetProductRequestTypesNonEligible_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRequestTypesNonEligible" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetProductRequestTypesNonEligible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRequestTypesNonEligibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetProductRequestTypesEligible_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRequestTypesEligible" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetProductRequestTypesEligible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRequestTypesEligibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarPrazoPadrao_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPrazoPadrao" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarPrazoPadrao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPrazoPadraoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_AlterarTaxa_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarTaxa" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_AlterarTaxa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarTaxaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_SolicitarNegociacaoTaxaProdutoComercial_InputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitarNegociacaoTaxaProdutoComercial" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_SolicitarNegociacaoTaxaProdutoComercial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitarNegociacaoTaxaProdutoComercialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetDiscountRateRestriction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscountRateRestriction" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetDiscountRateRestriction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscountRateRestrictionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ManterPrazoFlexivel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ManterPrazoFlexivel" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ManterPrazoFlexivel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ManterPrazoFlexivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_HabilitarDesabilitarVendaDigitada_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabilitarDesabilitarVendaDigitada" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_HabilitarDesabilitarVendaDigitada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabilitarDesabilitarVendaDigitadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_SolicitarExclusaoProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitarExclusaoProduto" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_SolicitarExclusaoProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitarExclusaoProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarServicoHabilitadoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarServicoHabilitadoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarServicoHabilitadoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarServicoHabilitadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarDetalheProdutoMultivanContratadoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDetalheProdutoMultivanContratadoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarDetalheProdutoMultivanContratadoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarDetalheProdutoMultivanContratadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_SolicitaAnaliseAlvara_InputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitaAnaliseAlvara" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_SolicitaAnaliseAlvara_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitaAnaliseAlvaraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_HabilitarProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabilitarProduto" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_HabilitarProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabilitarProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarServicoElegivelCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarServicoElegivelCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarServicoElegivelCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarServicoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarServicoNaoElegivelCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarServicoNaoElegivelCliente" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarServicoNaoElegivelCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarServicoNaoElegivelClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ValidarPermissaoVendaDigitiada_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarPermissaoVendaDigitiada" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ValidarPermissaoVendaDigitiada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarPermissaoVendaDigitiadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_HabilitarServico_InputMessage">
+    <wsdl:part name="parameters" element="tns:HabilitarServico" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_HabilitarServico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HabilitarServicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_DesabilitarServico_InputMessage">
+    <wsdl:part name="parameters" element="tns:DesabilitarServico" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_DesabilitarServico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DesabilitarServicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarPrazosTaxasPrazoFlexivel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPrazosTaxasPrazoFlexivel" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_ConsultarPrazosTaxasPrazoFlexivel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPrazosTaxasPrazoFlexivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetEligibleServiceRequestTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEligibleServiceRequestTypes" />
+  </wsdl:message>
+  <wsdl:message name="IProdutosService_GetEligibleServiceRequestTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEligibleServiceRequestTypesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProdutosService">
+    <wsdl:operation name="ConsultarInformacoesPatAleloCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarInformacoesPatAleloCliente" message="tns:IProdutosService_ConsultarInformacoesPatAleloCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarInformacoesPatAleloClienteResponse" message="tns:IProdutosService_ConsultarInformacoesPatAleloCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoHabilitadoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarProdutoHabilitadoCliente" message="tns:IProdutosService_ConsultarProdutoHabilitadoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarProdutoHabilitadoClienteResponse" message="tns:IProdutosService_ConsultarProdutoHabilitadoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDetalheProdutoHabilitadoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoHabilitadoCliente" message="tns:IProdutosService_ConsultarDetalheProdutoHabilitadoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoHabilitadoClienteResponse" message="tns:IProdutosService_ConsultarDetalheProdutoHabilitadoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoElegivelCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarProdutoElegivelCliente" message="tns:IProdutosService_ConsultarProdutoElegivelCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarProdutoElegivelClienteResponse" message="tns:IProdutosService_ConsultarProdutoElegivelCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDetalheProdutoElegivelCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoElegivelCliente" message="tns:IProdutosService_ConsultarDetalheProdutoElegivelCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoElegivelClienteResponse" message="tns:IProdutosService_ConsultarDetalheProdutoElegivelCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoNaoElegivelCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarProdutoNaoElegivelCliente" message="tns:IProdutosService_ConsultarProdutoNaoElegivelCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarProdutoNaoElegivelClienteResponse" message="tns:IProdutosService_ConsultarProdutoNaoElegivelCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDetalheProdutoNaoElegivelCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoNaoElegivelCliente" message="tns:IProdutosService_ConsultarDetalheProdutoNaoElegivelCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoNaoElegivelClienteResponse" message="tns:IProdutosService_ConsultarDetalheProdutoNaoElegivelCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRequestsHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetProductRequestsHistory" message="tns:IProdutosService_GetProductRequestsHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetProductRequestsHistoryResponse" message="tns:IProdutosService_GetProductRequestsHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestsHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetServiceRequestsHistory" message="tns:IProdutosService_GetServiceRequestsHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetServiceRequestsHistoryResponse" message="tns:IProdutosService_GetServiceRequestsHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRequestTypesEnabled">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetProductRequestTypesEnabled" message="tns:IProdutosService_GetProductRequestTypesEnabled_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetProductRequestTypesEnabledResponse" message="tns:IProdutosService_GetProductRequestTypesEnabled_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestTypesEnabled">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetServiceRequestTypesEnabled" message="tns:IProdutosService_GetServiceRequestTypesEnabled_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetServiceRequestTypesEnabledResponse" message="tns:IProdutosService_GetServiceRequestTypesEnabled_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestTypesNonEnabled">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetServiceRequestTypesNonEnabled" message="tns:IProdutosService_GetServiceRequestTypesNonEnabled_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetServiceRequestTypesNonEnabledResponse" message="tns:IProdutosService_GetServiceRequestTypesNonEnabled_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestTypesNonElegible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetServiceRequestTypesNonElegible" message="tns:IProdutosService_GetServiceRequestTypesNonElegible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetServiceRequestTypesNonElegibleResponse" message="tns:IProdutosService_GetServiceRequestTypesNonElegible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRequestTypesNonEligible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetProductRequestTypesNonEligible" message="tns:IProdutosService_GetProductRequestTypesNonEligible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetProductRequestTypesNonEligibleResponse" message="tns:IProdutosService_GetProductRequestTypesNonEligible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRequestTypesEligible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetProductRequestTypesEligible" message="tns:IProdutosService_GetProductRequestTypesEligible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetProductRequestTypesEligibleResponse" message="tns:IProdutosService_GetProductRequestTypesEligible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPrazoPadrao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarPrazoPadrao" message="tns:IProdutosService_ConsultarPrazoPadrao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarPrazoPadraoResponse" message="tns:IProdutosService_ConsultarPrazoPadrao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarTaxa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/AlterarTaxa" message="tns:IProdutosService_AlterarTaxa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/AlterarTaxaResponse" message="tns:IProdutosService_AlterarTaxa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarNegociacaoTaxaProdutoComercial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/SolicitarNegociacaoTaxaProdutoComercial" message="tns:IProdutosService_SolicitarNegociacaoTaxaProdutoComercial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/SolicitarNegociacaoTaxaProdutoComercialResponse" message="tns:IProdutosService_SolicitarNegociacaoTaxaProdutoComercial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscountRateRestriction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetDiscountRateRestriction" message="tns:IProdutosService_GetDiscountRateRestriction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetDiscountRateRestrictionResponse" message="tns:IProdutosService_GetDiscountRateRestriction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ManterPrazoFlexivel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ManterPrazoFlexivel" message="tns:IProdutosService_ManterPrazoFlexivel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ManterPrazoFlexivelResponse" message="tns:IProdutosService_ManterPrazoFlexivel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabilitarDesabilitarVendaDigitada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/HabilitarDesabilitarVendaDigitada" message="tns:IProdutosService_HabilitarDesabilitarVendaDigitada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/HabilitarDesabilitarVendaDigitadaResponse" message="tns:IProdutosService_HabilitarDesabilitarVendaDigitada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarExclusaoProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/SolicitarExclusaoProduto" message="tns:IProdutosService_SolicitarExclusaoProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/SolicitarExclusaoProdutoResponse" message="tns:IProdutosService_SolicitarExclusaoProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarServicoHabilitadoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarServicoHabilitadoCliente" message="tns:IProdutosService_ConsultarServicoHabilitadoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarServicoHabilitadoClienteResponse" message="tns:IProdutosService_ConsultarServicoHabilitadoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDetalheProdutoMultivanContratadoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoMultivanContratadoCliente" message="tns:IProdutosService_ConsultarDetalheProdutoMultivanContratadoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoMultivanContratadoClienteResponse" message="tns:IProdutosService_ConsultarDetalheProdutoMultivanContratadoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaAnaliseAlvara">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/SolicitaAnaliseAlvara" message="tns:IProdutosService_SolicitaAnaliseAlvara_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/SolicitaAnaliseAlvaraResponse" message="tns:IProdutosService_SolicitaAnaliseAlvara_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabilitarProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/HabilitarProduto" message="tns:IProdutosService_HabilitarProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/HabilitarProdutoResponse" message="tns:IProdutosService_HabilitarProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarServicoElegivelCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarServicoElegivelCliente" message="tns:IProdutosService_ConsultarServicoElegivelCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarServicoElegivelClienteResponse" message="tns:IProdutosService_ConsultarServicoElegivelCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarServicoNaoElegivelCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarServicoNaoElegivelCliente" message="tns:IProdutosService_ConsultarServicoNaoElegivelCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarServicoNaoElegivelClienteResponse" message="tns:IProdutosService_ConsultarServicoNaoElegivelCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarPermissaoVendaDigitiada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ValidarPermissaoVendaDigitiada" message="tns:IProdutosService_ValidarPermissaoVendaDigitiada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ValidarPermissaoVendaDigitiadaResponse" message="tns:IProdutosService_ValidarPermissaoVendaDigitiada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HabilitarServico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/HabilitarServico" message="tns:IProdutosService_HabilitarServico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/HabilitarServicoResponse" message="tns:IProdutosService_HabilitarServico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DesabilitarServico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/DesabilitarServico" message="tns:IProdutosService_DesabilitarServico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/DesabilitarServicoResponse" message="tns:IProdutosService_DesabilitarServico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPrazosTaxasPrazoFlexivel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/ConsultarPrazosTaxasPrazoFlexivel" message="tns:IProdutosService_ConsultarPrazosTaxasPrazoFlexivel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/ConsultarPrazosTaxasPrazoFlexivelResponse" message="tns:IProdutosService_ConsultarPrazosTaxasPrazoFlexivel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEligibleServiceRequestTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutosService/GetEligibleServiceRequestTypes" message="tns:IProdutosService_GetEligibleServiceRequestTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutosService/GetEligibleServiceRequestTypesResponse" message="tns:IProdutosService_GetEligibleServiceRequestTypes_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsHttpEndpointBinding_IProdutosService" type="tns:IProdutosService">
+    <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarInformacoesPatAleloCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarInformacoesPatAleloCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarInformacoesPatAleloCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarInformacoesPatAleloCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoHabilitadoCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarProdutoHabilitadoCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarProdutoHabilitadoCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarProdutoHabilitadoCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDetalheProdutoHabilitadoCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoHabilitadoCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoHabilitadoCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoHabilitadoCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoElegivelCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarProdutoElegivelCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarProdutoElegivelCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarProdutoElegivelCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDetalheProdutoElegivelCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoElegivelCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoElegivelCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoElegivelCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoNaoElegivelCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarProdutoNaoElegivelCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarProdutoNaoElegivelCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarProdutoNaoElegivelCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDetalheProdutoNaoElegivelCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoNaoElegivelCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoNaoElegivelCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoNaoElegivelCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRequestsHistory">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetProductRequestsHistory" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetProductRequestsHistory_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetProductRequestsHistory_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestsHistory">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetServiceRequestsHistory" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetServiceRequestsHistory_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetServiceRequestsHistory_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRequestTypesEnabled">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetProductRequestTypesEnabled" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesEnabled_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesEnabled_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestTypesEnabled">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetServiceRequestTypesEnabled" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesEnabled_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesEnabled_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestTypesNonEnabled">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetServiceRequestTypesNonEnabled" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesNonEnabled_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesNonEnabled_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceRequestTypesNonElegible">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetServiceRequestTypesNonElegible" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesNonElegible_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetServiceRequestTypesNonElegible_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRequestTypesNonEligible">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetProductRequestTypesNonEligible" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesNonEligible_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesNonEligible_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRequestTypesEligible">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetProductRequestTypesEligible" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesEligible_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetProductRequestTypesEligible_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPrazoPadrao">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarPrazoPadrao" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarPrazoPadrao_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarPrazoPadrao_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarTaxa">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/AlterarTaxa" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_AlterarTaxa_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_AlterarTaxa_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarNegociacaoTaxaProdutoComercial">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/SolicitarNegociacaoTaxaProdutoComercial" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_SolicitarNegociacaoTaxaProdutoComercial_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_SolicitarNegociacaoTaxaProdutoComercial_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscountRateRestriction">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetDiscountRateRestriction" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetDiscountRateRestriction_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetDiscountRateRestriction_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ManterPrazoFlexivel">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ManterPrazoFlexivel" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ManterPrazoFlexivel_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ManterPrazoFlexivel_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabilitarDesabilitarVendaDigitada">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/HabilitarDesabilitarVendaDigitada" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_HabilitarDesabilitarVendaDigitada_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_HabilitarDesabilitarVendaDigitada_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarExclusaoProduto">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/SolicitarExclusaoProduto" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_SolicitarExclusaoProduto_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_SolicitarExclusaoProduto_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarServicoHabilitadoCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarServicoHabilitadoCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarServicoHabilitadoCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarServicoHabilitadoCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDetalheProdutoMultivanContratadoCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarDetalheProdutoMultivanContratadoCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoMultivanContratadoCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarDetalheProdutoMultivanContratadoCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaAnaliseAlvara">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/SolicitaAnaliseAlvara" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_SolicitaAnaliseAlvara_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_SolicitaAnaliseAlvara_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabilitarProduto">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/HabilitarProduto" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_HabilitarProduto_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_HabilitarProduto_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarServicoElegivelCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarServicoElegivelCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarServicoElegivelCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarServicoElegivelCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarServicoNaoElegivelCliente">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarServicoNaoElegivelCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarServicoNaoElegivelCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarServicoNaoElegivelCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarPermissaoVendaDigitiada">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ValidarPermissaoVendaDigitiada" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ValidarPermissaoVendaDigitiada_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ValidarPermissaoVendaDigitiada_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabilitarServico">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/HabilitarServico" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_HabilitarServico_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_HabilitarServico_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesabilitarServico">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/DesabilitarServico" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_DesabilitarServico_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_DesabilitarServico_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPrazosTaxasPrazoFlexivel">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/ConsultarPrazosTaxasPrazoFlexivel" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarPrazosTaxasPrazoFlexivel_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_ConsultarPrazosTaxasPrazoFlexivel_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEligibleServiceRequestTypes">
+      <soap12:operation soapAction="http://tempuri.org/IProdutosService/GetEligibleServiceRequestTypes" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetEligibleServiceRequestTypes_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#wsHttpEndpointBinding_IProdutosService_GetEligibleServiceRequestTypes_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProdutosService">
+    <wsdl:port name="wsHttpEndpointBinding_IProdutosService" binding="tns:wsHttpEndpointBinding_IProdutosService">
+      <soap12:address location="http://localhost:52893/ProdutosService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:52893/ProdutosService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>administrator@crm.avanade.local</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

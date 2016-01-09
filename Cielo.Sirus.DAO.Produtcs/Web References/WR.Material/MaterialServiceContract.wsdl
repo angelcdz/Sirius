@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:header="http://canonico.cielo.com.br/governancasoa/comum/v1" xmlns:tns="http://service.cielo.com.br/cadastro/solucaocaptura/material/v2/" xmlns:fault="http://canonico.cielo.com.br/comum/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:log="http://canonico.cielo.com.br/operacao/logistica/v1" name="MaterialServiceContract" targetNamespace="http://service.cielo.com.br/cadastro/solucaocaptura/material/v2/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.cielo.com.br/cadastro/solucaocaptura/material/v2/">
+      <xsd:include schemaLocation="v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=MaterialServiceSchema.xsd" />
+      <xsd:import schemaLocation="v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" namespace="http://canonico.cielo.com.br/governancasoa/comum/v1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="solicitarMaterialResponse">
+    <wsdl:part name="parameters" element="tns:solicitarMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarHistoricoConsumoResponse">
+    <wsdl:part name="parameters" element="tns:consultarHistoricoConsumoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarHistoricoSolicitacaoResponse">
+    <wsdl:part name="parameters" element="tns:consultarHistoricoSolicitacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitarMaterialRequest">
+    <wsdl:part name="parameters" element="tns:solicitarMaterialRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarHistoricoConsumoRequest">
+    <wsdl:part name="parameters" element="tns:consultarHistoricoConsumoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="faultMessage">
+    <wsdl:part name="parameters" element="fault:fault" />
+  </wsdl:message>
+  <wsdl:message name="consultarSuprimentoElegivelRequest">
+    <wsdl:part name="parameters" element="tns:consultarSuprimentoElegivelRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarHistoricoSolicitacaoRequest">
+    <wsdl:part name="parameters" element="tns:consultarHistoricoSolicitacaoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarSuprimentoElegivelResponse">
+    <wsdl:part name="parameters" element="tns:consultarSuprimentoElegivelResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MaterialServicePortType">
+    <wsdl:operation name="consultarHistoricoSolicitacao">
+      <wsdl:documentation>Operacao responsavel Consultar Histórico de Solicitações de Suprimento.</wsdl:documentation>
+      <wsdl:input message="tns:consultarHistoricoSolicitacaoRequest" />
+      <wsdl:output message="tns:consultarHistoricoSolicitacaoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarSuprimentoElegivel">
+      <wsdl:documentation>Operacao responsavel Consultar Suprimentos Elegíveis.</wsdl:documentation>
+      <wsdl:input message="tns:consultarSuprimentoElegivelRequest" />
+      <wsdl:output message="tns:consultarSuprimentoElegivelResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarHistoricoConsumo">
+      <wsdl:documentation>Operacao responsavel Consultar Histórico Consumo de Suprimento.</wsdl:documentation>
+      <wsdl:input message="tns:consultarHistoricoConsumoRequest" />
+      <wsdl:output message="tns:consultarHistoricoConsumoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitarMaterial">
+      <wsdl:documentation>Operacao responsavel por solicitar material.</wsdl:documentation>
+      <wsdl:input message="tns:solicitarMaterialRequest" />
+      <wsdl:output message="tns:solicitarMaterialResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MaterialServiceSOAPBinding" type="tns:MaterialServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarHistoricoSolicitacao">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:consultarHistoricoSolicitacaoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarSuprimentoElegivel">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:consultarSuprimentoElegivelRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarHistoricoConsumo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:consultarHistoricoConsumoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarMaterial">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:solicitarMaterialRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MaterialService">
+    <wsdl:port name="MaterialServiceSOAPPort" binding="tns:MaterialServiceSOAPBinding">
+      <soap:address location="http://osb-cielo.cloudapp.net:80/Cadastro/Solucaocaptura/Material/v2" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

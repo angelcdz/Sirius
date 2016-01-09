@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="608c3004-e833-4117-a076-1f7c73f80232" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EquipamentoContract1.wsdl" MetadataType="Wsdl" ID="680ffbb6-7e20-4b93-b1d9-344145440eff" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL" />
+    <MetadataFile FileName="v27.xsd" MetadataType="Schema" ID="d9247c91-582d-48c4-a97b-27b26bbcef12" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=TerminalLogicoCliente.xsd" />
+    <MetadataFile FileName="v271.xsd" MetadataType="Schema" ID="51797be7-0de1-45c8-965d-e765a36bc325" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=Comum.xsd" />
+    <MetadataFile FileName="v272.xsd" MetadataType="Schema" ID="5cddae12-8fc8-4647-947f-b0731c62b1d5" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" />
+    <MetadataFile FileName="v273.xsd" MetadataType="Schema" ID="a0e2083a-6b6d-42fb-a30b-95255a9105a6" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=TerminalLogico.xsd" />
+    <MetadataFile FileName="v274.xsd" MetadataType="Schema" ID="1a35fb65-2889-4fee-b2b4-040a9fcb276e" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=PacoteCobrancaContratadoCliente.xsd" />
+    <MetadataFile FileName="v275.xsd" MetadataType="Schema" ID="bc6ce437-0234-44a8-9ab1-6858cc6337eb" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=EquipamentoServiceSchema.xsd" />
+    <MetadataFile FileName="v276.xsd" MetadataType="Schema" ID="b21453e5-7284-4a06-a89d-6d72b1e65b8d" SourceId="1" SourceUrl="http://osb-cielo.cloudapp.net/operacao/logistica/equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=PacoteCobranca.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

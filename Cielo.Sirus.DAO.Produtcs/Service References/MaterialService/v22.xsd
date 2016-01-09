@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:lgs="http://canonico.cielo.com.br/operacao/logistica/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/operacao/logistica/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=Material.xsd" />
+  <complexType name="MaterialSolicitadoCliente">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+        <annotation>
+          <documentation>Codigo interno que identifica um cliente na Cielo.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosMaterial" nillable="true" type="lgs:Material">
+        <annotation>
+          <documentation>Dados relacionados a entidade de cadastro de materiais.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="quantidadeMaterial" nillable="true" type="integer">
+        <annotation>
+          <documentation>Quantidade de item relacionadas a um material de suprimento solicitado pelo cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="quantidadeDiaPrazoEntrega" nillable="true" type="integer">
+        <annotation>
+          <documentation>Prazo (quantidade de dias) efetivo de entrega do material de suprimento a ser atendido pela Cielo.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dataSolicitacao" nillable="true" type="date">
+        <annotation>
+          <documentation>Data de solicitacao do material de suprimento realizada pelo cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoUsuarioOperador" nillable="true" type="string">
+        <annotation>
+          <documentation>Codigo de identificacao do operador responsavel pela abertura da solicitacao de material de suprimento pelo cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeTipoSolicitacao" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome que identifica o tipo de atendimento de uma solicitacao do material escolhido pelo cliente  (Emergencial ou Automatica).</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

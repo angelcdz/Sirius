@@ -1,0 +1,87 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" >
+    
+    <!-- Search TabItem -->
+    <BitmapImage x:Key="ImgBusca" UriSource="Images/ico_busca_on.png" />
+
+    <!-- Main Menu -->
+    <BitmapImage x:Key="ImgVisaoGeralAtivo" UriSource="Images/ico_01_on.png" />
+    <BitmapImage x:Key="ImgVisaoGeralInativo" UriSource="Images/visao_geral_off.png" />
+    <BitmapImage x:Key="ImgCadastroClienteAtivo" UriSource="Images/ico_02_on.png" />
+    <BitmapImage x:Key="ImgCadastroClienteInativo" UriSource="Images/ico_02_off.png" />
+    <BitmapImage x:Key="ImgAgendaFinanceiraAtivo" UriSource="Images/ico_03_on.png" />
+    <BitmapImage x:Key="ImgAgendaFinanceiraInativo" UriSource="Images/ico_03_off.png" />
+    <BitmapImage x:Key="ImgDemandaAtivo" UriSource="Images/ico_04_on.png" />
+    <BitmapImage x:Key="ImgDemandaInativo" UriSource="Images/ico_04_off.png" />
+    <BitmapImage x:Key="ImgProdutosServicosAtivo" UriSource="Images/ico_05_on.png" />
+    <BitmapImage x:Key="ImgProdutosServicosInativo" UriSource="Images/ico_05_off.png" />
+    <BitmapImage x:Key="ImgLogisticaAtivo" UriSource="Images/ico_06_on.png" />
+    <BitmapImage x:Key="ImgLogisticaInativo" UriSource="Images/ico_06_off.png" />
+    <BitmapImage x:Key="ImgOfertasAtivo" UriSource="Images/ico_07_on.png" />
+    <BitmapImage x:Key="ImgOfertasInativo" UriSource="Images/ico_07_off.png" />
+    <BitmapImage x:Key="ImgBibliotecaConteudoAtivo" UriSource="Images/ico_10_on.png" />
+    <BitmapImage x:Key="ImgBibliotecaConteudoInativo" UriSource="Images/ico_10_off.png" />
+    <BitmapImage x:Key="ImgCalendarioAgendaAtivo" UriSource="Images/ico_08_on.png" />
+    <BitmapImage x:Key="ImgCalendarioAgendaInativo" UriSource="Images/ico_08_off.png" />
+    <BitmapImage x:Key="ImgVisaoSiteCieloAtivo" UriSource="Images/ico_09_on.png" />
+    <BitmapImage x:Key="ImgVisaoSiteCieloInativo" UriSource="Images/ico_09_off.png" />
+
+    <!-- Operator -->
+    <BitmapImage x:Key="ImgRedFlag" UriSource="Images/Flag_red.png" />
+    <BitmapImage x:Key="ImgYellowFlag" UriSource="Images/Flag_yellow.png" />
+    <BitmapImage x:Key="ImgGreenKey" UriSource="Images/Key_green.png" />
+    <BitmapImage x:Key="ImgRedKey" UriSource="Images/Key_red.png" />
+    
+    <!-- Offers -->
+    <BitmapImage x:Key="ImgOfferTab" UriSource="Images/estrela.png" />
+    
+    <!-- Image Notes TextBox / Script -->
+    <BitmapImage x:Key="ImgDobraAnotacoes" UriSource="Images/detalhe_dobra_anotacoes.png"/>
+    <BitmapImage x:Key="ImgScript" UriSource="Images/usd_script01.png"/>
+
+    <!-- Performance Indicators -->
+    <BitmapImage x:Key="ImgTmaOff" UriSource="Images/ico_tma_off.png"/>
+    <BitmapImage x:Key="ImgTmaOn" UriSource="Images/ico_tma_on.png" />
+    <BitmapImage x:Key="ImgQuantidadeLigacoesOff" UriSource="Images/ico_quantidade_ligacoes_off.png" />
+    <BitmapImage x:Key="ImgQuantidadeLigacoesOn" UriSource="Images/ico_quantidade_ligacoes_on.png" />
+    <BitmapImage x:Key="ImgOfertasConvertidasOff" UriSource="Images/ico_conversao_vendas_off.png"/>
+    <BitmapImage x:Key="ImgOfertasConvertidasOn" UriSource="Images/ico_conversao_vendas_on.png" />
+
+    <!-- Pause -->
+    <BitmapImage x:Key="ImgPausaOff" UriSource="Images/stop_off.png" />
+    <BitmapImage x:Key="ImgPausaOn" UriSource="Images/stop_on.png" />
+    <BitmapImage x:Key="ImgPausaMouseOver" UriSource="Images/stop_mouseover.png" />
+    <BitmapImage x:Key="ImgPausaRequestedOn" UriSource="Images/check_on.png" />
+    <BitmapImage x:Key="ImgPausaRequestedOff" UriSource="Images/check_off.png" />
+    <BitmapImage x:Key="ImgPausaRequestedMouseOver" UriSource="Images/check_mouseover.png" />
+
+    <!-- Telephony -->
+    <BitmapImage x:Key="ImgMuteAtivo" UriSource="Images/ico_mute_on.png" />
+    <BitmapImage x:Key="ImgMuteInativo" UriSource="Images/ico_mute_off.png" />
+    <BitmapImage x:Key="ImgMuteMouseOver" UriSource="Images/ico_mute_mouseover.png" />
+    <BitmapImage x:Key="ImgEsperaAtivo" UriSource="Images/phone_hold_select.png" />
+    <BitmapImage x:Key="ImgEsperaInativo" UriSource="Images/phone_hold.png" />
+    <BitmapImage x:Key="ImgEsperaMouseOver" UriSource="Images/phone_hold_mouseover.png" />
+    <BitmapImage x:Key="ImgConferenciaAtivo" UriSource="Images/ico_conferencia_on.png" />
+    <BitmapImage x:Key="ImgConferenciaInativo" UriSource="Images/ico_conferencia_off.png" />
+    <BitmapImage x:Key="ImgConferenciaMouseOver" UriSource="Images/ico_conferencia_mouseover.png" />
+    <BitmapImage x:Key="ImgTransferenciaAtivo" UriSource="Images/ico_transferencia_on.png" />
+    <BitmapImage x:Key="ImgTransferenciaInativo" UriSource="Images/ico_transferencia_off.png" />
+    <BitmapImage x:Key="ImgTransferenciaMouseOver" UriSource="Images/ico_transferencia_mouseover.png" />
+    <BitmapImage x:Key="ImgSairConferenciao" UriSource="Images/icon_conference_sair.png" />
+    <BitmapImage x:Key="ImgIniciarConferenciao" UriSource="Images/icon_conferencia_iniciar.png" />
+    <BitmapImage x:Key="ImgConferenciaEncerrar" UriSource="Images/icon_conference_encerrar.png" />
+    <BitmapImage x:Key="ImgTransferir" UriSource="Images/icon_transfer.png" />
+
+    <!-- Clients contact combo -->
+    <BitmapImage x:Key="ImgContactName" UriSource="Images/ico_contact_name.png" />
+    <BitmapImage x:Key="ImgContactBaloon" UriSource="Images/ico_contact_baloon.png" />
+
+    <!-- IVR Route Box -->
+    <BitmapImage x:Key="ImgProtocolo" UriSource="Images/ico_protocolo.png" />
+    <BitmapImage x:Key="ImgOfertas" UriSource="Images/ico_oferta_disponivel.png" />
+    <BitmapImage x:Key="ImgUraTelefone" UriSource="Images/ura_telephone.png"/>
+
+</ResourceDictionary>

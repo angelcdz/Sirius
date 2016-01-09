@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F235EE7A-CE42-401E-BA21-BCF058E802BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cielo.Sirius.Business.Products</RootNamespace>
+    <AssemblyName>Cielo.Sirius.Business.Products</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Outlook.Sdk">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Crm.Outlook.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Tools.EmailProviders">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Crm.Tools.EmailProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Client">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Client.CodeGeneration">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Client.CodeGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Portal">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Portal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Portal.Files">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Portal.Files.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.CrmConnectControl">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Tooling.CrmConnectControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.CrmConnector.Powershell">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Tooling.CrmConnector.Powershell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Ui.Resources">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Tooling.Ui.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.WebResourceUtility">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Tooling.WebResourceUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GetCommercialDealRequestTypesBL.cs" />
+    <Compile Include="NegociacaoComercialBL.cs" />
+    <Compile Include="ConsultarDadosNegociacaoBL.cs" />
+    <Compile Include="AlterarProdutoCreditoParceladoBL.cs" />
+    <Compile Include="CalcularAlcadaFaixasParceladoSegmentadoBL.cs" />
+    <Compile Include="AlterarProdutoCreditoParceladoSegmentadoBL.cs" />
+    <Compile Include="AlterarParcelaFaixaProdutoBL.cs" />
+    <Compile Include="ChangeProductOneLumpBL.cs" />
+    <Compile Include="ConsultarDetalheProdutoElegivelClienteBL.cs" />
+    <Compile Include="ConsultarDetalheProdutoHabilitadoClienteBL.cs" />
+    <Compile Include="ConsultarDetalheProdutoMultivanContratadoClienteBL.cs" />
+    <Compile Include="ConsultarDetalheProdutoNaoElegivelClienteBL.cs" />
+    <Compile Include="ConsultarInformacoesPatAleloBL.cs" />
+    <Compile Include="ConsultarPrazosTaxasPrazoFlexivelBL.cs" />
+    <Compile Include="ConsultarPrazoPadraoBL.cs" />
+    <Compile Include="ConsultarProdutoElegivelClienteBL.cs" />
+    <Compile Include="ConsultarProdutoHabilitadoClienteBL.cs" />
+    <Compile Include="ConsultarProdutoNaoElegivelClienteBL.cs" />
+    <Compile Include="ConsultarProdutosPrazoFlexivelBL.cs" />
+    <Compile Include="ConsultarServicoElegivelClienteBL.cs" />
+    <Compile Include="ConsultarServicoHabilitadoClienteBL.cs" />
+    <Compile Include="ConsultarServicoNaoElegivelClienteBL.cs" />
+    <Compile Include="DesabilitarProdutoBL.cs" />
+    <Compile Include="GetDiscountRateRestrictionBL.cs" />
+    <Compile Include="GetProductRequestsHistoryBL.cs" />
+    <Compile Include="GetProductRequestTypesNonEnabledBL.cs" />
+    <Compile Include="GetProductRequestTypesEnabledBL.cs" />
+    <Compile Include="GetProductRequestTypesNonEligibleBL.cs" />
+    <Compile Include="GetRequestReasonBL.cs" />
+    <Compile Include="GetServiceRequestsHistoryBL.cs" />
+    <Compile Include="GetServiceRequestTypesNonElegibleBL.cs" />
+    <Compile Include="GetServiceRequestTypesNonEnabledBL.cs" />
+    <Compile Include="GetServiceRequestTypesEnabledBL.cs" />
+    <Compile Include="HabilitarDesabilitarVendaDigitadaBL.cs" />
+    <Compile Include="DesabilitarServicoBL.cs" />
+    <Compile Include="HabilitarProdutoBL.cs" />
+    <Compile Include="ManterPrazoFlexivelBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitarExclusaoProdutoBL.cs" />
+    <Compile Include="SolicitaAnaliseAlvaraBL.cs" />
+    <Compile Include="HabilitarServicoBL.cs" />
+    <Compile Include="SolicitarNegociacaoTaxaBL.cs" />
+    <Compile Include="ValidarPermissaoVendaDigitadaBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avanade.SmartApps.Foundation.Communication\Avanade.SmartApps.Communication.csproj">
+      <Project>{5b9ddbab-1ca9-4807-82b0-856459cb8b53}</Project>
+      <Name>Avanade.SmartApps.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Contracts.Product\Cielo.Sirius.Contracts.Products.csproj">
+      <Project>{df68dd91-542f-4a49-88a7-e23d8bbc8405}</Project>
+      <Name>Cielo.Sirius.Contracts.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Foundation\Avanade.SmartApps.csproj">
+      <Project>{0995c250-a3bd-4973-82e7-a43f8b23493a}</Project>
+      <Name>Avanade.SmartApps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirus.DAO.Produtcs\Cielo.Sirius.DAO.Products.csproj">
+      <Project>{9095975a-9f8a-4f83-b3e4-7d8b7433575a}</Project>
+      <Name>Cielo.Sirius.DAO.Products</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagrams\ChangeProductOneLump.cd" />
+    <None Include="ClassDiagrams\ConsultarServicoNaoElegivelCliente.cd" />
+    <None Include="ClassDiagrams\ConsultarInformacoesPatAlelo.cd" />
+    <None Include="ClassDiagrams\GetServiceRequestsHistory.cd" />
+    <None Include="ClassDiagrams\ConsultarServicoHabilitadoCliente.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

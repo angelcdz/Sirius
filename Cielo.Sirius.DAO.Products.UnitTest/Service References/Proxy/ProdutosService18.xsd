@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDadosNegociacao" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDadosNegociacao" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd42" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetNegotiationData" />
+  <xs:complexType name="ConsultarDadosNegociacaoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+          <xs:element minOccurs="0" name="DemandId" type="ser:guid" />
+          <xs:element minOccurs="0" name="ECNumber" type="ser:guid" />
+          <xs:element minOccurs="0" name="IlhaAtendimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDemanda" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarDadosNegociacaoRequest" nillable="true" type="tns:ConsultarDadosNegociacaoRequest" />
+  <xs:complexType name="ConsultarDadosNegociacaoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetNegotiationData" minOccurs="0" name="DadosCRM" nillable="true" type="q3:GetNegotiationDataResponse" />
+          <xs:element minOccurs="0" name="DataPrevistaRetorno" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataSLA" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IndicadorElegibilidade" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarDadosNegociacaoResponse" nillable="true" type="tns:ConsultarDadosNegociacaoResponse" />
+</xs:schema>

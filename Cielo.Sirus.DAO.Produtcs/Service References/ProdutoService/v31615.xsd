@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <annotation>
+    <documentation>Entidade do modelo canonico corporativo que representa um endereco.
+			Versao: 1.0
+			Autor: Luis Moraes
+
+			Historico de revisao:
+			1.0 31-03-2014 Criacao do xsd
+		   1.1 18-06-2014 Revisao dos nomes dos elementos e inclusão da documentação</documentation>
+  </annotation>
+  <complexType name="Endereco">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="nomeLogradouro" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoComplementoEndereco" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomeBairro" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomeCidade" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="siglaEstado" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="numeroCEP" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="numeroLogradouro" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomeTipoLogradouro" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome do tipo do logradouro aplicado ao endereco. Exemplos:
+Rua
+Avenida
+Praca</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomePais" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome do pais no qual o endereco existe. exemplos:
+Brasil
+Argentina
+Inglaterra</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeComplementoCEP" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="numeroComplementoCEP" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="trechoLogradouro" nillable="true" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="Enderecos">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="enderecos" nillable="true" type="cds:Endereco" />
+    </sequence>
+  </complexType>
+</schema>

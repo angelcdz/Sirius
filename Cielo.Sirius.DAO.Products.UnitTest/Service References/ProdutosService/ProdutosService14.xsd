@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarProduto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarProduto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="HabilitarProdutoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoEmpresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FaixasTaxaSegmentado" nillable="true" type="tns:ArrayOfHabilitarProdutoFaixaTaxaSegmentadoDTO" />
+          <xs:element minOccurs="0" name="IdMotivo" type="ser:guid" />
+          <xs:element minOccurs="0" name="NomeSolicitante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Origem" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PercentualTaxa" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Protocolo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuantidadeParcelas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TelefoneSolicitante" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarProdutoRequest" nillable="true" type="tns:HabilitarProdutoRequest" />
+  <xs:complexType name="ArrayOfHabilitarProdutoFaixaTaxaSegmentadoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HabilitarProdutoFaixaTaxaSegmentadoDTO" nillable="true" type="tns:HabilitarProdutoFaixaTaxaSegmentadoDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHabilitarProdutoFaixaTaxaSegmentadoDTO" nillable="true" type="tns:ArrayOfHabilitarProdutoFaixaTaxaSegmentadoDTO" />
+  <xs:complexType name="HabilitarProdutoFaixaTaxaSegmentadoDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoFaixa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroFinalParcelaFaixa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroInicialParcelaFaixa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PercentualTaxaFaixa" nillable="true" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarProdutoFaixaTaxaSegmentadoDTO" nillable="true" type="tns:HabilitarProdutoFaixaTaxaSegmentadoDTO" />
+  <xs:complexType name="HabilitarProdutoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SistemaLegado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SolicitacaoCentralAtendimento" nillable="true" type="tns:HabilitarProdutoSolicitacaoCentralAtendimentoDTO" />
+          <xs:element minOccurs="0" name="StatusRetorno" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarProdutoResponse" nillable="true" type="tns:HabilitarProdutoResponse" />
+  <xs:complexType name="HabilitarProdutoSolicitacaoCentralAtendimentoDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q4:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoSolicitacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataPrevistaConclusaoSolicitacao" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarProdutoSolicitacaoCentralAtendimentoDTO" nillable="true" type="tns:HabilitarProdutoSolicitacaoCentralAtendimentoDTO" />
+</xs:schema>

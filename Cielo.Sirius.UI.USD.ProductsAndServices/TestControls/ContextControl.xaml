@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.TestControls.ContextControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="300" Width="300">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextId}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValue}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdProtocolo}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueProtocolo}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdNomeContato}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueNomeContato}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdTelefone}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueTelefone}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdCelular}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueCelular}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdIlhaDeAtendimento}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueIlhaDeAtendimento}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdTituloDeOcorrencia}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueTituloDeOcorrencia}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdAccount}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueAccount}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdParentCaseId}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueParentCaseId}" Width="150"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding ContextIdContactId}" Width="150"></TextBox>
+            <TextBox Text="{Binding ContextValueContactId}" Width="150"></TextBox>
+        </StackPanel>
+        <Button Command="{Binding Iniciar}">Iniciar</Button>
+    </StackPanel>
+</UserControl>

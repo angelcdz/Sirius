@@ -1,0 +1,4 @@
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.DynamicsCRM.Plugin\bin\Debug\Avanade.SmartApps.DynamicsCRM.Plugin.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.DynamicsCRM.Plugin\bin\Debug\Avanade.SmartApps.DynamicsCRM.Plugin.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.DynamicsCRM.Plugin\obj\Debug\Avanade.SmartApps.DynamicsCRM.Plugin.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.DynamicsCRM.Plugin\obj\Debug\Avanade.SmartApps.DynamicsCRM.Plugin.pdb

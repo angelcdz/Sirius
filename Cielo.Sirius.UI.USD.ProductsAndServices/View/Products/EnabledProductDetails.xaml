@@ -1,0 +1,55 @@
+﻿<base:ViewBaseControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.EnabledProductDetails"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:controls="clr-namespace:Cielo.Sirius.Foundation.USD.Controls;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:converters="clr-namespace:Cielo.Sirius.Foundation.USD.Converters;assembly=Cielo.Sirius.Foundation.USD" 
+             xmlns:bindings="clr-namespace:Cielo.Sirius.Foundation.USD.Bindings;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:nav="clr-namespace:Cielo.Sirius.Foundation.USD.Navegation;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:view="clr-namespace:Cielo.Sirius.UI.USD.ProductsAndServices.View"
+             xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD"
+             Style="{DynamicResource ViewBaseControlStyle}" Width="408" MinHeight="210">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converters:BoolNotConverter x:Key="BoolNotConverter" />
+        <converters:StringNullOrEmptyToVisibilityConverter x:Key="StringNullOrEmptyToVisibilityConverter"/>
+    </UserControl.Resources>
+
+            <Grid>
+                <TextBlock Margin="0,10,0,0" Text="DETALHES DO PRODUTO" Style="{DynamicResource ScreenSubtitle}"/>
+
+                <StackPanel  Margin="0,32,0,0" Width="408" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Grid x:Name="dgProductDetails">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="151" />
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <TextBlock Text="Bandeira" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Produto" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Status" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Data de Habilitação" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Habilitado para Venda Digitada" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Utilizado nos Últimos 30 dias" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Tipo de cobrança" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Prazo de Recebimento" Style="{DynamicResource DetailProductText}"/>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Top">
+                            <TextBlock Text="{Binding Product.Bandeira}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding Product.NomeProduto}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding Product.Status}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding Product.DataHabilitacao}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding Product.HabilitadoVendaDigital}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding Product.UtilizadoUltimos30Dias}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding Product.TipoLiquidacao}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding Product.QuantidadeDiasPrazo}" Style="{DynamicResource DetailDescriptionProductText}" />
+                        </StackPanel>
+                    </Grid>
+
+                        </StackPanel>
+                    </Grid>
+</base:ViewBaseControl>

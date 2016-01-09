@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="ConsultarInformacoesPatAleloRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarInformacoesPatAleloRequest" nillable="true" type="tns:ConsultarInformacoesPatAleloRequest" />
+  <xs:complexType name="ConsultarInformacoesPatAleloResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DadosAlimentacao" nillable="true" type="tns:PatAleloAlimentacaoDTO" />
+          <xs:element minOccurs="0" name="DadosRefeicao" nillable="true" type="tns:PatAleloRefeicaoDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarInformacoesPatAleloResponse" nillable="true" type="tns:ConsultarInformacoesPatAleloResponse" />
+  <xs:complexType name="PatAleloAlimentacaoDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aberto24Horas" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Acougue" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Armazem" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CheckOutsLoja" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoCliente" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataAfiliacao" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Domingo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Hipermercado" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HorarioComercial" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Hortimercado" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IndicadorApresentacaoCartao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicadorServicoDelivery" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicadorVendaInternet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LaticinioFrios" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Mercearia" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Noturno" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Outros" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Padaria" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Peixaria" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Sabado" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SegundaSexta" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Supermercado" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ValorAreaAtendimentoPublico" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PatAleloAlimentacaoDTO" nillable="true" type="tns:PatAleloAlimentacaoDTO" />
+  <xs:complexType name="PatAleloRefeicaoDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q4:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Aberto24Horas" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Bar" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CodigoCliente" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataAfiliacao" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Domingo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FastFood" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HorarioComercial" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IndicadorApresentacaoCartao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicadorServicoDelivery" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicadorVendaInternet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lanchonete" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Noturno" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Outros" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Padaria" type="xs:boolean" />
+          <xs:element minOccurs="0" name="QuantidadeDeAssento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuantidadeDeMaximaRefeicao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuantidadeDeMesa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Restaurante" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Sabado" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SegundaSexta" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ValorAreaAtendimentoPublico" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PatAleloRefeicaoDTO" nillable="true" type="tns:PatAleloRefeicaoDTO" />
+</xs:schema>

@@ -1,0 +1,960 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9095975A-9F8A-4F83-B3E4-7D8B7433575A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cielo.Sirius.DAO.Products</RootNamespace>
+    <AssemblyName>Cielo.Sirius.DAO.Products</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cielo.CredentialManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Assets\Cielo.CredentialManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Outlook.Sdk">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Crm.Outlook.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\Solution Assets\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Assets\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Client">
+      <HintPath>..\Solution Assets\Microsoft.Xrm.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Portal">
+      <HintPath>..\Solution Assets\Microsoft.Xrm.Portal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\Solution Assets\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
+      <HintPath>..\..\..\SDK\Bin\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommercialNegotiationDAO.cs" />
+    <Compile Include="GetCommercialDealRequestTypesDAO.cs" />
+    <Compile Include="NegociacaoComercialDAO.cs" />
+    <Compile Include="AlterarProdutoAVistaDAO.cs" />
+    <Compile Include="AlterarProdutoCreditoParceladoDAO.cs" />
+    <Compile Include="ChangeProductInstallmentCreditDAO.cs" />
+    <Compile Include="ChangeProductOneLumpDAO.cs" />
+    <Compile Include="ChangeProductSegmentedParcelledCreditDAO.cs" />
+    <Compile Include="AlterarProdutoCreditoParceladoSegmentadoDAO.cs" />
+    <Compile Include="AlterarTaxaCriarOcorrenciaDAO.cs" />
+    <Compile Include="AlterarParcelaFaixaProdutoDAO.cs" />
+    <Compile Include="ConsultarElegibilidadeCriacaoDemandaDAO.cs" />
+    <Compile Include="Extensions\NegociacaoService\DAOOSBExtensions.cs" />
+    <Compile Include="GetNegotiationDataDAO.cs" />
+    <Compile Include="ConsultarSLAPadraoDAO.cs" />
+    <Compile Include="ConsultarInformacoesPatAleloDAO.cs" />
+    <Compile Include="ConsultarDetalheProdutoMultivanContratadoClienteDAO.cs" />
+    <Compile Include="ConsultarPrazosTaxasPrazoFlexivelDAO.cs" />
+    <Compile Include="ConsultarProdutosPrazoFlexivelDAO.cs" />
+    <Compile Include="ConsultarServicoElegivelClienteDAO.cs" />
+    <Compile Include="ConsultarServicoHabilitadoClienteDAO.cs" />
+    <Compile Include="ConsultarServicoNaoElegivelClienteDAO.cs" />
+    <Compile Include="CRM\CRMActions.cs" />
+    <Compile Include="DesabilitarProdutoDAO.cs" />
+    <Compile Include="DesabilitarServicoDAO.cs" />
+    <Compile Include="DisableProductDAO.cs" />
+    <Compile Include="EnableTypedSaleDAO.cs" />
+    <Compile Include="DisableTypedSaleDAO.cs" />
+    <Compile Include="DisableServiceDAO.cs" />
+    <Compile Include="EnableServiceDAO.cs" />
+    <Compile Include="ExistsServiceOpenDemandDAO.cs" />
+    <Compile Include="Extensions\ClienteService\DAOOSBExtensions.cs" />
+    <Compile Include="Extensions\EquipamentoService\DAOOSBExtensions.cs" />
+    <Compile Include="Extensions\FaturamentoService\DAOOSBExtensions.cs" />
+    <Compile Include="Extensions\MaterialService\DAOOSBExtensions.cs" />
+    <Compile Include="Extensions\ServicoService\DAOOSBExtensions.cs" />
+    <Compile Include="GetCommercialEstablishmentInformationDAO.cs" />
+    <Compile Include="GetNonElegibleServiceRequestTypesDAO.cs" />
+    <Compile Include="GetNonEnabledServiceRequestTypesDAO.cs" />
+    <Compile Include="GetDiscountRateRestrictionDAO.cs" />
+    <Compile Include="ConsultarDetalheProdutoElegivelClienteDAO.cs" />
+    <Compile Include="ConsultarDetalheProdutoHabilitadoClienteDAO.cs" />
+    <Compile Include="ConsultarDetalheProdutoNaoElegivelClienteDAO.cs" />
+    <Compile Include="ConsultarPrazoPadraoDAO.cs" />
+    <Compile Include="ConsultarProdutoElegivelClienteDAO.cs" />
+    <Compile Include="ConsultarProdutoHabilitadoClienteDAO.cs" />
+    <Compile Include="ConsultarProdutoNaoElegivelClienteDAO.cs" />
+    <Compile Include="Extensions\ProdutoService\DAOOSBExtensions.cs" />
+    <Compile Include="ExistsProductOpenDemandDAO.cs" />
+    <Compile Include="GetNonEnabledProductRequestTypesDAO.cs" />
+    <Compile Include="GetEnabledProductRequestTypesDAO.cs" />
+    <Compile Include="GetNonEligibleProductRequestTypesDAO.cs" />
+    <Compile Include="GetProductRequestsHistoryDAO.cs" />
+    <Compile Include="GetProductRequestTypesDAO.cs" />
+    <Compile Include="GetRequestReasonDAO.cs" />
+    <Compile Include="GetServiceRequestsHistoryDAO.cs" />
+    <Compile Include="GetEnabledServiceRequestTypesDAO.cs" />
+    <Compile Include="HabilitarDesabilitarVendaDigitadaDAO.cs" />
+    <Compile Include="HabilitarProdutoDAO.cs" />
+    <Compile Include="ManterPrazoFlexivelDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RateChangeNegotiationRequestDAO.cs" />
+    <Compile Include="Service References\ClienteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\EquipamentoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FaturamentoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MaterialService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NegociacaoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProdutoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServicoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitaAnaliseAlvaraDAO.cs" />
+    <Compile Include="SolicitarExclusaoProdutoDAO.cs" />
+    <Compile Include="HabilitarServicoDAO.cs" />
+    <Compile Include="SolicitarNegociacaoTaxaDAO.cs" />
+    <Compile Include="ValidarPermissaoVendaDigitadaDAO.cs" />
+    <Compile Include="Web References\WR.Cliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WR.Equipamento\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WR.Faturamento\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WR.Material\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WR.Produto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WR.Servico\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avanade.SmartApps.Foundation.Communication\Avanade.SmartApps.Communication.csproj">
+      <Project>{5b9ddbab-1ca9-4807-82b0-856459cb8b53}</Project>
+      <Name>Avanade.SmartApps.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Contracts.Product\Cielo.Sirius.Contracts.Products.csproj">
+      <Project>{df68dd91-542f-4a49-88a7-e23d8bbc8405}</Project>
+      <Name>Cielo.Sirius.Contracts.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Foundation\Avanade.SmartApps.csproj">
+      <Project>{0995c250-a3bd-4973-82e7-a43f8b23493a}</Project>
+      <Name>Avanade.SmartApps</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagrams\AlterarProdutoAVistaClassDiagram.cd" />
+    <None Include="ClassDiagrams\ConsultarInformacoesPatAleloDAODiagram.cd" />
+    <None Include="ClassDiagrams\SolicitaAnaliseAlvaraDAO.cd" />
+    <None Include="ClassDiagrams\HabilitarProdutoDAO.cd" />
+    <None Include="ClassDiagrams\ConsultarServicoNaoElegivelCliente.cd" />
+    <None Include="ClassDiagrams\GetServiceRequestsHistory.cd" />
+    <None Include="ClassDiagrams\ConsultarServicoHabilitadoCliente.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ClienteService\Cielo.Sirius.DAO.Products.ClienteService.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClienteService\Cielo.Sirius.DAO.Products.ClienteService.consultarDomicilioBancarioTruncadoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClienteService\Cielo.Sirius.DAO.Products.ClienteService.Credenciamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClienteService\Cielo.Sirius.DAO.Products.ClienteService.DadosBancarios.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClienteService\Cielo.Sirius.DAO.Products.ClienteService.DadosGrupoProdutoPrazoFlexivelType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClienteService\Cielo.Sirius.DAO.Products.ClienteService.DomicilioBancarioType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClienteService\Cielo.Sirius.DAO.Products.ClienteService.Filial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClienteService\Cielo.Sirius.DAO.Products.ClienteService.SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ClienteService\ClienteServiceContract1.wsdl" />
+    <None Include="Service References\ClienteService\v315.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3151.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v31510.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v31511.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v31512.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v31513.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v31514.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3152.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3153.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3154.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3155.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3156.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3157.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3158.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteService\v3159.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EquipamentoService\Cielo.Sirius.DAO.Products.EquipamentoService.PacoteCobrancaContratadoCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EquipamentoService\Cielo.Sirius.DAO.Products.EquipamentoService.SolicitacaoLogisticaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EquipamentoService\Cielo.Sirius.DAO.Products.EquipamentoService.TerminalLogicoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EquipamentoService\EquipamentoContract1.wsdl" />
+    <None Include="Service References\EquipamentoService\v27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EquipamentoService\v271.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EquipamentoService\v272.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EquipamentoService\v273.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EquipamentoService\v274.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EquipamentoService\v275.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EquipamentoService\v276.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FaturamentoService\Cielo.Sirius.DAO.Products.FaturamentoService.SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FaturamentoService\Faturamento1.wsdl" />
+    <None Include="Service References\FaturamentoService\v14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FaturamentoService\v141.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FaturamentoService\v142.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FaturamentoService\v143.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MaterialService\Cielo.Sirius.DAO.Products.MaterialService.InfoHistoricoConsumoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MaterialService\Cielo.Sirius.DAO.Products.MaterialService.Material.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MaterialService\Cielo.Sirius.DAO.Products.MaterialService.MaterialSolicitadoCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MaterialService\Cielo.Sirius.DAO.Products.MaterialService.SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MaterialService\MaterialServiceContract.wsdl" />
+    <None Include="Service References\MaterialService\v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MaterialService\v21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MaterialService\v22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MaterialService\v23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MaterialService\v24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MaterialService\v25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NegociacaoService\Cielo.Sirius.DAO.Products.NegociacaoService.consultarElegibilidadeNegociacaoComercialResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NegociacaoService\Cielo.Sirius.DAO.Products.NegociacaoService.listaDemandaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NegociacaoService\CieloSoapHeader.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NegociacaoService\Comum.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NegociacaoService\TemporarioContract.wsdl" />
+    <None Include="Service References\NegociacaoService\TemporarioSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.Banco.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.DadosPatAleloVVAType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.DadosPatAleloVVRType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.DadosProdutoMultivanContratadoClienteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.DadosProdutosType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.DadosProdutoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.GrupoProdutoPrazoFlexivel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.Produto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.ProdutoContratadoCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.ProdutoContratadoClienteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Cielo.Sirius.DAO.Products.ProdutoService.SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProdutoService\Produto.wsdl" />
+    <None Include="Service References\ProdutoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ProdutoService\configuration.svcinfo" />
+    <None Include="Service References\ProdutoService\configuration91.svcinfo" />
+    <None Include="Service References\ProdutoService\v316.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3161.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v31610.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v31611.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v31612.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v31613.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v31614.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v31615.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3162.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3163.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3164.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3165.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3166.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3167.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3168.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoService\v3169.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicoService\Cielo.Sirius.DAO.Products.ServicoService.Servico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServicoService\Servico1.wsdl" />
+    <None Include="Service References\ServicoService\v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicoService\v11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicoService\v12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServicoService\v13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\Cliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Cliente\ClienteServiceContract.wsdl" />
+    <None Include="Web References\WR.Cliente\consultarDomicilioBancarioTruncadoType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Cliente\Credenciamento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Cliente\DadosBancarios.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Cliente\DadosGrupoProdutoPrazoFlexivelType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Cliente\DomicilioBancarioType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Cliente\Filial.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Cliente\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WR.Cliente\SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Cliente\v3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v310.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v311.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v312.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Cliente\v39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Equipamento\EquipamentoContract.wsdl" />
+    <None Include="Web References\WR.Equipamento\PacoteCobrancaContratadoCliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Equipamento\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WR.Equipamento\SolicitacaoLogisticaType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Equipamento\TerminalLogicoType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Equipamento\v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Equipamento\v20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Equipamento\v21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Equipamento\v22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Equipamento\v23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Equipamento\v24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Equipamento\v25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Faturamento\Faturamento.wsdl" />
+    <None Include="Web References\WR.Faturamento\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WR.Faturamento\SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Faturamento\v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Faturamento\v10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Faturamento\v11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Faturamento\v12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Material\InfoHistoricoConsumoType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Material\Material.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Material\MaterialServiceContract.wsdl" />
+    <None Include="Web References\WR.Material\MaterialSolicitadoCliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Material\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WR.Material\SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Material\v2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Material\v20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Material\v21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Material\v22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Material\v23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Material\v24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\Banco.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\Cliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\DadosPatAleloVVAType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\DadosPatAleloVVRType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\DadosProdutoMultivanContratadoClienteType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\DadosProdutosType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\DadosProdutoType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\GrupoProdutoPrazoFlexivel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\Produto.wsdl" />
+    <None Include="Web References\WR.Produto\Produto1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\ProdutoContratadoCliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\ProdutoContratadoClienteType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WR.Produto\SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Produto\v3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v310.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v311.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v312.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v313.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v314.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Produto\v39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Servico\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WR.Servico\Servico.wsdl" />
+    <None Include="Web References\WR.Servico\ServicoType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Servico\SolicitacaoCentralAtendimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WR.Servico\v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Servico\v10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Servico\v11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Servico\v12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WR.Servico\v13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ClienteService\" />
+    <WCFMetadataStorage Include="Service References\EquipamentoService\" />
+    <WCFMetadataStorage Include="Service References\FaturamentoService\" />
+    <WCFMetadataStorage Include="Service References\MaterialService\" />
+    <WCFMetadataStorage Include="Service References\NegociacaoService\" />
+    <WCFMetadataStorage Include="Service References\ProdutoService\" />
+    <WCFMetadataStorage Include="Service References\ServicoService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ClienteService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ClienteService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ClienteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EquipamentoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EquipamentoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EquipamentoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FaturamentoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FaturamentoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FaturamentoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServicoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MaterialService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MaterialService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MaterialService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WR.Cliente\</RelPath>
+      <UpdateFromURL>http://win-lt2std568dd:8080/Cadastro/Cliente/Cliente/v3%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Cielo_Sirius_DAO_Products_WR_Cliente_ClienteService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://win-lt2std568dd:8080/Cadastro/Faturamento/Faturamento/v1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WR.Faturamento\</RelPath>
+      <UpdateFromURL>http://win-lt2std568dd:8080/Cadastro/Faturamento/Faturamento/v1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Cielo_Sirius_DAO_Products_WR_Faturamento_Servico</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WR.Produto\</RelPath>
+      <UpdateFromURL>http://win-lt2std568dd:8080/Cadastro/Produto/Produto/v3%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Cielo_Sirius_DAO_Products_WR_Produto_Produto</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://win-lt2std568dd:8080/Cadastro/Servico/Servico/v1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WR.Servico\</RelPath>
+      <UpdateFromURL>http://win-lt2std568dd:8080/Cadastro/Servico/Servico/v1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Cielo_Sirius_DAO_Products_WR_Servico_Servico</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WR.Material\</RelPath>
+      <UpdateFromURL>http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Cielo_Sirius_DAO_Products_WR_Material_MaterialService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WR.Equipamento\</RelPath>
+      <UpdateFromURL>http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Cielo_Sirius_DAO_Products_WR_Equipamento_EquipamentoService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NegociacaoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NegociacaoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NegociacaoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

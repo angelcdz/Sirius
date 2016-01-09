@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoHabilitadoCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoElegivelCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoNaoElegivelCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoNaoElegivelCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetProductRequestsHistory" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetServiceRequestsHistory" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEnabledProductRequestTypes" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetNonEligibleProductRequestTypes" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEligibleProductRequestTypes" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazoPadrao" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.AlterarParcelaFaixaProduto" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarNegociacaoTaxa" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetDiscountRateRestriction" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd19" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ManterPrazoFlexivel" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd20" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd21" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarExclusaoProduto" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoHabilitadoCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd24" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitaAnaliseAlvara" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd25" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarProduto" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd26" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd27" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoNaoElegivelCliente" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd28" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd29" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarServico" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd30" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.DesabilitarServico" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd31" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel" />
+  <xs:element name="ConsultarInformacoesPatAleloCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo" minOccurs="0" name="requestData" nillable="true" type="q1:ConsultarInformacoesPatAleloRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarInformacoesPatAleloClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo" minOccurs="0" name="ConsultarInformacoesPatAleloClienteResult" nillable="true" type="q2:ConsultarInformacoesPatAleloResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProdutoHabilitadoCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente" minOccurs="0" name="requestData" nillable="true" type="q3:ConsultarProdutoHabilitadoClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProdutoHabilitadoClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente" minOccurs="0" name="ConsultarProdutoHabilitadoClienteResult" nillable="true" type="q4:ConsultarProdutoHabilitadoClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDetalheProdutoHabilitadoCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoHabilitadoCliente" minOccurs="0" name="requestData" nillable="true" type="q5:ConsultarDetalheProdutoHabilitadoClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDetalheProdutoHabilitadoClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoHabilitadoCliente" minOccurs="0" name="ConsultarDetalheProdutoHabilitadoClienteResult" nillable="true" type="q6:ConsultarDetalheProdutoHabilitadoClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProdutoElegivelCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoElegivelCliente" minOccurs="0" name="requestData" nillable="true" type="q7:ConsultarProdutoElegivelClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProdutoElegivelClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoElegivelCliente" minOccurs="0" name="ConsultarProdutoElegivelClienteResult" nillable="true" type="q8:ConsultarProdutoElegivelClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDetalheProdutoElegivelCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente" minOccurs="0" name="requestData" nillable="true" type="q9:ConsultarDetalheProdutoElegivelClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDetalheProdutoElegivelClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente" minOccurs="0" name="ConsultarDetalheProdutoElegivelClienteResult" nillable="true" type="q10:ConsultarDetalheProdutoElegivelClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProdutoNaoElegivelCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoNaoElegivelCliente" minOccurs="0" name="requestData" nillable="true" type="q11:ConsultarProdutoNaoElegivelClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarProdutoNaoElegivelClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoNaoElegivelCliente" minOccurs="0" name="ConsultarProdutoNaoElegivelClienteResult" nillable="true" type="q12:ConsultarProdutoNaoElegivelClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDetalheProdutoNaoElegivelCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoNaoElegivelCliente" minOccurs="0" name="requestData" nillable="true" type="q13:ConsultarDetalheProdutoNaoElegivelClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDetalheProdutoNaoElegivelClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoNaoElegivelCliente" minOccurs="0" name="ConsultarDetalheProdutoNaoElegivelClienteResult" nillable="true" type="q14:ConsultarDetalheProdutoNaoElegivelClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductRequestsHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetProductRequestsHistory" minOccurs="0" name="requestData" nillable="true" type="q15:GetProductRequestsHistoryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductRequestsHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetProductRequestsHistory" minOccurs="0" name="GetProductRequestsHistoryResult" nillable="true" type="q16:GetProductRequestsHistoryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceRequestsHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetServiceRequestsHistory" minOccurs="0" name="requestData" nillable="true" type="q17:GetServiceRequestsHistoryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceRequestsHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetServiceRequestsHistory" minOccurs="0" name="GetServiceRequestsHistoryResult" nillable="true" type="q18:GetServiceRequestsHistoryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductRequestTypesEnabled">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEnabledProductRequestTypes" minOccurs="0" name="requestData" nillable="true" type="q19:GetEnabledProductRequestTypesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductRequestTypesEnabledResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEnabledProductRequestTypes" minOccurs="0" name="GetProductRequestTypesEnabledResult" nillable="true" type="q20:GetEnabledProductRequestTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductRequestTypesNonEligible">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetNonEligibleProductRequestTypes" minOccurs="0" name="requestData" nillable="true" type="q21:GetNonEligibleProductRequestTypesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductRequestTypesNonEligibleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetNonEligibleProductRequestTypes" minOccurs="0" name="GetProductRequestTypesNonEligibleResult" nillable="true" type="q22:GetNonEligibleProductRequestTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductRequestTypesEligible">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEligibleProductRequestTypes" minOccurs="0" name="requestData" nillable="true" type="q23:GetEligibleProductRequestTypesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductRequestTypesEligibleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetEligibleProductRequestTypes" minOccurs="0" name="GetProductRequestTypesEligibleResult" nillable="true" type="q24:GetEligibleProductRequestTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPrazoPadrao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazoPadrao" minOccurs="0" name="requestData" nillable="true" type="q25:ConsultarPrazoPadraoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPrazoPadraoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazoPadrao" minOccurs="0" name="ConsultarPrazoPadraoResult" nillable="true" type="q26:ConsultarPrazoPadraoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarTaxa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.AlterarParcelaFaixaProduto" minOccurs="0" name="requestData" nillable="true" type="q27:AlterarParcelaFaixaProdutoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarTaxaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.AlterarParcelaFaixaProduto" minOccurs="0" name="AlterarTaxaResult" nillable="true" type="q28:AlterarParcelaFaixaProdutoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarNegociacaoTaxaProdutoComercial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarNegociacaoTaxa" minOccurs="0" name="requestData" nillable="true" type="q29:SolicitarNegociacaoTaxaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarNegociacaoTaxaProdutoComercialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarNegociacaoTaxa" minOccurs="0" name="SolicitarNegociacaoTaxaProdutoComercialResult" nillable="true" type="q30:SolicitarNegociacaoTaxaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDiscountRateRestriction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetDiscountRateRestriction" minOccurs="0" name="requestData" nillable="true" type="q31:GetDiscountRateRestrictionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDiscountRateRestrictionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetDiscountRateRestriction" minOccurs="0" name="GetDiscountRateRestrictionResult" nillable="true" type="q32:GetDiscountRateRestrictionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManterPrazoFlexivel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ManterPrazoFlexivel" minOccurs="0" name="requestData" nillable="true" type="q33:ManterPrazoFlexivelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManterPrazoFlexivelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ManterPrazoFlexivel" minOccurs="0" name="ManterPrazoFlexivelResult" nillable="true" type="q34:ManterPrazoFlexivelResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HabilitarDesabilitarVendaDigitada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada" minOccurs="0" name="requestData" nillable="true" type="q35:HabilitarDesabilitarVendaDigitadaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HabilitarDesabilitarVendaDigitadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada" minOccurs="0" name="HabilitarDesabilitarVendaDigitadaResult" nillable="true" type="q36:HabilitarDesabilitarVendaDigitadaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarExclusaoProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarExclusaoProduto" minOccurs="0" name="requestData" nillable="true" type="q37:SolicitarExclusaoProdutoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarExclusaoProdutoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarExclusaoProduto" minOccurs="0" name="SolicitarExclusaoProdutoResult" nillable="true" type="q38:SolicitarExclusaoProdutoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarServicoHabilitadoCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoHabilitadoCliente" minOccurs="0" name="requestData" nillable="true" type="q39:ConsultarServicoHabilitadoClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarServicoHabilitadoClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoHabilitadoCliente" minOccurs="0" name="ConsultarServicoHabilitadoClienteResult" nillable="true" type="q40:ConsultarServicoHabilitadoClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDetalheProdutoMultivanContratadoCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente" minOccurs="0" name="requestData" nillable="true" type="q41:ConsultarDetalheProdutoMultivanContratadoClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarDetalheProdutoMultivanContratadoClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente" minOccurs="0" name="ConsultarDetalheProdutoMultivanContratadoClienteResult" nillable="true" type="q42:ConsultarDetalheProdutoMultivanContratadoClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitaAnaliseAlvara">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitaAnaliseAlvara" minOccurs="0" name="requestData" nillable="true" type="q43:SolicitaAnaliseAlvaraRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitaAnaliseAlvaraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitaAnaliseAlvara" minOccurs="0" name="SolicitaAnaliseAlvaraResult" nillable="true" type="q44:SolicitaAnaliseAlvaraResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HabilitarProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarProduto" minOccurs="0" name="requestData" nillable="true" type="q45:HabilitarProdutoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HabilitarProdutoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarProduto" minOccurs="0" name="HabilitarProdutoResult" nillable="true" type="q46:HabilitarProdutoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarServicoElegivelCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente" minOccurs="0" name="requestData" nillable="true" type="q47:ConsultarServicoElegivelClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarServicoElegivelClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente" minOccurs="0" name="ConsultarServicoElegivelClienteResult" nillable="true" type="q48:ConsultarServicoElegivelClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarServicoNaoElegivelCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoNaoElegivelCliente" minOccurs="0" name="requestData" nillable="true" type="q49:ConsultarServicoNaoElegivelClienteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarServicoNaoElegivelClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoNaoElegivelCliente" minOccurs="0" name="ConsultarServicoNaoElegivelClienteResult" nillable="true" type="q50:ConsultarServicoNaoElegivelClienteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarPermissaoVendaDigitiada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada" minOccurs="0" name="requestData" nillable="true" type="q51:ValidarPermissaoVendaDigitadaRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarPermissaoVendaDigitiadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada" minOccurs="0" name="ValidarPermissaoVendaDigitiadaResult" nillable="true" type="q52:ValidarPermissaoVendaDigitadaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HabilitarServico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarServico" minOccurs="0" name="requestData" nillable="true" type="q53:HabilitarServicoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HabilitarServicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarServico" minOccurs="0" name="HabilitarServicoResult" nillable="true" type="q54:HabilitarServicoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DesabilitarServico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.DesabilitarServico" minOccurs="0" name="requestData" nillable="true" type="q55:DesabilitarServicoRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DesabilitarServicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.DesabilitarServico" minOccurs="0" name="DesabilitarServicoResult" nillable="true" type="q56:DesabilitarServicoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPrazosTaxasPrazoFlexivel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel" minOccurs="0" name="requestData" nillable="true" type="q57:ConsultarPrazosTaxasPrazoFlexivelRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPrazosTaxasPrazoFlexivelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel" minOccurs="0" name="ConsultarPrazosTaxasPrazoFlexivelResult" nillable="true" type="q58:ConsultarPrazosTaxasPrazoFlexivelResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

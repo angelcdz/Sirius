@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cielo.Sirius.Integration.OutboundService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServiceURL_Produto" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://osb-cielo.cloudapp.net/Cadastro/Produto/Produto/v3</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Servico" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://osb-cielo.cloudapp.net/Cadastro/Servico/Servico/v1</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Cliente" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://osb-cielo.cloudapp.net/Cadastro/Cliente/Cliente/v3</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Faturamento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://osb-cielo.cloudapp.net/Cadastro/Faturamento/Faturamento/v1</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Equipamento" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://osb-cielo.cloudapp.net/Operacao/Logistica/Equipamento/v2</Value>
+    </Setting>
+    <Setting Name="ServiceURL_Material" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

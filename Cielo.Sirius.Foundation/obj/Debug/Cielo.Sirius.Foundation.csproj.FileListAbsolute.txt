@@ -1,0 +1,10 @@
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\bin\Debug\Cielo.Sirius.Foundation.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\bin\Debug\Cielo.Sirius.Foundation.pdb
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\bin\Debug\Cielo.CredentialManager.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\bin\Debug\NLog.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\bin\Debug\NLog.xml
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\obj\Debug\Cielo.Sirius.Foundation.csprojResolveAssemblyReference.cache
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\obj\Debug\Cielo.Sirius.Foundation.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Foundation\obj\Debug\Cielo.Sirius.Foundation.pdb

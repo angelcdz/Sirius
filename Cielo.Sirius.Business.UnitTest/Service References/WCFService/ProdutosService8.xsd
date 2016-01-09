@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetProductRequestsHistory" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetProductRequestsHistory" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="GetProductRequestsHistoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetProductRequestsHistoryRequest" nillable="true" type="tns:GetProductRequestsHistoryRequest" />
+  <xs:complexType name="GetProductRequestsHistoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ProductRequests" nillable="true" type="tns:ArrayOfGetProductRequestsHistoryDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetProductRequestsHistoryResponse" nillable="true" type="tns:GetProductRequestsHistoryResponse" />
+  <xs:complexType name="ArrayOfGetProductRequestsHistoryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetProductRequestsHistoryDTO" nillable="true" type="tns:GetProductRequestsHistoryDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetProductRequestsHistoryDTO" nillable="true" type="tns:ArrayOfGetProductRequestsHistoryDTO" />
+  <xs:complexType name="GetProductRequestsHistoryDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClosedOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProductRequestName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceCallNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetProductRequestsHistoryDTO" nillable="true" type="tns:GetProductRequestsHistoryDTO" />
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa os dados de afiliacao do EC.
+			Versao: 1.0
+			Autor: Luis Moraes
+
+			Historico de revisao:
+			1.0 31-03-2014 Criacao do xsd
+         1.1 18-06-2014 Revisão dos elementos e preenchimento da documentação</documentation>
+  </annotation>
+  <complexType name="Credenciamento">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoTipoCredenciamento" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="dataCredenciamento" nillable="true" type="date" />
+      <element minOccurs="0" maxOccurs="1" name="codigoBanco" nillable="true" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="numeroAgencia" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoRegional" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomePlaqueta" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorCentroCompras" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="codigoTipoTerminal" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="quantidadeTerminal" nillable="true" type="int" />
+    </sequence>
+  </complexType>
+</schema>

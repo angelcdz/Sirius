@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="ConsultarDetalheProdutoElegivelClienteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarDetalheProdutoElegivelClienteRequest" nillable="true" type="tns:ConsultarDetalheProdutoElegivelClienteRequest" />
+  <xs:complexType name="ConsultarDetalheProdutoElegivelClienteResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Produto" nillable="true" type="tns:ConsultarDetalheProdutoElegivelClienteProdutoDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarDetalheProdutoElegivelClienteResponse" nillable="true" type="tns:ConsultarDetalheProdutoElegivelClienteResponse" />
+  <xs:complexType name="ConsultarDetalheProdutoElegivelClienteProdutoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataHabilitacaoProdutoCliente" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IndicadorAceitaTransacaoDigitada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndicadorVendaDigitada" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IndicadorVendaUltimoMes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NomeBandeira" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeProduto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomeTipoLiquidacao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuantidadeDiasPrazo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuantidadeParcelasAdministradora" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Taxas" nillable="true" type="tns:ArrayOfConsultarDetalheProdutoElegivelClienteTaxaDTO" />
+      <xs:element minOccurs="0" name="TipoGrupoProduto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValorItem" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarDetalheProdutoElegivelClienteProdutoDTO" nillable="true" type="tns:ConsultarDetalheProdutoElegivelClienteProdutoDTO" />
+  <xs:complexType name="ArrayOfConsultarDetalheProdutoElegivelClienteTaxaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultarDetalheProdutoElegivelClienteTaxaDTO" nillable="true" type="tns:ConsultarDetalheProdutoElegivelClienteTaxaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultarDetalheProdutoElegivelClienteTaxaDTO" nillable="true" type="tns:ArrayOfConsultarDetalheProdutoElegivelClienteTaxaDTO" />
+  <xs:complexType name="ConsultarDetalheProdutoElegivelClienteTaxaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumeroFinalParcelaFaixa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroInicialParcelaFaixa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentualDesconto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PercentualTaxa" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PercentualTaxaPadrao" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="QuantidadeParcelasLoja" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultarDetalheProdutoElegivelClienteTaxaDTO" nillable="true" type="tns:ConsultarDetalheProdutoElegivelClienteTaxaDTO" />
+</xs:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2?wsdl" filename="EquipamentoContract.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=TerminalLogicoCliente.xsd" filename="v2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=PacoteCobrancaContratadoCliente.xsd" filename="v20.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" filename="v21.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=Comum.xsd" filename="v22.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=EquipamentoServiceSchema.xsd" filename="v23.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=PacoteCobranca.xsd" filename="v24.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://win-lt2std568dd:8080/Operacao/Logistica/Equipamento/v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=TerminalLogico.xsd" filename="v25.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

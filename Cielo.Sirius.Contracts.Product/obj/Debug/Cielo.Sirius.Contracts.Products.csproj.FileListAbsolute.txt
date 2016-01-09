@@ -1,0 +1,10 @@
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\bin\Debug\Cielo.Sirius.Contracts.Products.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\bin\Debug\Cielo.Sirius.Contracts.Products.pdb
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\bin\Debug\Cielo.Sirius.Foundation.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\bin\Debug\NLog.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\bin\Debug\Cielo.Sirius.Foundation.pdb
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\bin\Debug\NLog.xml
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\obj\Debug\Cielo.Sirius.Contracts.Products.csprojResolveAssemblyReference.cache
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\obj\Debug\Cielo.Sirius.Contracts.Products.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.Contracts.Product\obj\Debug\Cielo.Sirius.Contracts.Products.pdb

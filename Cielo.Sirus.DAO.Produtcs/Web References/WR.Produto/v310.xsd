@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=DadosBancarios.xsd" />
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa os produtos da
+			Cielo. Versao: 1.0 Autor: Luis Moraes
+
+			Historico de revisao: 
+         1.0 31-03-2014 Criacao do xsd
+          1.1 18-06-2014 Revisão dos elementos e preenchimento da documentação</documentation>
+  </annotation>
+  <complexType name="Produto">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="nomeProduto" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="dadosBancarios" nillable="true" type="cds:DadosBancarios" />
+      <element minOccurs="0" maxOccurs="1" name="codigoProduto" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="numeroProduto" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="percentualTaxa" nillable="true" type="decimal" />
+      <element minOccurs="0" maxOccurs="1" name="quantidadeDiasPrazo" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoProduto" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="dadosTarifa" nillable="true" type="cds:Tarifa" />
+      <element minOccurs="0" maxOccurs="1" name="codigoEmpresa" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="numeroEmpresa" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoBandeira" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="numeroBandeira" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoFormaPagamento" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorSecuratizacao" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorSecuratizacaoAntecipacao" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="codigoLiquidacao" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomeTipoCobranca" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomeSituacaoBandeira" nillable="true" type="string">
+        <annotation>
+          <documentation>Situacao na qual a bandeira esta para este produto. Dominio:
+Habilitada
+Desabilitada</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeBandeira" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome da bandeira.
+Exemplos: VISA; MASTER; AMEX; TICKET; SODEXO; SOROCRED; ELO;etc.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeTipoLiquidacao" nillable="true" type="string">
+        <annotation>
+          <documentation>Informa o responsavel pela liquidacao das operacoes para o cliente: Adquirencia (Cielo) ou Van/MultiVan (Van responsavel).</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dataHabilitacaoProdutoCliente" nillable="true" type="date">
+        <annotation>
+          <documentation>Data de habilitação do produto contratado pelo cliente</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="percentualDesconto" nillable="true" type="decimal">
+        <annotation>
+          <documentation>Valor percentual dado de desconto ao produto</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorVendaDigitada" nillable="true" type="boolean">
+        <annotation>
+          <documentation>indicador que indica se este produto permite transacoes de venda digitadas</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorVendaDigitadaHabilitada" nillable="true" type="boolean">
+        <annotation>
+          <documentation>indicador que indica se para um determinado cliente este produto esta habilitado para gerar transacoes de venda digitadas.
+Este indicador podera ser positivo somente se o indicador que demonstra que a venda digitada esta com seu valor verdadeiro.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="Produtos">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="produto" nillable="true" type="cds:Produto" />
+    </sequence>
+  </complexType>
+  <complexType name="Tarifa">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoTarifa" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="nomeTipoTarifa" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="valorTarifa" nillable="true" type="double" />
+      <element minOccurs="0" maxOccurs="1" name="valorItem" nillable="true" type="double" />
+      <element minOccurs="0" maxOccurs="1" name="quantidadeParcelasLoja" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="quantidadeParcelasAdministradora" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="valorRemuneracao" nillable="true" type="double" />
+      <element minOccurs="0" maxOccurs="1" name="valorTaxaGarantia" nillable="true" type="double" />
+      <element minOccurs="0" maxOccurs="1" name="percentualTaxaGarantia" nillable="true" type="double" />
+      <element minOccurs="0" maxOccurs="1" name="codigoGarantia" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="percentualTaxaPadrao" nillable="true" type="double">
+        <annotation>
+          <documentation>Percentual da taxa mdr (merchant discount rate) padrao definida para o produto.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="percentualTaxaMatriz" nillable="true" type="double">
+        <annotation>
+          <documentation>Percentual da taxa mdr (merchant discount rate) do produto negociado para a matriz (para a cadeia centralizada).</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="percentualTaxaMinima" nillable="true" type="double">
+        <annotation>
+          <documentation>Percentual de taxa mínima aceita para contratação do produto.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="percentualTaxaMaxima" nillable="true" type="double">
+        <annotation>
+          <documentation>Percentual de taxa máxima aceita para contratação do produto</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosFaixasTaxaSegmentado" nillable="true" type="cds:FaixasTaxaSegmentado">
+        <annotation>
+          <documentation>Lista de faixa de taxas de um produto parcelado contratado pelo cliente.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="FaixaTaxaSegmentado">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="percentualTaxaFaixa" nillable="true" type="double">
+        <annotation>
+          <documentation>Valor da taxa correspondente a uma faixa de parcelas do produto contratado pelo cliente ou ofertado para o cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroInicialParcelaFaixa" nillable="true" type="integer">
+        <annotation>
+          <documentation>Numero inicial da parcela da faixa para a cobrança da taxa.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroFinalParcelaFaixa" nillable="true" type="integer">
+        <annotation>
+          <documentation>Numero final da parcela da faixa para a cobrança da taxa.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoFaixa" nillable="true" type="integer">
+        <annotation>
+          <documentation>Codigo que identifica a faixa de taxa valida para um conjunto de prestacoes de um produto parcelado a ser ofertado para o cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="percentualDescontoSegmentado" nillable="true" type="double">
+        <annotation>
+          <documentation>Valor do descontocorrespondente a uma faixa de parcelas do produto contratado pelo cliente ou ofertado para o cliente.
+                              No documento funcional esta sendo solicitado este campo para que quando for parcelado segmentado este campo deve ser somado com a taxa atual das parcelas do cliente.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="FaixasTaxaSegmentado">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosFaixaTaxaSegmentado" nillable="true" type="cds:FaixaTaxaSegmentado">
+        <annotation>
+          <documentation>Lista de faixa de taxas de um produto parcelado contradado pelo cliente.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="GrupoProdutoPrazoFlexivel">
+    <annotation>
+      <documentation>Representa o agrupamento de produtos do prazo flexível.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoGrupoPrazoFlexivel" nillable="true" type="integer">
+        <annotation>
+          <documentation>O código de grupo de prazos flexíveis representa o agrupamento de produtos do prazo flexível.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="descricaoGrupoPrazoFelxivel" nillable="true" type="string">
+        <annotation>
+          <documentation>Descrição do grupo de prazos flexíveis, que representa o agrupamento de produtos do prazo flexível.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosTarifasGrupoProdutoPrazoFlexivel" nillable="true" type="cds:TarifasGrupoProdutoPrazoFlexivel" />
+      <element name="dadosProdutos" type="cds:Produtos">
+        <annotation>
+          <documentation>Relação de produtos de prazo flexível relacionados ao grupo.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="GruposProdutoPrazoFlexivel">
+    <annotation>
+      <documentation>Lista de grupos de produto de prazo flexível.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosGrupoProdutoPrazoFlexivel" nillable="true" type="cds:GrupoProdutoPrazoFlexivel">
+        <annotation>
+          <documentation>Lista de grupo de produtos de prazo flexível.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="TarifaGrupoProdutoPrazoFlexivel">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="quantidadeDiasGrupoPrazoFlexivel" nillable="true" type="integer">
+        <annotation>
+          <documentation>Quantidade de dias que o valor transacionado, relacionado a qualquer produto pertencente ao grupo, será repassado ao cliente de forma antecipada.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="percentualTaxaGrupoPrazoFlexivel" nillable="true" type="double">
+        <annotation>
+          <documentation>Valor da taxa correspondente a quantidade de dias (de 1 a 30) de antecipação de repasse de pagamento ao cliente relacionado a qualquer produto pertencente ao grupo.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="TarifasGrupoProdutoPrazoFlexivel">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosTarifaGrupoProdutoPrazoFlexivel" nillable="true" type="cds:TarifaGrupoProdutoPrazoFlexivel" />
+    </sequence>
+  </complexType>
+</schema>

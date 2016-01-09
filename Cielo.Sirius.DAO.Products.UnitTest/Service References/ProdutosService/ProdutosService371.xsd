@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.AlterarProdutoAVista" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.AlterarProdutoAVista" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="AlterarProdutoAVistaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArvoreAssunto" type="ser:guid" />
+          <xs:element minOccurs="0" name="CanalAtendimento" type="xs:int" />
+          <xs:element minOccurs="0" name="CaseType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cliente" type="ser:guid" />
+          <xs:element minOccurs="0" name="CodigoAssessor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Contato" type="ser:guid" />
+          <xs:element minOccurs="0" name="EstabelecimentoComercial" type="ser:guid" />
+          <xs:element minOccurs="0" name="IdMotivo" type="ser:guid" />
+          <xs:element minOccurs="0" name="IlhaAtendimento" type="ser:guid" />
+          <xs:element minOccurs="0" name="NomeAssessor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NomeProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Origem" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PercentualTaxa" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Protocolo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoSolicitacao" type="xs:int" />
+          <xs:element minOccurs="0" name="UsuarioSolicitante" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AlterarProdutoAVistaRequest" nillable="true" type="tns:AlterarProdutoAVistaRequest" />
+  <xs:complexType name="AlterarProdutoAVistaResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SistemaLegado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Solicitacao" nillable="true" type="tns:AlterarProdutoAVistaSolicitacaoDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AlterarProdutoAVistaResponse" nillable="true" type="tns:AlterarProdutoAVistaResponse" />
+  <xs:complexType name="AlterarProdutoAVistaSolicitacaoDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoSolicitacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataPrevistaConclusaoSolicitacao" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AlterarProdutoAVistaSolicitacaoDTO" nillable="true" type="tns:AlterarProdutoAVistaSolicitacaoDTO" />
+</xs:schema>

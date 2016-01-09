@@ -1,0 +1,4 @@
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.DynamicsCRM.WorkFlow\bin\Debug\Cielo.Sirius.DynamicsCRM.WorkFlow.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.DynamicsCRM.WorkFlow\bin\Debug\Cielo.Sirius.DynamicsCRM.WorkFlow.pdb
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.DynamicsCRM.WorkFlow\obj\Debug\Cielo.Sirius.DynamicsCRM.WorkFlow.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.DynamicsCRM.WorkFlow\obj\Debug\Cielo.Sirius.DynamicsCRM.WorkFlow.pdb

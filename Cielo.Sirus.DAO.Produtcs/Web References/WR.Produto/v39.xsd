@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="SituacaoFuncionamentoCliente">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoSituacaoCliente" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="dataReabertura" nillable="true" type="date" />
+      <element minOccurs="0" maxOccurs="1" name="dataFechamento" nillable="true" type="date" />
+      <element minOccurs="0" maxOccurs="1" name="codigoMotivoFechamento" nillable="true" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="SituacoesFuncionamentoCliente">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="situacaoFuncionamentoCliente" nillable="true" type="cds:SituacaoFuncionamentoCliente" />
+    </sequence>
+  </complexType>
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa as situações de abertura, fechamento e reabertura do EC.
+			Versao: 1.0
+			Autor: Luis Moraes / Arquitetura de Informação
+
+			Historico de revisao:
+			1.0 17-06-2014 Criacao do xsd
+         1.1 18-06-2014 Revisão dos elementos e preenchimento da documentação</documentation>
+  </annotation>
+</schema>

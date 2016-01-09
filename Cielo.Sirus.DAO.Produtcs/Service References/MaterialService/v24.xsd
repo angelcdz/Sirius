@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cad="http://canonico.cielo.com.br/cadastro/v1" xmlns:com="http://canonico.cielo.com.br/comum/v1" xmlns:tns="http://service.cielo.com.br/cadastro/solucaocaptura/material/v2/" xmlns:ass="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" xmlns:log="http://canonico.cielo.com.br/operacao/logistica/v1" elementFormDefault="qualified" targetNamespace="http://service.cielo.com.br/cadastro/solucaocaptura/material/v2/" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+  <import schemaLocation="v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=MaterialSolicitadoCliente.xsd" namespace="http://canonico.cielo.com.br/operacao/logistica/v1" />
+  <import schemaLocation="v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=Material.xsd" namespace="http://canonico.cielo.com.br/operacao/logistica/v1" />
+  <import schemaLocation="v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=SolicitacaoCentralAtendimento.xsd" namespace="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" />
+  <element name="consultarHistoricoSolicitacaoRequest">
+    <annotation>
+      <documentation>Dados de entrada para Consultar Histórico de Solicitações de Suprimento.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarHistoricoSolicitacaoResponse">
+    <annotation>
+      <documentation>Dados de saida para Consultar Histórico de Solicitações de Suprimento.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="materialSolicitadoCliente" type="tns:MaterialSolicitadoClienteType" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <complexType name="MaterialSolicitadoClienteType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="materialSolicitadoCliente" type="log:MaterialSolicitadoCliente" />
+    </sequence>
+  </complexType>
+  <element name="consultarSuprimentoElegivelRequest">
+    <annotation>
+      <documentation>Dados de entrada para Consultar Suprimentos Elegíveis.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarSuprimentoElegivelResponse">
+    <annotation>
+      <documentation>Dados de saida para Consultar Suprimentos Elegíveis.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="materiais" type="tns:MateriaisType" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <complexType name="MateriaisType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="material" type="log:Material" />
+    </sequence>
+  </complexType>
+  <element name="consultarHistoricoConsumoRequest">
+    <annotation>
+      <documentation>Dados de entrada para Consultar Histórico Consumo de Suprimento.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoMaterial" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo que identifica os materiais que a Cielo disponibiliza para os clientes.</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarHistoricoConsumoResponse">
+    <annotation>
+      <documentation>Dados de saida para Consultar Histórico Consumo de Suprimento.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="material" type="log:Material" />
+        <element minOccurs="1" maxOccurs="1" name="dadosHistoricoConsumo" type="tns:DadosHistoricoConsumoType" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <complexType name="DadosHistoricoConsumoType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="infoHistoricoConsumo" type="tns:InfoHistoricoConsumoType" />
+    </sequence>
+  </complexType>
+  <complexType name="InfoHistoricoConsumoType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="mesConsumo" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="quantidadeSuprimento" type="string" />
+    </sequence>
+  </complexType>
+  <element name="solicitarMaterialRequest">
+    <annotation>
+      <documentation>Dados de entrada para solictar material.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="protocolo" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoMaterial" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo que identifica os materiais que a Cielo disponibiliza para os clientes.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="quantidadeMaterial" nillable="true" type="integer">
+          <annotation>
+            <documentation>Quantidade de item relacionadas a um material de suprimento solicitado pelo cliente.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="nomeResponsavel" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeContato" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="telefoneContato" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="justificativaSolicitacao" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="codigoRacf" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="solicitarMaterialResponse">
+    <annotation>
+      <documentation>Dados de saida para solicitar material.</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="statusRetorno" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="sistemaLegado" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="solicitacaoCentralAtendimento" type="ass:SolicitacaoCentralAtendimento" />
+      </sequence>
+    </complexType>
+  </element>
+</schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa os dados
+			bancarios de um EC.
+			Versao: 1.0
+			Autor: Luis Moraes
+
+			Historico de revisao:
+			1.0 31-03-2014 Criacao do xsd
+			1.1 12-06-2014 Luis Moraes: Adicionando
+			os campos: numeroDACAgencia e numeroDACContaCorrente</documentation>
+  </annotation>
+  <complexType name="DadosBancarios">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoBanco" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="numeroAgencia" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="numeroContaCorrente" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="numeroDACAgencia" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="numeroDACContaCorrente" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="unbounded" name="nomeBandeiraTrava" nillable="true" type="string">
+        <annotation>
+          <documentation>Lista com o nome das bandeiras que estao travadas neste domicilio bancarios</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

@@ -1,0 +1,4 @@
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.DynamicsCRM.Plugins\bin\Debug\1.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.DynamicsCRM.Plugins\bin\Debug\1.pdb
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.DynamicsCRM.Plugins\obj\Debug\1.dll
+C:\Referencia\Cielo.Sirius\Cielo.Sirius.DynamicsCRM.Plugins\obj\Debug\1.pdb

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:lgs="http://canonico.cielo.com.br/operacao/logistica/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/operacao/logistica/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="Material">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoMaterial" nillable="true" type="integer">
+        <annotation>
+          <documentation>Codigo que identifica os materiais que a Cielo disponibiliza para os clientes.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="descricaoMaterial" nillable="true" type="string">
+        <annotation>
+          <documentation>Descricao dos materiais que a Cielo disponibiliza para os clientes.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="ConsultarPrazosTaxasPrazoFlexivelRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoGrupoPrazoFlexivel" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarPrazosTaxasPrazoFlexivelRequest" nillable="true" type="tns:ConsultarPrazosTaxasPrazoFlexivelRequest" />
+  <xs:complexType name="ConsultarPrazosTaxasPrazoFlexivelResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GruposProdutoPrazoFlexivel" nillable="true" type="tns:ArrayOfConsultarPrazosTaxasPrazoFlexivelDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarPrazosTaxasPrazoFlexivelResponse" nillable="true" type="tns:ConsultarPrazosTaxasPrazoFlexivelResponse" />
+  <xs:complexType name="ArrayOfConsultarPrazosTaxasPrazoFlexivelDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultarPrazosTaxasPrazoFlexivelDTO" nillable="true" type="tns:ConsultarPrazosTaxasPrazoFlexivelDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultarPrazosTaxasPrazoFlexivelDTO" nillable="true" type="tns:ArrayOfConsultarPrazosTaxasPrazoFlexivelDTO" />
+  <xs:complexType name="ConsultarPrazosTaxasPrazoFlexivelDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoGrupoPrazoFlexivel" type="xs:int" />
+          <xs:element minOccurs="0" name="DadosTarifasGrupoProdutoPrazoFlexivel" nillable="true" type="tns:ArrayOfConsultarPrazosTaxasPrazoFlexivelTarifasDTO" />
+          <xs:element minOccurs="0" name="DescricaoGrupoPrazoFlexivel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicadorHabilitado" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarPrazosTaxasPrazoFlexivelDTO" nillable="true" type="tns:ConsultarPrazosTaxasPrazoFlexivelDTO" />
+  <xs:complexType name="ArrayOfConsultarPrazosTaxasPrazoFlexivelTarifasDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultarPrazosTaxasPrazoFlexivelTarifasDTO" nillable="true" type="tns:ConsultarPrazosTaxasPrazoFlexivelTarifasDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultarPrazosTaxasPrazoFlexivelTarifasDTO" nillable="true" type="tns:ArrayOfConsultarPrazosTaxasPrazoFlexivelTarifasDTO" />
+  <xs:complexType name="ConsultarPrazosTaxasPrazoFlexivelTarifasDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q4:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PercentualTaxaGrupoPrazoFlexivel" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="QuantidadeDiasGrupoPrazoFlexivel" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarPrazosTaxasPrazoFlexivelTarifasDTO" nillable="true" type="tns:ConsultarPrazosTaxasPrazoFlexivelTarifasDTO" />
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="PacoteCobranca">
+    <annotation>
+      <documentation>Contém os valores padrões para cobrança de aluguel de Produtos/Serviços a serem ofertados para o clientes Cielo.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="valorAluguelTabela" nillable="true" type="double">
+        <annotation>
+          <documentation>Valor de aluguel a ser cobrado mensalmente dos clientes que contratarem este pacote</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

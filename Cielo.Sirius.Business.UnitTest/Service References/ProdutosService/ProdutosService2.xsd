@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarServico" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.HabilitarServico" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="HabilitarServicoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArvoreAssunto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CanalDeAtendimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoCliente" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoServico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EstabelecimentoComercial" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IlhaDeAtendimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentCaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TituloOcorrencia" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarServicoRequest" nillable="true" type="tns:HabilitarServicoRequest" />
+  <xs:complexType name="HabilitarServicoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataSLA" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HabilitarServicoResponse" nillable="true" type="tns:HabilitarServicoResponse" />
+</xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Contato.xsd" />
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa o proprietario do EC.
+			Versao: 1.0
+			Autor: Luis Moraes
+
+			Historico de revisao:
+			1.0 31-03-2014 Criacao do xsd
+		   1.1 18-06-2014 Revisao dos nomes dos elementos e inclusao da documentacao</documentation>
+  </annotation>
+  <complexType name="Proprietario">
+    <annotation>
+      <documentation>Entidade do modelo canonico que representa o proprietario do Estabelecimento Comercial que e o Cliente da Cielo.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="nomeProprietario" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome do proprietario do estabelecimento comercial Cliente da Cielo.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroCPFProprietario" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do CPF do proprietario</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dataNascimentoProprietario" nillable="true" type="date">
+        <annotation>
+          <documentation>Data de nascimento do proprietario</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosContatoProprietario" nillable="true" type="cds:Contatos">
+        <annotation>
+          <documentation>Informacoes de contatos referentes a este proprietario</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="Proprietarios">
+    <annotation>
+      <documentation>Ocorrencias da entidade canonica Proprietario</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="proprietario" nillable="true" type="cds:Proprietario" />
+    </sequence>
+  </complexType>
+</schema>

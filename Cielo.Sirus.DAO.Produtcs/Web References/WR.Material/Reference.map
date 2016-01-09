@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=SolicitacaoCentralAtendimento.xsd" filename="v2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2?wsdl" filename="MaterialServiceContract.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" filename="v20.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=MaterialSolicitadoCliente.xsd" filename="v21.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=Comum.xsd" filename="v22.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=MaterialServiceSchema.xsd" filename="v23.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://osb-cielo.cloudapp.net/Cadastro/Solucaocaptura/Material/v2?WSDL&amp;interface=MaterialServiceSOAPBinding&amp;part=Material.xsd" filename="v24.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

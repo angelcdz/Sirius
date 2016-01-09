@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="TerminalLogico">
+    <annotation>
+      <documentation>O terminal logico identifica um equipamento ou dispositivo instalado no cliente (Ex: POS)
+com o objetivo de descrever suas caracteristicas.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="numeroTerminalLogico" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero que identifica um terminal logico da rede de captura de transacoes Cielo.
+Cada equipamento ou dispositivo esta associado a um unico numero de terminal.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoTipoTerminal" nillable="true" type="string">
+        <annotation>
+          <documentation>Identifica o tipo de terminal (equipamentos/dispositivos) que o terminal logico do cliente esta associado. 
+Este tipo eh definido pela logistica. 
+Exemplos: 
+FX
+AX</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeSolucaoCaptura" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome da solucao de captura (tipo de tecnologia) que o canal de venda utiliza. 
+Exemplos:
+POS DIAL Versão Xpto
+POS GPRS
+POS BANDA LARGA
+TEF DISCADO</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeGrupoSolucaoCaptura" nillable="true" type="string">
+        <annotation>
+          <documentation>Agrupamento de solucao de captura criado no ambiente de autorizacao
+Exemplos:
+POS        
+TEF        
+AUTOR.MANU 
+URA        
+EDI        
+GDS        
+E-COMMERCE 
+MOBILE     
+V.PEDAGIO</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="TerminaisLogicos">
+    <annotation>
+      <documentation>Estrutura de agregacao de varios terminais logicos</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="terminallogico" nillable="true" type="cds:TerminalLogico">
+        <annotation>
+          <documentation>Elemento utilizado para agregar varios terminais logicos</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

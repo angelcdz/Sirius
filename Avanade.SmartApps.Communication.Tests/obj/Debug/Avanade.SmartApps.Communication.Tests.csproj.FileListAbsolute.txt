@@ -1,0 +1,15 @@
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\config\dataAccess.config
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Avanade.SmartApps.Communication.Tests.dll.config
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Avanade.SmartApps.Communication.Tests.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Avanade.SmartApps.Communication.Tests.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Avanade.SmartApps.Communication.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Cielo.Sirius.Foundation.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Cielo.CredentialManager.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\NLog.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Avanade.SmartApps.Communication.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\Cielo.Sirius.Foundation.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\bin\Debug\NLog.xml
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\obj\Debug\Avanade.SmartApps.Communication.Tests.csprojResolveAssemblyReference.cache
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\obj\Debug\Avanade.SmartApps.Communication.Tests.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.Communication.Tests\obj\Debug\Avanade.SmartApps.Communication.Tests.pdb

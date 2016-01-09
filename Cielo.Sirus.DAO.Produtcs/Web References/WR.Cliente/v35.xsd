@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:apn="http://canonico.cielo.com.br/administracaorecursosfinanceiros/moeda/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/administracaorecursosfinanceiros/moeda/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa uma moeda
+			Versao: 1.0
+			Autor: Daniel Varanda
+	
+			Historico de revisao:
+			1.0 11-10-2013 Criacao do xsd</documentation>
+  </annotation>
+  <simpleType name="Codigo">
+    <annotation>
+      <documentation>ISO 4217 - Padrao internacional que define codigos de tres letras para as moedas correntes</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="AED">
+        <annotation>
+          <documentation>DIRHAM/EMIR.ARABE - EMIRADOS ARABES UNIDOS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AFN">
+        <annotation>
+          <documentation>AFEGANE AFEGANIST - AFEGANISTAO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ALL">
+        <annotation>
+          <documentation>LEK ALBANIA REP - ALBANIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AMD">
+        <annotation>
+          <documentation>DRAM ARMENIA REP - ARMENIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ANG">
+        <annotation>
+          <documentation>GUILDER ANTILHAS HOLANDESAS - ANTILHAS
+						HOLANDESAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AOA">
+        <annotation>
+          <documentation>KWANZA/ANGOLA - ANGOLA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ARS">
+        <annotation>
+          <documentation>PESO/ARGENTINA - ARGENTINA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AUD">
+        <annotation>
+          <documentation>DOLAR AUSTRALIANO - AUSTRALIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AWG">
+        <annotation>
+          <documentation>FLORIM/ARUBA - ARUBA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AZN">
+        <annotation>
+          <documentation>MANAT ARZEBAIJAO - AZERBAIJAO, REPUBLICA DO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BAM">
+        <annotation>
+          <documentation>MARCO CONV BOSNIA - BOSNIA*HERZEGOVINA
+						(REPUBLICA DA)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BBD">
+        <annotation>
+          <documentation>DOLAR/BARBADOS - BARBADOS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BDT">
+        <annotation>
+          <documentation>TACA/BANGLADESH - BANGLADESH</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BGN">
+        <annotation>
+          <documentation>LEV/BULGARIA, REP - BULGARIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BHD">
+        <annotation>
+          <documentation>DINAR/BAHREIN - BAHREIN, ILHAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BIF">
+        <annotation>
+          <documentation>FRANCO/BURUNDI - BURUNDI</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BMD">
+        <annotation>
+          <documentation>DOLAR/BERMUDAS - BERMUDAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BND">
+        <annotation>
+          <documentation>DOLAR BRUNEI - BRUNEI</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BOB">
+        <annotation>
+          <documentation>BOLIVIANO/BOLIVIA - BOLIVIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BRL">
+        <annotation>
+          <documentation>REAL BRASIL - BRASIL</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BSD">
+        <annotation>
+          <documentation>DOLAR/BAHAMAS - BAHAMAS, ILHAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BTN">
+        <annotation>
+          <documentation>NGULTRUM/BUTAO - BUTAO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BWP">
+        <annotation>
+          <documentation>PULA/BOTSWANA - BOTSUANA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BYR">
+        <annotation>
+          <documentation>RUBLO BELARUS - BELARUS, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BZD">
+        <annotation>
+          <documentation>DOLAR/BELIZE - BELIZE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CAD">
+        <annotation>
+          <documentation>DOLAR CANADENSE - CANADA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CDF">
+        <annotation>
+          <documentation>FRANCO CONGOLES - CONGO, REPUBLICA DEMOCRATICA DO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CHF">
+        <annotation>
+          <documentation>FRANCO SUICO - SUICA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CLF">
+        <annotation>
+          <documentation>UNID FOMENTO CHIL - CHILE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CLP">
+        <annotation>
+          <documentation>PESO CHILE - CHILE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CNH">
+        <annotation>
+          <documentation>RENMINBI HONG KONG - *</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CNY">
+        <annotation>
+          <documentation>RENMIMBI IUAN - CHINA, REPUBLICA POPULAR</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="COP">
+        <annotation>
+          <documentation>PESO/COLOMBIA - COLOMBIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CRC">
+        <annotation>
+          <documentation>COLON/COSTA RICA - COSTA RICA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CUP">
+        <annotation>
+          <documentation>PESO/CUBA - CUBA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CVE">
+        <annotation>
+          <documentation>ESCUDO CABO VERDE - CABO VERDE, REPUBLICA DE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CZK">
+        <annotation>
+          <documentation>COROA TCHECA - TCHECA, REPUBLICA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="DJF">
+        <annotation>
+          <documentation>FRANCO/DJIBUTI - DJIBUTI</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="DKK">
+        <annotation>
+          <documentation>COROA DINAMARQUESA - DINAMARCA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="DOP">
+        <annotation>
+          <documentation>PESO/REP. DOMINIC - REPUBLICA DOMINICANA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="DZD">
+        <annotation>
+          <documentation>DINAR ARGELINO - ARGELIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EGP">
+        <annotation>
+          <documentation>LIBRA/EGITO - EGITO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ERN">
+        <annotation>
+          <documentation>NAKFA ERITREIA - ERITREIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ETB">
+        <annotation>
+          <documentation>BIRR/ETIOPIA - ETIOPIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EUR">
+        <annotation>
+          <documentation>EURO - *</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="FJD">
+        <annotation>
+          <documentation>DOLAR FIJI - FIJI</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="FKP">
+        <annotation>
+          <documentation>LIBRA/FALKLAND - FALKLAND (ILHAS MALVINAS)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GBP">
+        <annotation>
+          <documentation>LIBRA ESTERLINA - REINO UNIDO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GEL">
+        <annotation>
+          <documentation>LARI GEORGIA - GEORGIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GHS">
+        <annotation>
+          <documentation>CEDI GANA - GANA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GIP">
+        <annotation>
+          <documentation>LIBRA/GIBRALTAR - GIBRALTAR</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GMD">
+        <annotation>
+          <documentation>DALASI/GAMBIA - GAMBIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GNF">
+        <annotation>
+          <documentation>FRANCO/GUINE - GUINE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GTQ">
+        <annotation>
+          <documentation>QUETZAL/GUATEMALA - GUATEMALA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GWP">
+        <annotation>
+          <documentation>PESO/GUINE BISSAU - GUINE*BISSAU</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GYD">
+        <annotation>
+          <documentation>DOLAR DA GUIANA - GUIANA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HKD">
+        <annotation>
+          <documentation>DOLAR HONG KONG - HONG KONG</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HNL">
+        <annotation>
+          <documentation>LEMPIRA/HONDURAS - HONDURAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HRK">
+        <annotation>
+          <documentation>KUNA/CROACIA - CROACIA (REPUBLICA DA)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HTG">
+        <annotation>
+          <documentation>GOURDE/HAITI - HAITI</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HUF">
+        <annotation>
+          <documentation>FORINT/HUNGRIA - HUNGRIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="IDR">
+        <annotation>
+          <documentation>RUPIA/INDONESIA - INDONESIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ILS">
+        <annotation>
+          <documentation>SHEKEL/ISRAEL - ISRAEL</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="INR">
+        <annotation>
+          <documentation>RUPIA/INDIA - INDIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="IQD">
+        <annotation>
+          <documentation>DINAR/IRAQUE - IRAQUE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="IRR">
+        <annotation>
+          <documentation>RIAL/IRAN, REP - IRA, REPUBLICA ISLAMICA DO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ISK">
+        <annotation>
+          <documentation>COROA ISLND/ISLAN - ISLANDIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="JMD">
+        <annotation>
+          <documentation>DOLAR/JAMAICA - JAMAICA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="JOD">
+        <annotation>
+          <documentation>DINAR/JORDANIA - JORDANIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="JPY">
+        <annotation>
+          <documentation>IENE - JAPAO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KES">
+        <annotation>
+          <documentation>XELIM/QUENIA - QUENIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KGS">
+        <annotation>
+          <documentation>SOM QUIRGUISTAO - QUIRGUIZ, REPUBLICA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KHR">
+        <annotation>
+          <documentation>RIEL/CAMBOJA - CAMBOJA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KMF">
+        <annotation>
+          <documentation>FRANCO/COMORES - COMORES, ILHAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KPW">
+        <annotation>
+          <documentation>WON/COREIA NORTE - COREIA, REP.POP.DEMOCRATICA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KRW">
+        <annotation>
+          <documentation>WON COREIA SUL - COREIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KWD">
+        <annotation>
+          <documentation>DINAR/KWAIT - COVEITE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KYD">
+        <annotation>
+          <documentation>DOLAR CAYMAN - CAYMAN, ILHAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KZT">
+        <annotation>
+          <documentation>TENGE CAZAQUISTAO - CAZAQUISTAO, REPUBLICA DO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LAK">
+        <annotation>
+          <documentation>QUIPE/LAOS, REP - LAOS, REP.POP.DEMOCR.DO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LBP">
+        <annotation>
+          <documentation>LIBRA/LIBANO - LIBANO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LKR">
+        <annotation>
+          <documentation>RUPIA/SRI LANKA - SRI LANKA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LRD">
+        <annotation>
+          <documentation>DOLAR LIBERIA - LIBERIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LSL">
+        <annotation>
+          <documentation>LOTI/LESOTO - LESOTO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LTL">
+        <annotation>
+          <documentation>LITA/LITUANIA - LITUANIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LVL">
+        <annotation>
+          <documentation>LAT/LETONIA, REP - LETONIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LYD">
+        <annotation>
+          <documentation>DINAR/LIBIA - LIBIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MAD">
+        <annotation>
+          <documentation>DIRHAM/MARROCOS - MARROCOS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MDL">
+        <annotation>
+          <documentation>LEU/MOLDAVIA, REP - MOLDAVIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MGA">
+        <annotation>
+          <documentation>ARIARY MADAGASCAR - MADAGASCAR</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MKD">
+        <annotation>
+          <documentation>DINAR/MACEDONIA - MACEDONIA, ANT.REP.IUGOSLAVA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MMK">
+        <annotation>
+          <documentation>QUIATE/BIRMANIA - MIANMAR (BIRMANIA)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MNT">
+        <annotation>
+          <documentation>TUGRIK/MONGOLIA - MONGOLIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MOP">
+        <annotation>
+          <documentation>PATACA/MACAU - MACAU</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MRO">
+        <annotation>
+          <documentation>UGUIA MAURITANIA - MAURITANIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MUR">
+        <annotation>
+          <documentation>RUPIA/MAURICIO - MAURICIO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MVR">
+        <annotation>
+          <documentation>RUFIA/MALDIVAS - MALDIVAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MWK">
+        <annotation>
+          <documentation>QUACHA/MALAVI - MALAVI</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MXN">
+        <annotation>
+          <documentation>PESO/MEXICO - MEXICO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MYR">
+        <annotation>
+          <documentation>RINGGIT/MALASIA - MALASIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MZN">
+        <annotation>
+          <documentation>NOVA METICAL/MOCA - MOCAMBIQUE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="NAD">
+        <annotation>
+          <documentation>DOLAR DA NAMIBIA - NAMIBIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="NGN">
+        <annotation>
+          <documentation>NAIRA/NIGERIA - NIGERIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="NIO">
+        <annotation>
+          <documentation>CORDOBA OURO - NICARAGUA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="NOK">
+        <annotation>
+          <documentation>COROA NORUEGUESA - NORUEGA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="NPR">
+        <annotation>
+          <documentation>RUPIA/NEPAL - NEPAL</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="NZD">
+        <annotation>
+          <documentation>DOLAR/NOVA ZELAND - NOVA ZELANDIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="OMR">
+        <annotation>
+          <documentation>RIAL/OMA - OMA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PAB">
+        <annotation>
+          <documentation>BALBOA/PANAMA - PANAMA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PEN">
+        <annotation>
+          <documentation>NOVO SOL/PERU - PERU</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PGK">
+        <annotation>
+          <documentation>KINA/PAPUA N GUIN - PAPUA NOVA GUINE</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PHP">
+        <annotation>
+          <documentation>PESO/FILIPINAS - FILIPINAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PKR">
+        <annotation>
+          <documentation>RUPIA/PAQUISTAO - PAQUISTAO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PLN">
+        <annotation>
+          <documentation>ZLOTY/POLONIA - POLONIA, REPUBLICA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PYG">
+        <annotation>
+          <documentation>GUARANI/PARAGUAI - PARAGUAI</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="QAR">
+        <annotation>
+          <documentation>RIAL/CATAR - CATAR</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="RON">
+        <annotation>
+          <documentation>NOVO LEU/ROMENIA - ROMENIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="RSD">
+        <annotation>
+          <documentation>DINAR SERVIO SERVIA - SERVIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="RUB">
+        <annotation>
+          <documentation>RUBLO/RUSSIA - RUSSIA, FEDERACAO DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="RWF">
+        <annotation>
+          <documentation>FRANCO/RUANDA - RUANDA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SAR">
+        <annotation>
+          <documentation>RIAL/ARAB SAUDITA - ARABIA SAUDITA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SBD">
+        <annotation>
+          <documentation>DOLAR IL SALOMAO - SALOMAO, ILHAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SCR">
+        <annotation>
+          <documentation>RUPIA/SEYCHELES - SEYCHELLES</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SDG">
+        <annotation>
+          <documentation>NOVA LIBRA SUDANESA - SUDAO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SDR">
+        <annotation>
+          <documentation>DIREITO ESPECIAL - *</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SEK">
+        <annotation>
+          <documentation>COROA SUECA - SUECIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SGD">
+        <annotation>
+          <documentation>DOLAR CINGAPURA - CINGAPURA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SHP">
+        <annotation>
+          <documentation>LIBRA/STA HELENA - SANTA HELENA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SLL">
+        <annotation>
+          <documentation>LEONE/SERRA LEOA - SERRA LEOA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SOS">
+        <annotation>
+          <documentation>XELIM/SOMALIA - SOMALIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SRD">
+        <annotation>
+          <documentation>DOLAR/SURINAME - SURINAME</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SSP">
+        <annotation>
+          <documentation>LIBRA SUL SUDANESA - SUDAO DO SUL</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="STD">
+        <annotation>
+          <documentation>DOBRA S TOME PRIN - SAO TOME E PRINCIPE, ILHAS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SVC">
+        <annotation>
+          <documentation>COLON/EL SALVADOR - EL SALVADOR</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SYP">
+        <annotation>
+          <documentation>LIBRA/SIRIA, REP - SIRIA, REPUBLICA ARABE DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SZL">
+        <annotation>
+          <documentation>LILANGENI/SUAZIL - SUAZILANDIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="THB">
+        <annotation>
+          <documentation>BATH/TAILANDIA - TAILANDIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TJS">
+        <annotation>
+          <documentation>SOMONI TADJIQUISTAO - TADJIQUISTAO, REPUBLICA DO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TMT">
+        <annotation>
+          <documentation>NOVO MANAT TURCOM - TURCOMENISTAO, REPUBLICA DO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TND">
+        <annotation>
+          <documentation>DINAR/TUNISIA - TUNISIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TOP">
+        <annotation>
+          <documentation>PAANGA/TONGA - TONGA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TRY">
+        <annotation>
+          <documentation>NOVA LIRA/TURQUIA - TURQUIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TTD">
+        <annotation>
+          <documentation>DOLAR/TRIN. TOBAG - TRINIDAD E TOBAGO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TWD">
+        <annotation>
+          <documentation>NOVO DOLAR/TAIWAN - FORMOSA (TAIWAN)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TZS">
+        <annotation>
+          <documentation>XELIM/TANZANIA - TANZANIA, REP.UNIDA DA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="UAH">
+        <annotation>
+          <documentation>HRYVNIA UCRANIA - UCRANIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="UGX">
+        <annotation>
+          <documentation>XELIM/UGANDA - UGANDA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="USD">
+        <annotation>
+          <documentation>DOLAR DOS EUA - ESTADOS UNIDOS</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="UYU">
+        <annotation>
+          <documentation>PESO/URUGUAIO - URUGUAI</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="UZS">
+        <annotation>
+          <documentation>SOM UZBEQUISTAO - UZBEQUISTAO, REPUBLICA DO</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="VEF">
+        <annotation>
+          <documentation>BOLIVAR VEN - VENEZUELA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="VND">
+        <annotation>
+          <documentation>DONGUE/VIETNAN - VIETNA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="VUV">
+        <annotation>
+          <documentation>VATU VANUATU - VANUATU</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="WST">
+        <annotation>
+          <documentation>TALA SAMOA OC - SAMOA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="XAF">
+        <annotation>
+          <documentation>FRANCO CFA BEAC - *</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="XAU">
+        <annotation>
+          <documentation>DOLAR OURO - *</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="XCD">
+        <annotation>
+          <documentation>DOLAR CARIBE ORIENTAL - *</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="XEU">
+        <annotation>
+          <documentation>UNID.MONET.EUROP. - *</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="XOF">
+        <annotation>
+          <documentation>FRANCO CFA BCEAO - *</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="XPF">
+        <annotation>
+          <documentation>FRANCO CFP - POLINESIA FRANCESA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="YER">
+        <annotation>
+          <documentation>RIAL/IEMEN - IEMEN</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ZAR">
+        <annotation>
+          <documentation>RANDE/AFRICA SUL - AFRICA DO SUL</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ZMW">
+        <annotation>
+          <documentation>QUACHA ZAMBIA - ZAMBIA</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ZWL">
+        <annotation>
+          <documentation>DOLAR ZIMBABUE - ZIMBABUE</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <element name="codigo" type="string" />
+  <complexType name="Moeda">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoMoedaISO4217" nillable="true" type="apn:Codigo" />
+      <element minOccurs="0" maxOccurs="1" name="codigoSimboloMoeda" nillable="true" type="string" />
+    </sequence>
+  </complexType>
+</schema>

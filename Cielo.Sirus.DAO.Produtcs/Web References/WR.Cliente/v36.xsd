@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>Entidade do modelo canonico corporativo que representa um endereco.
+			Versao: 1.0
+			Autor: Luis Moraes
+
+			Historico de revisao:
+			1.0 31-03-2014 Criacao do xsd
+		   1.1 18-06-2014 Revisao dos nomes dos elementos e inclusÃ£o da documentaÃ§Ã£o</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="Endereco">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="nomeLogradouro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="descricaoComplementoEndereco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nomeBairro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nomeCidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="siglaEstado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="numeroCEP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="numeroLogradouro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="nomeTipoLogradouro" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome do tipo do logradouro aplicado ao endereco. Exemplos:
+Rua
+Avenida
+Praca</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="nomePais" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome do pais no qual o endereco existe. exemplos:
+Brasil
+Argentina
+Inglaterra</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="nomePessoaAosCuidados" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Nome da pessoa encarregada de receber a correspondencia no lugar do responsavel.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Enderecos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="enderecos" nillable="true" type="cds:Endereco" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

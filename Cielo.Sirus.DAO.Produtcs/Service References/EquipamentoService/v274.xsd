@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=PacoteCobranca.xsd" />
+  <include schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=TerminalLogico.xsd" />
+  <complexType name="PacoteCobrancaContratadoCliente">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+        <annotation>
+          <documentation>Codigo adotado pela Cielo para identificar o Cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosTerminalLogico" nillable="true" type="cds:TerminalLogico">
+        <annotation>
+          <documentation>Dados da entidade "TerminalLogico"</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosPacoteCobranca" nillable="true" type="cds:PacoteCobranca">
+        <annotation>
+          <documentation>Dados da entidade "PacoteCobranca"</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="valorAluguelContratado" nillable="true" type="double">
+        <annotation>
+          <documentation>Valor do aluguel do Pacote, contratado pelo EC, a ser pago mensalmente.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PacotesCobrancaContratadoCliente">
+    <annotation>
+      <documentation>Lista de pacotes contratado pelo EC.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosPacoteCobrancaContratadoCliente" nillable="true" type="cds:PacoteCobrancaContratadoCliente">
+        <annotation>
+          <documentation>Dados da entidade "PacoteCobrancaContratadoCliente"</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

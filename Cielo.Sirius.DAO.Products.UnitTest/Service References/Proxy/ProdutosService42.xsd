@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetNegotiationData" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetNegotiationData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GetNegotiationDataResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Competitors" nillable="true" type="tns:ArrayOfGetNegotiationDataCompetitorsDTO" />
+          <xs:element minOccurs="0" name="DealItems" nillable="true" type="tns:ArrayOfGetNegotiationDataDealItemsDTO" />
+          <xs:element minOccurs="0" name="DoOffersExist" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Reasons" nillable="true" type="tns:ArrayOfGetNegotiationDataReasonsDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNegotiationDataResponse" nillable="true" type="tns:GetNegotiationDataResponse" />
+  <xs:complexType name="ArrayOfGetNegotiationDataCompetitorsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetNegotiationDataCompetitorsDTO" nillable="true" type="tns:GetNegotiationDataCompetitorsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetNegotiationDataCompetitorsDTO" nillable="true" type="tns:ArrayOfGetNegotiationDataCompetitorsDTO" />
+  <xs:complexType name="GetNegotiationDataCompetitorsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompetitorId" type="ser:guid" />
+      <xs:element minOccurs="0" name="CompetitorName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNegotiationDataCompetitorsDTO" nillable="true" type="tns:GetNegotiationDataCompetitorsDTO" />
+  <xs:complexType name="ArrayOfGetNegotiationDataDealItemsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetNegotiationDataDealItemsDTO" nillable="true" type="tns:GetNegotiationDataDealItemsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetNegotiationDataDealItemsDTO" nillable="true" type="tns:ArrayOfGetNegotiationDataDealItemsDTO" />
+  <xs:complexType name="GetNegotiationDataDealItemsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DealItemId" type="ser:guid" />
+      <xs:element minOccurs="0" name="DealItemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNegotiationDataDealItemsDTO" nillable="true" type="tns:GetNegotiationDataDealItemsDTO" />
+  <xs:complexType name="ArrayOfGetNegotiationDataReasonsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetNegotiationDataReasonsDTO" nillable="true" type="tns:GetNegotiationDataReasonsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetNegotiationDataReasonsDTO" nillable="true" type="tns:ArrayOfGetNegotiationDataReasonsDTO" />
+  <xs:complexType name="GetNegotiationDataReasonsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReasonId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ReasonName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNegotiationDataReasonsDTO" nillable="true" type="tns:GetNegotiationDataReasonsDTO" />
+</xs:schema>

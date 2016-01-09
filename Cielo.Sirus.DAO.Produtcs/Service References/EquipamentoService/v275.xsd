@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://service.cielo.com.br/operacao/logistica/equipamento/v2" xmlns:cad="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://service.cielo.com.br/operacao/logistica/equipamento/v2" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=TerminalLogico.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <import schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=TerminalLogicoCliente.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <import schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=PacoteCobrancaContratadoCliente.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <annotation>
+    <documentation>Versao: 2.0
+			Autor: Arnaldo Imamura (Sensedia)
+			
+			Historico de revisao:
+			1.0.0 13-02-2015 Operação consultarTerminalLogico (Arnaldo Imamura - Sensedia)
+			1.0.1 26-03-2015 Operações instalarEquipamento, desinstalarEquipamento e trocarEquipamento (Luiz Pizzini - Sensedia)
+			1.0.2 17-04-2015 Operações consultarSolicitacaoLogisticaPorPeriodo (Luiz Pizzini - Sensedia)
+			1.0.3 17-04-2015 Operações consultarPrazoInstalacao e consultarPrazoAlteracaoDesinstalacao (Arnaldo Imamura - Sensedia)
+			1.0.4 18-05-2015 Operações consultarValorAluguel e consultarPrazoPadrao (Leandro Estrada - Sensedia)</documentation>
+  </annotation>
+  <element name="consultarTerminalLogicoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="retornoPaginaTerminal" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="retornoPaginaVersao" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="retornoPaginaNumero" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="retornoPaginaLoja" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarTerminalLogicoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetornoMensagem" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="retornoPaginaTerminal" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="retornoPaginaVersao" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="retornoPaginaNumero" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="retornoPaginaLoja" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="terminaisLogicos" nillable="true" type="tns:TerminaisLogicosType" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="instalarEquipamentoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="demandaSolicitada" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="solucaoCaptura" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="enderecoComplemento" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="horarioAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="operadoraPreferencia" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="numeroSerie" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoErro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroChamadoEDS" nillable="true">
+          <simpleType>
+            <restriction base="string">
+              <minLength value="1" />
+              <maxLength value="7" />
+            </restriction>
+          </simpleType>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="dataEntrada" nillable="true" type="dateTime" />
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="requestEvento" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroChamadoLegado" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="numeroCNPJCPF" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroDDDTelefoneContato" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTelefoneContato" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeRazaoSocial" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeFantasia" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeLogradouro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroCEP" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeBairro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="siglaEstado" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeCidade" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeContato" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="ramoAtividade" nillable="true" type="string" />
+        <element minOccurs="0" name="listaNumeroLogico">
+          <complexType>
+            <sequence>
+              <element minOccurs="0" maxOccurs="unbounded" name="numeroLogico" nillable="true" type="string" />
+            </sequence>
+          </complexType>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="observacao" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="quantidadeConjuntos" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="codigoCanal" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="numeroChamadoStar" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="pontoReferencia" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="instalarEquipamentoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigo" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="mensagem" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="quantidadeTempoAtendimento" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoPeriodoAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeUnidadeTempoAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoSolicitacao" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoChamadoLogistica" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="desinstalarEquipamentoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="demandaSolicitada" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="solucaoCaptura" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="enderecoComplemento" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="horarioAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="operadoraPreferencia" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="numeroSerie" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoErro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroChamadoEDS" nillable="true">
+          <simpleType>
+            <restriction base="string">
+              <minLength value="1" />
+              <maxLength value="7" />
+            </restriction>
+          </simpleType>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="dataEntrada" nillable="true" type="dateTime" />
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="evento" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroChamadoLegado" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="numeroCNPJCPF" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroDDDTelefoneContato" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTelefoneContato" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeRazaoSocial" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeFantasia" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeLogradouro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroCEP" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeBairro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="siglaEstado" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeCidade" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeContato" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="ramoAtividade" nillable="true" type="string" />
+        <element minOccurs="0" name="listaNumeroLogico">
+          <complexType>
+            <sequence>
+              <element minOccurs="0" maxOccurs="unbounded" name="numeroLogico" nillable="true" type="string" />
+            </sequence>
+          </complexType>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="observacao" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="quantidadeConjuntos" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="codigoCanal" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="numeroChamadoStar" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="pontoReferencia" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="desinstalarEquipamentoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigo" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="mensagem" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="quantidadeTempoAtendimento" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoPeriodoAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeUnidadeTempoAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoSolicitacao" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoChamadoLogistica" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="trocarEquipamentoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="demandaSolicitada" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="solucaoCaptura" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="enderecoComplemento" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="horarioAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="operadoraPreferencia" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="numeroSerie" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoErro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroChamadoEDS" nillable="true">
+          <simpleType>
+            <restriction base="string">
+              <minLength value="1" />
+              <maxLength value="7" />
+            </restriction>
+          </simpleType>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="dataEntrada" nillable="true" type="dateTime" />
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="evento" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroChamadoLegado" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="numeroCNPJCPF" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroDDDTelefoneContato" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTelefoneContato" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeRazaoSocial" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeFantasia" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeLogradouro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="numeroCEP" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeBairro" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="siglaEstado" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeCidade" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="nomeContato" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="ramoAtividade" nillable="true" type="string" />
+        <element minOccurs="0" name="listaNumeroLogico">
+          <complexType>
+            <sequence>
+              <element minOccurs="0" maxOccurs="unbounded" name="numeroLogico" nillable="true" type="string" />
+            </sequence>
+          </complexType>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="observacao" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="quantidadeConjuntos" nillable="true" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="codigoCanal" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="numeroChamadoStar" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="pontoReferencia" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="trocarEquipamentoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigo" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="mensagem" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="quantidadeTempoAtendimento" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoPeriodoAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="nomeUnidadeTempoAtendimento" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoSolicitacao" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoChamadoLogistica" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarSolicitacaoLogisticaPorPeriodoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long" />
+        <element minOccurs="1" maxOccurs="1" name="dataInicioPesquisa" nillable="true" type="dateTime" />
+        <element minOccurs="1" maxOccurs="1" name="dataFimPesquisa" nillable="true" type="dateTime" />
+        <element minOccurs="0" maxOccurs="1" name="codigoServicoExecutado" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarSolicitacaoLogisticaPorPeriodoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="solicitacoesLogistica" type="tns:SolicitacoesLogisticaType" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarPrazoInstalacaoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="nomeCidade" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="siglaEstado" type="tns:ufType" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarPrazoInstalacaoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="sla" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="slaUnidade" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoPeriodoAtendimento" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarPrazoAlteracaoDesinstalacaoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="nomeCidade" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="siglaEstado" type="tns:ufType" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarPrazoAlteracaoDesinstalacaoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="sla" nillable="true" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="slaUnidade" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoPeriodoAtendimento" nillable="true" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <simpleType name="ufType">
+    <restriction base="string">
+      <enumeration value="AC" />
+      <enumeration value="AL" />
+      <enumeration value="AM" />
+      <enumeration value="AP" />
+      <enumeration value="BA" />
+      <enumeration value="CE" />
+      <enumeration value="DF" />
+      <enumeration value="ES" />
+      <enumeration value="GO" />
+      <enumeration value="MA" />
+      <enumeration value="MG" />
+      <enumeration value="MS" />
+      <enumeration value="MT" />
+      <enumeration value="PA" />
+      <enumeration value="PB" />
+      <enumeration value="PE" />
+      <enumeration value="PI" />
+      <enumeration value="PR" />
+      <enumeration value="RJ" />
+      <enumeration value="RN" />
+      <enumeration value="RS" />
+      <enumeration value="RO" />
+      <enumeration value="RR" />
+      <enumeration value="SC" />
+      <enumeration value="SE" />
+      <enumeration value="SP" />
+      <enumeration value="TO" />
+    </restriction>
+  </simpleType>
+  <complexType name="SolicitacoesLogisticaType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="solicitacaoLogistica" type="tns:SolicitacaoLogisticaType" />
+    </sequence>
+  </complexType>
+  <complexType name="SolicitacaoLogisticaType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="numeroChamado" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="sequencialChamado" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="chamadoEds" nillable="true" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="dataEntrada" nillable="true" type="dateTime" />
+      <element minOccurs="0" maxOccurs="1" name="statusChamado" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="estabelecimento" nillable="true" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="loja" nillable="true" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="evento" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoServicoExecutado" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="servicoExecutado" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="dataPrevista" nillable="true" type="dateTime" />
+      <element minOccurs="0" maxOccurs="1" name="dataBaixa" nillable="true" type="dateTime" />
+      <element minOccurs="0" maxOccurs="1" name="codigoServicoTipo" nillable="true" type="integer" />
+    </sequence>
+  </complexType>
+  <complexType name="TerminalLogicoType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="numeroTerminalLogico" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoTipoTerminal" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomeSolucaoCaptura" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomeGrupoSolucaoCaptura" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="detalhesTerminalLogico" nillable="true" type="tns:DetalhesTerminalLogicoType" />
+    </sequence>
+  </complexType>
+  <element name="detalhesTerminalLogico" type="tns:DetalhesTerminalLogicoType" />
+  <complexType name="DetalhesTerminalLogicoType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="tipoTerminal" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoCompleta" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoResumida" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="categoriaTerminal" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="tipoSolucao" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="modelo" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="descontinuado" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="solucaoCaptura" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="tecnologia" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomenclaturaMarketing" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="versao" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="TerminaisLogicosType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="terminalLogico" type="tns:TerminalLogicoType" />
+    </sequence>
+  </complexType>
+  <element name="terminaisLogicos" type="tns:TerminaisLogicosType" />
+  <element name="consultarValorAluguelRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="numeroTerminalLogico" nillable="true" type="string">
+          <annotation>
+            <documentation>Numero que identifica um terminal logico da rede de captura de transacoes Cielo.
+							Cada equipamento ou dispositivo esta associado a um unico numero de terminal.</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarValorAluguelResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="pacotesCobrancaContratadoCliente" type="cad:PacotesCobrancaContratadoCliente" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarPrazoPadraoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="tipoDemanda" nillable="true" type="long">
+          <annotation>
+            <documentation>"Código de Solicitação (EX): 1 - Alterar Produto; 2 - Habilitar Produto; 3 - Habilitar Serviço; 
+							4 - Abrir Solicitação de Negociação de Taxa; 5 - Habilitar Venda Digitada; 6 - Desabilitar Venda Digitada".</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="subTipoDemanda" nillable="true" type="long">
+          <annotation>
+            <documentation>Sub Tipo da Demanda (EX): 1 - XXXX; 2 - YYYYY.</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarPrazoPadraoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="dataSLA" type="date" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+</schema>

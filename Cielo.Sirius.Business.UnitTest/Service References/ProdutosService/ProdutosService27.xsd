@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetDiscountRateRestriction" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.GetDiscountRateRestriction" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="GetDiscountRateRestrictionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgentGroupCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BranchActivityCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultRate" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDiscountRateRestrictionRequest" nillable="true" type="tns:GetDiscountRateRestrictionRequest" />
+  <xs:complexType name="GetDiscountRateRestrictionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DiscountRateRestrictionPercentage" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MaxDiscountRateRestrictionPercentage" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MinDiscountRateRestrictionPercentage" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetDiscountRateRestrictionResponse" nillable="true" type="tns:GetDiscountRateRestrictionResponse" />
+</xs:schema>

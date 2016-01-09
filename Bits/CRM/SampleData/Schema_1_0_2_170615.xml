@@ -1,0 +1,410 @@
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <entity name="account" displayname="Customer" etc="1" primaryidfield="accountid" primarynamefield="name" disableplugins="false">
+    <fields>
+      <field displayname="Account" name="accountid" type="guid" primaryKey="true" />
+      <field displayname="Account Number" name="accountnumber" type="string" />
+      <field displayname="Account Rating" name="accountratingcode" type="optionsetvalue" />
+      <field displayname="Address 1" name="address1_composite" type="string" />
+      <field displayname="Address 1: Address Type" name="address1_addresstypecode" type="optionsetvalue" />
+      <field displayname="Address 1: City" name="address1_city" type="string" />
+      <field displayname="Address 1: Country/Region" name="address1_country" type="string" />
+      <field displayname="Address 1: County" name="address1_county" type="string" />
+      <field displayname="Address 1: Fax" name="address1_fax" type="string" />
+      <field displayname="Address 1: Freight Terms" name="address1_freighttermscode" type="optionsetvalue" />
+      <field displayname="Address 1: ID" name="address1_addressid" type="guid" primaryKey="true" />
+      <field displayname="Address 1: Latitude" name="address1_latitude" type="float" />
+      <field displayname="Address 1: Longitude" name="address1_longitude" type="float" />
+      <field displayname="Address 1: Name" name="address1_name" type="string" />
+      <field displayname="Address 1: Post Office Box" name="address1_postofficebox" type="string" />
+      <field displayname="Address 1: Primary Contact Name" name="address1_primarycontactname" type="string" />
+      <field displayname="Address 1: Shipping Method" name="address1_shippingmethodcode" type="optionsetvalue" />
+      <field displayname="Address 1: State/Province" name="address1_stateorprovince" type="string" />
+      <field displayname="Address 1: Street 1" name="address1_line1" type="string" />
+      <field displayname="Address 1: Street 2" name="address1_line2" type="string" />
+      <field displayname="Address 1: Street 3" name="address1_line3" type="string" />
+      <field displayname="Address 1: Telephone 2" name="address1_telephone2" type="string" />
+      <field displayname="Address 1: Telephone 3" name="address1_telephone3" type="string" />
+      <field displayname="Address 1: UPS Zone" name="address1_upszone" type="string" />
+      <field displayname="Address 1: UTC Offset" name="address1_utcoffset" type="number" />
+      <field displayname="Address 1: ZIP/Postal Code" name="address1_postalcode" type="string" />
+      <field displayname="Address 2" name="address2_composite" type="string" />
+      <field displayname="Address 2: Address Type" name="address2_addresstypecode" type="optionsetvalue" />
+      <field displayname="Address 2: City" name="address2_city" type="string" />
+      <field displayname="Address 2: Country/Region" name="address2_country" type="string" />
+      <field displayname="Address 2: County" name="address2_county" type="string" />
+      <field displayname="Address 2: Fax" name="address2_fax" type="string" />
+      <field displayname="Address 2: Freight Terms" name="address2_freighttermscode" type="optionsetvalue" />
+      <field displayname="Address 2: ID" name="address2_addressid" type="guid" primaryKey="true" />
+      <field displayname="Address 2: Latitude" name="address2_latitude" type="float" />
+      <field displayname="Address 2: Longitude" name="address2_longitude" type="float" />
+      <field displayname="Address 2: Name" name="address2_name" type="string" />
+      <field displayname="Address 2: Post Office Box" name="address2_postofficebox" type="string" />
+      <field displayname="Address 2: Primary Contact Name" name="address2_primarycontactname" type="string" />
+      <field displayname="Address 2: Shipping Method" name="address2_shippingmethodcode" type="optionsetvalue" />
+      <field displayname="Address 2: State/Province" name="address2_stateorprovince" type="string" />
+      <field displayname="Address 2: Street 1" name="address2_line1" type="string" />
+      <field displayname="Address 2: Street 2" name="address2_line2" type="string" />
+      <field displayname="Address 2: Street 3" name="address2_line3" type="string" />
+      <field displayname="Address 2: Telephone 1" name="address2_telephone1" type="string" />
+      <field displayname="Address 2: Telephone 2" name="address2_telephone2" type="string" />
+      <field displayname="Address 2: Telephone 3" name="address2_telephone3" type="string" />
+      <field displayname="Address 2: UPS Zone" name="address2_upszone" type="string" />
+      <field displayname="Address 2: UTC Offset" name="address2_utcoffset" type="number" />
+      <field displayname="Address 2: ZIP/Postal Code" name="address2_postalcode" type="string" />
+      <field displayname="Address Phone" name="address1_telephone1" type="string" />
+      <field displayname="Aging 30" name="aging30" type="money" />
+      <field displayname="Aging 30 (Base)" name="aging30_base" type="money" />
+      <field displayname="Aging 60" name="aging60" type="money" />
+      <field displayname="Aging 60 (Base)" name="aging60_base" type="money" />
+      <field displayname="Aging 90" name="aging90" type="money" />
+      <field displayname="Aging 90 (Base)" name="aging90_base" type="money" />
+      <field displayname="Annual Revenue" name="revenue" type="money" />
+      <field displayname="Annual Revenue (Base)" name="revenue_base" type="money" />
+      <field displayname="Business Type" name="businesstypecode" type="optionsetvalue" />
+      <field displayname="Category" name="accountcategorycode" type="optionsetvalue" />
+      <field displayname="Classification" name="accountclassificationcode" type="optionsetvalue" />
+      <field displayname="Company Name" name="name" type="string" />
+      <field displayname="CPF/CNPJ" name="cielo_cpfcnpj" type="string" customfield="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Credit Hold" name="creditonhold" type="bool" />
+      <field displayname="Credit Limit" name="creditlimit" type="money" />
+      <field displayname="Credit Limit (Base)" name="creditlimit_base" type="money" />
+      <field displayname="Currency" name="transactioncurrencyid" type="entityreference" lookupType="transactioncurrency" />
+      <field displayname="Customer Size" name="customersizecode" type="optionsetvalue" />
+      <field displayname="Default Image" name="entityimage" type="imagedata" />
+      <field displayname="Description" name="description" type="string" />
+      <field displayname="Do not allow Bulk Emails" name="donotbulkemail" type="bool" />
+      <field displayname="Do not allow Bulk Mails" name="donotbulkpostalmail" type="bool" />
+      <field displayname="Do not allow Emails" name="donotemail" type="bool" />
+      <field displayname="Do not allow Faxes" name="donotfax" type="bool" />
+      <field displayname="Do not allow Mails" name="donotpostalmail" type="bool" />
+      <field displayname="Do not allow Phone Calls" name="donotphone" type="bool" />
+      <field displayname="Email" name="emailaddress1" type="string" />
+      <field displayname="Email Address 2" name="emailaddress2" type="string" />
+      <field displayname="Email Address 3" name="emailaddress3" type="string" />
+      <field displayname="Entity Image Id" name="entityimageid" type="guid" />
+      <field displayname="Exchange Rate" name="exchangerate" type="decimal" />
+      <field displayname="Fax" name="fax" type="string" />
+      <field displayname="FTP Site" name="ftpsiteurl" type="string" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Industry" name="industrycode" type="optionsetvalue" />
+      <field displayname="Last Date Included in Campaign" name="lastusedincampaign" type="datetime" />
+      <field displayname="Main Phone" name="telephone1" type="string" />
+      <field displayname="Market Capitalization" name="marketcap" type="money" />
+      <field displayname="Market Capitalization (Base)" name="marketcap_base" type="money" />
+      <field displayname="Master ID" name="masterid" type="entityreference" lookupType="account" />
+      <field displayname="Merged" name="merged" type="bool" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="No. of Employees" name="numberofemployees" type="number" />
+      <field displayname="Originating Lead" name="originatingleadid" type="entityreference" lookupType="lead" />
+      <field displayname="Other Phone" name="telephone2" type="string" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Ownership" name="ownershipcode" type="optionsetvalue" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Parent Account" name="parentaccountid" type="entityreference" lookupType="account" />
+      <field displayname="Participates in Workflow" name="participatesinworkflow" type="bool" />
+      <field displayname="Payment Terms" name="paymenttermscode" type="optionsetvalue" />
+      <field displayname="Preferred Day" name="preferredappointmentdaycode" type="optionsetvalue" />
+      <field displayname="Preferred Facility/Equipment" name="preferredequipmentid" type="entityreference" lookupType="equipment" />
+      <field displayname="Preferred Method of Contact" name="preferredcontactmethodcode" type="optionsetvalue" />
+      <field displayname="Preferred Service" name="preferredserviceid" type="entityreference" lookupType="service" />
+      <field displayname="Preferred Time" name="preferredappointmenttimecode" type="optionsetvalue" />
+      <field displayname="Preferred User" name="preferredsystemuserid" type="entityreference" lookupType="systemuser" />
+      <field displayname="Price List" name="defaultpricelevelid" type="entityreference" lookupType="pricelevel" />
+      <field displayname="Primary Contact" name="primarycontactid" type="entityreference" lookupType="contact" />
+      <field displayname="Process" name="processid" type="guid" />
+      <field displayname="Process Stage" name="stageid" type="guid" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Relationship Type" name="customertypecode" type="optionsetvalue" />
+      <field displayname="Send Marketing Materials" name="donotsendmm" type="bool" />
+      <field displayname="Shares Outstanding" name="sharesoutstanding" type="number" />
+      <field displayname="Shipping Method" name="shippingmethodcode" type="optionsetvalue" />
+      <field displayname="SIC Code" name="sic" type="string" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Stock Exchange" name="stockexchange" type="string" />
+      <field displayname="Telephone 3" name="telephone3" type="string" />
+      <field displayname="Territory" name="territoryid" type="entityreference" lookupType="territory" />
+      <field displayname="Territory Code" name="territorycode" type="optionsetvalue" />
+      <field displayname="Ticker Symbol" name="tickersymbol" type="string" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Website" name="websiteurl" type="string" />
+      <field displayname="Yomi Account Name" name="yominame" type="string" />
+    </fields>
+    <relationships>
+      <relationship name="accountleads" manyToMany="true" isreflexive="false" relatedEntityName="accountleads" m2mTargetEntity="lead" m2mTargetEntityPrimaryKey="leadid" />
+    </relationships>
+  </entity>
+  <entity name="cielo_discountraterestriction" displayname="Alçada de Taxas" etc="10105" primaryidfield="cielo_discountraterestrictionid" primarynamefield="cielo_name" disableplugins="false">
+    <fields>
+      <field displayname="Alçada de Taxas" name="cielo_discountraterestrictionid" type="guid" primaryKey="true" />
+      <field displayname="Código do MCC" name="cielo_branchactivitycodeid" type="entityreference" lookupType="cielo_branchofactivity" customfield="true" />
+      <field displayname="Código do Produto" name="cielo_productcode" type="string" customfield="true" />
+      <field displayname="Código Ilha de Atendimento" name="cielo_agentgroupcodeid" type="entityreference" lookupType="team" customfield="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Name" name="cielo_name" type="string" customfield="true" />
+      <field displayname="Organization Id" name="organizationid" type="entityreference" lookupType="organization" />
+      <field displayname="Percentual da Taxa" name="cielo_discountraterestrictionpercentage" type="decimal" customfield="true" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="cielo_commercialestablishment" displayname="Commercial Establishment" etc="10012" primaryidfield="cielo_commercialestablishmentid" primarynamefield="cielo_ecnumber" disableplugins="false">
+    <fields>
+      <field displayname="Activity Status" name="cielo_activitystatusid" type="entityreference" lookupType="cielo_activitystatus" customfield="true" />
+      <field displayname="Anticipation Category" name="cielo_anticipationcategoryid" type="entityreference" lookupType="cielo_anticipationcategory" customfield="true" />
+      <field displayname="Branch of Activity" name="cielo_branchofactivityid" type="entityreference" lookupType="cielo_branchofactivity" customfield="true" />
+      <field displayname="Business Phone" name="cielo_alternatephonenumber" type="string" customfield="true" />
+      <field displayname="City" name="cielo_cityname" type="string" customfield="true" />
+      <field displayname="Closing Date" name="cielo_closingdate" type="datetime" customfield="true" />
+      <field displayname="Closure Reason" name="cielo_closurereasonid" type="entityreference" lookupType="cielo_closurereason" customfield="true" />
+      <field displayname="Commercial Segment" name="cielo_segmentcode" type="string" customfield="true" />
+      <field displayname="Company Name" name="cielo_companyname" type="string" customfield="true" />
+      <field displayname="CPF/CNPJ" name="cielo_cpfcnpj" type="string" customfield="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Customer" name="cielo_accountid" type="entityreference" lookupType="account" customfield="true" />
+      <field displayname="Customer Online Service" name="cielo_customeronlineservice" type="bool" customfield="true" />
+      <field displayname="EC Number" name="cielo_commercialestablishmentid" type="guid" primaryKey="true" />
+      <field displayname="EC Number" name="cielo_ecnumber" type="string" customfield="true" />
+      <field displayname="Email" name="emailaddress" type="string" />
+      <field displayname="Establishment Phone" name="cielo_mainphonenumber" type="string" customfield="true" />
+      <field displayname="Hours of Operation" name="cielo_hoursofoperationid" type="entityreference" lookupType="cielo_hoursofoperation" customfield="true" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Localized Exception Message" name="cielo_localizedexceptionmessage" type="string" customfield="true" />
+      <field displayname="Membership Date" name="cielo_membershipdate" type="datetime" customfield="true" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Opening Date" name="cielo_openingdate" type="datetime" customfield="true" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Person Type" name="cielo_cepersontype" type="string" customfield="true" />
+      <field displayname="Person Type" name="cielo_persontype" type="optionsetvalue" customfield="true" />
+      <field displayname="Plate Name" name="cielo_platename" type="string" customfield="true" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Signature on File" name="cielo_issignatureonfile" type="bool" customfield="true" />
+      <field displayname="State" name="cielo_stateacronym" type="string" customfield="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status of Operation" name="cielo_statusofoperationid" type="entityreference" lookupType="cielo_statusofoperation" customfield="true" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="Trade Name" name="cielo_tradename" type="string" customfield="true" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+      <field displayname="Virtual Manager Portfolio" name="cielo_virtualmanagerportfolioid" type="entityreference" lookupType="cielo_virtualmanagerportfolio" customfield="true" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="cielo_branchofactivity" displayname="Branch of Activity" etc="10010" primaryidfield="cielo_branchofactivityid" primarynamefield="cielo_economyclassname" disableplugins="false">
+    <fields>
+      <field displayname="ARV Restriction Indicator" name="cielo_hasarvrestriction" type="bool" customfield="true" />
+      <field displayname="Branch of Activity" name="cielo_branchofactivityid" type="guid" primaryKey="true" />
+      <field displayname="Branch of Activity" name="cielo_economyclassname" type="string" customfield="true" />
+      <field displayname="Branch of Activity Code" name="cielo_code" type="number" customfield="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Organization Id" name="organizationid" type="entityreference" lookupType="organization" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="incident" displayname="Case" etc="112" primaryidfield="incidentid" primarynamefield="title" disableplugins="false">
+    <fields>
+      <field displayname="Account" name="accountid" type="entityreference" lookupType="account" />
+      <field displayname="Activities Complete" name="activitiescomplete" type="bool" />
+      <field displayname="Actual Service Units" name="actualserviceunits" type="number" />
+      <field displayname="Billed Service Units" name="billedserviceunits" type="number" />
+      <field displayname="Blocked Profile" name="blockedprofile" type="bool" />
+      <field displayname="Case" name="incidentid" type="guid" primaryKey="true" />
+      <field displayname="Case Number" name="ticketnumber" type="string" />
+      <field displayname="Case Stage" name="incidentstagecode" type="optionsetvalue" />
+      <field displayname="Case Title" name="title" type="string" />
+      <field displayname="Case Type" name="casetypecode" type="optionsetvalue" />
+      <field displayname="Check Email" name="checkemail" type="bool" />
+      <field displayname="Child Cases" name="numberofchildincidents" type="number" />
+      <field displayname="Contact" name="contactid" type="entityreference" lookupType="contact" />
+      <field displayname="Contact" name="primarycontactid" type="entityreference" lookupType="contact" />
+      <field displayname="Contract" name="contractid" type="entityreference" lookupType="contract" />
+      <field displayname="Contract Line" name="contractdetailid" type="entityreference" lookupType="contractdetail" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Currency" name="transactioncurrencyid" type="entityreference" lookupType="transactioncurrency" />
+      <field displayname="Customer" name="customerid" type="entityreference" lookupType="account|contact" />
+      <field displayname="Customer Contacted" name="customercontacted" type="bool" />
+      <field displayname="Decrementing" name="isdecrementing" type="bool" />
+      <field displayname="Description" name="description" type="string" />
+      <field displayname="Entitlement" name="entitlementid" type="entityreference" lookupType="entitlement" />
+      <field displayname="Entity Image" name="entityimage" type="imagedata" />
+      <field displayname="Entity Image Id" name="entityimageid" type="guid" />
+      <field displayname="Escalated On" name="escalatedon" type="datetime" />
+      <field displayname="Exchange Rate" name="exchangerate" type="decimal" />
+      <field displayname="First Response By" name="responseby" type="datetime" />
+      <field displayname="First Response Sent" name="firstresponsesent" type="bool" />
+      <field displayname="First Response SLA Status" name="firstresponseslastatus" type="optionsetvalue" />
+      <field displayname="Follow Up By" name="followupby" type="datetime" />
+      <field displayname="Follow up Task Created" name="followuptaskcreated" type="bool" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Influence Score" name="influencescore" type="float" />
+      <field displayname="Internal Use Only" name="merged" type="bool" />
+      <field displayname="IsEscalated" name="isescalated" type="bool" />
+      <field displayname="Knowledge Base Article" name="kbarticleid" type="entityreference" lookupType="kbarticle" />
+      <field displayname="Last SLA invoked" name="slainvokedid" type="entityreference" lookupType="sla" />
+      <field displayname="Master Case" name="masterid" type="entityreference" lookupType="incident" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Número Estabelecimento Comercial" name="cielo_commercialestablishmentnumberid" type="entityreference" lookupType="cielo_commercialestablishment" customfield="true" />
+      <field displayname="Origin" name="caseorigincode" type="optionsetvalue" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Parent Case" name="parentcaseid" type="entityreference" lookupType="incident" />
+      <field displayname="Priority" name="prioritycode" type="optionsetvalue" />
+      <field displayname="Process" name="processid" type="guid" />
+      <field displayname="Process Stage" name="stageid" type="guid" />
+      <field displayname="Product" name="productid" type="entityreference" lookupType="product" />
+      <field displayname="Protocolo" name="cielo_protocol" type="string" customfield="true" />
+      <field displayname="Received As" name="messagetypecode" type="optionsetvalue" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Resolve By" name="resolveby" type="datetime" />
+      <field displayname="Resolve By SLA Status" name="resolvebyslastatus" type="optionsetvalue" />
+      <field displayname="Responsible Contact" name="responsiblecontactid" type="entityreference" lookupType="contact" />
+      <field displayname="Route Case" name="routecase" type="bool" />
+      <field displayname="Satisfaction" name="customersatisfactioncode" type="optionsetvalue" />
+      <field displayname="Sentiment Value" name="sentimentvalue" type="float" />
+      <field displayname="Serial Number" name="productserialnumber" type="string" />
+      <field displayname="Service Level" name="contractservicelevelcode" type="optionsetvalue" />
+      <field displayname="Service Stage" name="servicestage" type="optionsetvalue" />
+      <field displayname="Severity" name="severitycode" type="optionsetvalue" />
+      <field displayname="Social Profile" name="socialprofileid" type="entityreference" lookupType="socialprofile" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Subject" name="subjectid" type="entityreference" lookupType="subject" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="cielo_requestreason" displayname="Motivo Solicitação" etc="10104" primaryidfield="cielo_requestreasonid" primarynamefield="cielo_name" disableplugins="false">
+    <fields>
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Descrição" name="cielo_name" type="string" customfield="true" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Motivo Solicitação" name="cielo_requestreasonid" type="guid" primaryKey="true" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="Tipo de Solicitação" name="cielo_articlesubjectcodeid" type="entityreference" lookupType="subject" customfield="true" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="cielo_productrequest" displayname="Solicitação de Produto" etc="10106" primaryidfield="cielo_productrequestid" primarynamefield="cielo_name" disableplugins="false">
+    <fields>
+      <field displayname="Código do Produto" name="cielo_productcode" type="string" customfield="true" />
+      <field displayname="Código Ocorrência" name="cielo_caseid" type="entityreference" lookupType="incident" customfield="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Name" name="cielo_name" type="string" customfield="true" />
+      <field displayname="Owner" name="ownerid" type="owner" />
+      <field displayname="Owning Business Unit" name="owningbusinessunit" type="entityreference" lookupType="businessunit" />
+      <field displayname="Owning Team" name="owningteam" type="entityreference" lookupType="team" />
+      <field displayname="Owning User" name="owninguser" type="entityreference" lookupType="systemuser" />
+      <field displayname="Produto" name="cielo_productname" type="string" customfield="true" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Solicitação de Produto" name="cielo_productrequestid" type="guid" primaryKey="true" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="cielo_requestparameterization" displayname="Parametrização de Solicitação" etc="10108" primaryidfield="cielo_requestparameterizationid" primarynamefield="cielo_name" disableplugins="false">
+    <fields>
+      <field displayname="Código" name="cielo_requesttypecode" type="string" customfield="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Nome" name="cielo_name" type="string" customfield="true" />
+      <field displayname="Organization Id" name="organizationid" type="entityreference" lookupType="organization" />
+      <field displayname="Parametrização de Solicitação" name="cielo_requestparameterizationid" type="guid" primaryKey="true" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+    </fields>
+    <relationships />
+  </entity>
+  <entity name="cielo_brand" displayname="Bandeira" etc="10107" primaryidfield="cielo_brandid" primarynamefield="cielo_name" disableplugins="false">
+    <fields>
+      <field displayname="Bandeira" name="cielo_brandid" type="guid" primaryKey="true" />
+      <field displayname="Created By" name="createdby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created By (Delegate)" name="createdonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Created On" name="createdon" type="datetime" />
+      <field displayname="Import Sequence Number" name="importsequencenumber" type="number" />
+      <field displayname="Modified By" name="modifiedby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified By (Delegate)" name="modifiedonbehalfby" type="entityreference" lookupType="systemuser" />
+      <field displayname="Modified On" name="modifiedon" type="datetime" />
+      <field displayname="Nome" name="cielo_name" type="string" customfield="true" />
+      <field displayname="Organization Id" name="organizationid" type="entityreference" lookupType="organization" />
+      <field displayname="Record Created On" name="overriddencreatedon" type="datetime" />
+      <field displayname="Status" name="statecode" type="state" />
+      <field displayname="Status Reason" name="statuscode" type="status" />
+      <field displayname="Time Zone Rule Version Number" name="timezoneruleversionnumber" type="number" />
+      <field displayname="UTC Conversion Time Zone Code" name="utcconversiontimezonecode" type="number" />
+    </fields>
+    <relationships />
+  </entity>
+</entities>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:ns="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Produto.xsd" />
+  <complexType name="ProdutoContratadoCliente">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoCliente" nillable="true" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="dadosProduto" nillable="true" type="ns:Produto" />
+      <element minOccurs="0" maxOccurs="1" name="nomeIndicadorLiquidacao" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorContingenciaBatch" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorAceitaTransacaoDigitada" nillable="true" type="string" />
+    </sequence>
+  </complexType>
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa um Produto Contratado por um Cliente
+			estabelecimento comercial Versao: 1.0 Autor: Luis Moraes
+
+			Historico de revisao: 
+         1.0 02-07-2014 Criacao do xsd</documentation>
+  </annotation>
+</schema>

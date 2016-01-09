@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Endereco.xsd" />
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa uma filial de um cliente da Cielo.
+			Versao: 1.0 Autor: Luis Moraes
+
+			Historico de revisao: 1.0 07-04-2014 Criacao do xsd
+                               1.1 18-06-2014 Revisao dos nomes dos elementos e inclusão da documentação</documentation>
+  </annotation>
+  <complexType name="Filial">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="numeroMatriz" nillable="true" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="numeroFilial" nillable="true" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="nomeFantasia" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="dadosEndereco" nillable="true" type="cds:Enderecos" />
+    </sequence>
+  </complexType>
+  <complexType name="Filiais">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="filial" nillable="true" type="cds:Filial" />
+    </sequence>
+  </complexType>
+</schema>

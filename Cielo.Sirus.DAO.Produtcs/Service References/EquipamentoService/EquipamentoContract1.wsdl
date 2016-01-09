@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:header="http://canonico.cielo.com.br/governancasoa/comum/v1" xmlns:tns="http://service.cielo.com.br/operacao/logistica/equipamento/v2" xmlns:fault="http://canonico.cielo.com.br/comum/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="EquipamentoContract" targetNamespace="http://service.cielo.com.br/operacao/logistica/equipamento/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Contrato do serviço responsável por disponibilizar operações relacionadas a equipamentos.
+		Versao: 2.0
+		Autor: Arnaldo Imamura (Sensedia)
+		
+		Historico de revisao:
+		1.0.0 13-02-2015 Operação consultarTerminalLogico (Arnaldo Imamura - Sensedia)
+		1.0.1 26-03-2015 Operações instalarEquipamento, desinstalarEquipamento e trocarEquipamento (Luiz Pizzini - Sensedia)
+		1.0.2 17-04-2015 Operações consultarSolicitacaoLogisticaPorPeriodo (Luiz Pizzini - Sensedia)
+		1.0.3 17-04-2015 Operações consultarPrazoInstalacao e consultarPrazoAlteracaoDesinstalacao (Arnaldo Imamura - Sensedia)
+		1.0.4 18-05-2015 Operações consultarValorAluguel e consultarPrazoPadrao (Leandro Estrada - Sensedia)</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.cielo.com.br/operacao/logistica/equipamento/v2">
+      <xsd:include schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=EquipamentoServiceSchema.xsd" />
+      <xsd:import schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" namespace="http://canonico.cielo.com.br/governancasoa/comum/v1" />
+      <xsd:import schemaLocation="v2?WSDL&amp;interface=EquipamentoServiceSOAPBinding&amp;part=Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarPrazoAlteracaoDesinstalacaoRequest">
+    <wsdl:part name="parameters" element="tns:consultarPrazoAlteracaoDesinstalacaoRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarValorAluguelResponse">
+    <wsdl:part name="parameters" element="tns:consultarValorAluguelResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarPrazoInstalacaoResponse">
+    <wsdl:part name="parameters" element="tns:consultarPrazoInstalacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarPrazoAlteracaoDesinstalacaoResponse">
+    <wsdl:part name="parameters" element="tns:consultarPrazoAlteracaoDesinstalacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarSolicitacaoLogisticaPorPeriodoResponse">
+    <wsdl:part name="parameters" element="tns:consultarSolicitacaoLogisticaPorPeriodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="trocarEquipamentoResponse">
+    <wsdl:part name="parameters" element="tns:trocarEquipamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="instalarEquipamentoRequest">
+    <wsdl:part name="parameters" element="tns:instalarEquipamentoRequest" />
+  </wsdl:message>
+  <wsdl:message name="instalarEquipamentoResponse">
+    <wsdl:part name="parameters" element="tns:instalarEquipamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="trocarEquipamentoRequest">
+    <wsdl:part name="parameters" element="tns:trocarEquipamentoRequest" />
+  </wsdl:message>
+  <wsdl:message name="faultMessage">
+    <wsdl:part name="parameters" element="fault:fault" />
+  </wsdl:message>
+  <wsdl:message name="desinstalarEquipamentoRequest">
+    <wsdl:part name="parameters" element="tns:desinstalarEquipamentoRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarPrazoInstalacaoRequest">
+    <wsdl:part name="parameters" element="tns:consultarPrazoInstalacaoRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarTerminalLogicoRequest">
+    <wsdl:part name="parameters" element="tns:consultarTerminalLogicoRequest" />
+  </wsdl:message>
+  <wsdl:message name="header">
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarValorAluguelRequest">
+    <wsdl:part name="parameters" element="tns:consultarValorAluguelRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="desinstalarEquipamentoResponse">
+    <wsdl:part name="parameters" element="tns:desinstalarEquipamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarTerminalLogicoResponse">
+    <wsdl:part name="parameters" element="tns:consultarTerminalLogicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarPrazoPadraoResponse">
+    <wsdl:part name="parameters" element="tns:consultarPrazoPadraoResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarSolicitacaoLogisticaPorPeriodoRequest">
+    <wsdl:part name="parameters" element="tns:consultarSolicitacaoLogisticaPorPeriodoRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarPrazoPadraoRequest">
+    <wsdl:part name="parameters" element="tns:consultarPrazoPadraoRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="EquipamentoServicePortType">
+    <wsdl:operation name="consultarTerminalLogico">
+      <wsdl:input message="tns:consultarTerminalLogicoRequest" />
+      <wsdl:output message="tns:consultarTerminalLogicoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="instalarEquipamento">
+      <wsdl:input message="tns:instalarEquipamentoRequest" />
+      <wsdl:output message="tns:instalarEquipamentoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="desinstalarEquipamento">
+      <wsdl:input message="tns:desinstalarEquipamentoRequest" />
+      <wsdl:output message="tns:desinstalarEquipamentoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="trocarEquipamento">
+      <wsdl:input message="tns:trocarEquipamentoRequest" />
+      <wsdl:output message="tns:trocarEquipamentoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarSolicitacaoLogisticaPorPeriodo">
+      <wsdl:input message="tns:consultarSolicitacaoLogisticaPorPeriodoRequest" />
+      <wsdl:output message="tns:consultarSolicitacaoLogisticaPorPeriodoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrazoInstalacao">
+      <wsdl:input message="tns:consultarPrazoInstalacaoRequest" />
+      <wsdl:output message="tns:consultarPrazoInstalacaoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrazoAlteracaoDesinstalacao">
+      <wsdl:input message="tns:consultarPrazoAlteracaoDesinstalacaoRequest" />
+      <wsdl:output message="tns:consultarPrazoAlteracaoDesinstalacaoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarValorAluguel">
+      <wsdl:input message="tns:consultarValorAluguelRequest" />
+      <wsdl:output message="tns:consultarValorAluguelResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrazoPadrao">
+      <wsdl:input message="tns:consultarPrazoPadraoRequest" />
+      <wsdl:output message="tns:consultarPrazoPadraoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EquipamentoServiceSOAPBinding" type="tns:EquipamentoServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarTerminalLogico">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:header" part="header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="instalarEquipamento">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:header" part="header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desinstalarEquipamento">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:header" part="header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="trocarEquipamento">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:header" part="header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarSolicitacaoLogisticaPorPeriodo">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:header" part="header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrazoInstalacao">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:header" part="header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrazoAlteracaoDesinstalacao">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:header" part="header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarValorAluguel">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:consultarValorAluguelRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrazoPadrao">
+      <soap:operation soapAction="" />
+      <wsdl:input>
+        <soap:header message="tns:consultarPrazoPadraoRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EquipamentoService">
+    <wsdl:port name="EquipamentoServiceSOAPPort" binding="tns:EquipamentoServiceSOAPBinding">
+      <soap:address location="http://Cielo-OSB:8080/operacao/logistica/equipamento/v2" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

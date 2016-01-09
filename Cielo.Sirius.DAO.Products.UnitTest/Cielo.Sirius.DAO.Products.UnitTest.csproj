@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97F98ECA-D77D-4266-BF6D-520BAAC087E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cielo.Sirius.DAO.Products.UnitTest</RootNamespace>
+    <AssemblyName>Cielo.Sirius.DAO.Products.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cielo.Sirius.Foundation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8788bfe52c9f1ff7, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Assets\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Assets\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="AlterarParcelaFaixaProdutoDAOUnitTest.cs" />
+    <Compile Include="ConsultarDetalheProdutoElegivelClienteDAOUnitTest.cs" />
+    <Compile Include="ConsultarDetalheProdutoHabilitadoClienteDAOUnitTest.cs" />
+    <Compile Include="ConsultarDetalheProdutoMultivanContratadoClienteDAOUnitTest.cs" />
+    <Compile Include="ConsultarDetalheProdutoNaoElegivelClienteDAOUnitTest.cs" />
+    <Compile Include="ConsultarPrazoPadraoDAOUnitTest.cs" />
+    <Compile Include="ConsultarPrazosTaxasUnitTest.cs" />
+    <Compile Include="ConsultarProdutoElegivelClienteDAOUnitTest.cs" />
+    <Compile Include="ConsultarProdutoHabilitadoClienteDAOUnitTest.cs" />
+    <Compile Include="ConsultarProdutoNaoElegivelClienteDAOUnitTest.cs" />
+    <Compile Include="ConsultarProdutosPrazoFlexivelUnitTest.cs" />
+    <Compile Include="CRM\Actions.cs" />
+    <Compile Include="CRM\CRMActions.cs" />
+    <Compile Include="DesabilitarProdutoUnitTest.cs" />
+    <Compile Include="DesabilitarServicoUnitTest.cs" />
+    <Compile Include="GetEnabledProductRequestTypesDAOUnitTest.cs" />
+    <Compile Include="HabilitarProdutoDAOUnitTest.cs" />
+    <Compile Include="Metricas\ConsultarDadosNegociacaoUnitTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ProdutosService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Proxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitarNegociacaoTaxaUnitTest.cs" />
+    <Compile Include="GetRequestReasonUnitTest.cs" />
+    <Compile Include="DesabilitarVendaDigitadaUnitTest.cs" />
+    <Compile Include="HabilitarServicoUnitTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avanade.SmartApps.Foundation.Communication\Avanade.SmartApps.Communication.csproj">
+      <Project>{5b9ddbab-1ca9-4807-82b0-856459cb8b53}</Project>
+      <Name>Avanade.SmartApps.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Business.UnitTest\Cielo.Sirius.Business.UnitTest.csproj">
+      <Project>{7f47e14d-8552-4f64-a4ae-a99a1d5bee41}</Project>
+      <Name>Cielo.Sirius.Business.UnitTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.BusinessLogic.Product\Cielo.Sirius.Business.Products.csproj">
+      <Project>{f235ee7a-ce42-401e-ba21-bcf058e802bf}</Project>
+      <Name>Cielo.Sirius.Business.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Contracts.Product\Cielo.Sirius.Contracts.Products.csproj">
+      <Project>{df68dd91-542f-4a49-88a7-e23d8bbc8405}</Project>
+      <Name>Cielo.Sirius.Contracts.Products</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Foundation\Avanade.SmartApps.csproj">
+      <Project>{0995c250-a3bd-4973-82e7-a43f8b23493a}</Project>
+      <Name>Avanade.SmartApps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirius.Integration.OutboundService\Cielo.Sirius.Integration.OutboundService.csproj">
+      <Project>{07952d22-c49b-4973-8f4a-0cb5437e9c79}</Project>
+      <Name>Cielo.Sirius.Integration.OutboundService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cielo.Sirus.DAO.Produtcs\Cielo.Sirius.DAO.Products.csproj">
+      <Project>{9095975a-9f8a-4f83-b3e4-7d8b7433575a}</Project>
+      <Name>Cielo.Sirius.DAO.Products</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Config\DataAccess.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\DomainDecodingTables.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarParcelaFaixaProduto.AlterarParcelaFaixaProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarProdutoAVista.AlterarProdutoAVistaResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarProdutoCreditoParcelado.AlterarProdutoCreditoParceladoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.AlterarProdutoCreditoParceladoSegmentado.AlterarProdutoCreditoParceladoSegmentadoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.CalcularAlcadaFaixasParceladoSegmentado.CalcularAlcadaFaixasParceladoSegmentadoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDadosNegociacao.ConsultarDadosNegociacaoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoElegivelCliente.ConsultarDetalheProdutoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoHabilitadoCliente.ConsultarDetalheProdutoHabilitadoClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente.ConsultarDetalheProdutoMultivanContratadoClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarDetalheProdutoNaoElegivelCliente.ConsultarDetalheProdutoNaoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarInformacoesPatAlelo.ConsultarInformacoesPatAleloResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarPrazoPadrao.ConsultarPrazoPadraoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarPrazosTaxasPrazoFlexivel.ConsultarPrazosTaxasPrazoFlexivelResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoElegivelCliente.ConsultarProdutoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente.ConsultarProdutoHabilitadoClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutoNaoElegivelCliente.ConsultarProdutoNaoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarProdutosPrazoFlexivel.ConsultarProdutosPrazoFlexivelResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente.ConsultarServicoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoHabilitadoCliente.ConsultarServicoHabilitadoClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ConsultarServicoNaoElegivelCliente.ConsultarServicoNaoElegivelClienteResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.DesabilitarProduto.DesabilitarProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.DesabilitarServico.DesabilitarServicoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetDiscountRateRestriction.GetDiscountRateRestrictionResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEligibleProductRequestTypes.GetEligibleProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEnabledProductRequestTypes.GetEnabledProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetEnabledServiceRequestTypes.GetEnabledServiceRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetNonEligibleProductRequestTypes.GetNonEligibleProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetNonEnabledProductRequestTypes.GetNonEnabledProductRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetProductRequestsHistory.GetProductRequestsHistoryResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetRequestReason.GetRequestReasonResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.GetServiceRequestsHistory.GetServiceRequestsHistoryResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarDesabilitarVendaDigitada.HabilitarDesabilitarVendaDigitadaResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarPrazoFlexivel.HabilitarPrazoFlexivelResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarProduto.HabilitarProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.HabilitarServico.HabilitarServicoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ManterPrazoFlexivel.ManterPrazoFlexivelResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.Products.GetNonEligibleServiceRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.Products.GetNonEnabledServiceRequestTypesResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitaAnaliseAlvara.SolicitaAnaliseAlvaraResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitarExclusaoProduto.SolicitarExclusaoProdutoResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.SolicitarNegociacaoTaxa.SolicitarNegociacaoTaxaResponse.datasource" />
+    <None Include="Properties\DataSources\Cielo.Sirius.Contracts.ValidarPermissaoVendaDigitada.ValidarPermissaoVendaDigitadaResponse.datasource" />
+    <None Include="Service References\ProdutosService\ProdutosService.wsdl" />
+    <None Include="Service References\ProdutosService\ProdutosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService371.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService372.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutosService\ProdutosService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService.wsdl" />
+    <None Include="Service References\Proxy\ProdutosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService40.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\ProdutosService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ProdutosService\" />
+    <WCFMetadataStorage Include="Service References\Proxy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutosService\ProdutosService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutosService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutosService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutosService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\ProdutosService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

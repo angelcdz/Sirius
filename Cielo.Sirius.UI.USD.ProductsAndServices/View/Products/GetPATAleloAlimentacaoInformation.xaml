@@ -1,0 +1,78 @@
+﻿<base:ViewBaseControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.GetPATAleloAlimentacaoInformation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:converters="clr-namespace:Cielo.Sirius.Foundation.USD.Converters;assembly=Cielo.Sirius.Foundation.USD" 
+      xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD"
+      Style="{DynamicResource ViewBaseControlStyle}">
+
+    <UserControl.Resources>
+        <converters:BoolToSimNaoConverter x:Key="BoolToSimNaoConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Visibility="{Binding ApresentarPATAlimentacao, Converter={StaticResource BoolToVisibilityConverter}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="13"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="151" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3"
+						Text="Informações PAT - Alimentação" Style="{DynamicResource ScreenSubtitle}" />
+
+        <StackPanel Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock Text="Checkouts loja" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Supermercado" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Armazém" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Laticínios-frios" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Segunda a sexta" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Área de atendimento" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Sábado" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Domingo" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Hipermercado" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Açougue" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Outros" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Comercial" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Noturno" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="24 Horas" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Hortimercado" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Peixaria" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Apresenta cartão" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Delivery" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Internet" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Mercearia" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="Padaria" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Top">
+            <TextBlock Text="{Binding CheckoutsLoja}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Supermercado, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Armazem, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Laticinio, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding SegundaSexta, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding AreaAtendimento}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Sabado, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Domingo, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Hipermercado, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Acougue, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Outros, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Comercial, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Noturno, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Horas24, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Hortimercado, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Peixaria, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding ApresentaCartao}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Delivery}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Internet}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Mercearia, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+            <TextBlock Text="{Binding Padaria, Converter={StaticResource BoolToSimNaoConverter}}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+        </StackPanel>
+
+
+    </Grid>
+</base:ViewBaseControl>

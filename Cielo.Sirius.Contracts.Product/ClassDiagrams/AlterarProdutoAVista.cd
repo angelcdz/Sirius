@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Cielo.Sirius.Contracts.AlterarProdutoAVista.AlterarProdutoAVistaRequest">
+    <Position X="1" Y="0.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAgAAFAAAAAKAEABEAAIAAAAAAAAAAwAiIIA=</HashCode>
+      <FileName>AlterarProdutoAVista.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Contracts.AlterarProdutoAVista.AlterarProdutoAVistaResponse">
+    <Position X="6" Y="0.5" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AlterarProdutoAVista.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Contracts.AlterarProdutoAVista.AlterarProdutoAVistaSolicitacaoDTO">
+    <Position X="6" Y="4.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>AlterarProdutoAVista.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cielo.Sirius.Foundation.ResponseBase">
+    <Position X="6" Y="2.25" Width="6" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Cielo.Sirius.Foundation.RequestBase">
+    <Position X="1" Y="5.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

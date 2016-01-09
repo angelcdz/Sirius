@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:lgs="http://canonico.cielo.com.br/operacao/logistica/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/operacao/logistica/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="PrazoAtendimento">
+    <annotation>
+      <documentation>Prazo para atendimento da solicitação do cliente.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="quantidadeTempoAtendimento" nillable="true" type="integer">
+        <annotation>
+          <documentation>Quantidade de unidade de tempo para o Atendimento.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeUnidadeTempoAtendimento" nillable="true" type="string">
+        <annotation>
+          <documentation>Descricao da unidade de tempo do atendimento (Ex: Dias, Horas, etc).</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="descricaoPeriodoAtendimento" nillable="true" type="string">
+        <annotation>
+          <documentation>Descricao do periodo de atendimento da solicitacao do cliente (Ex: Segunda a sabado das 08:00 as 22:00).</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

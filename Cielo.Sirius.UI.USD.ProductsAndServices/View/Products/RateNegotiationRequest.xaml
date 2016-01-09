@@ -1,0 +1,60 @@
+﻿<base:ViewBaseControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.RateNegotiationRequest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:Cielo.Sirius.Foundation.USD.Controls;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:converters="clr-namespace:Cielo.Sirius.Foundation.USD.Converters;assembly=Cielo.Sirius.Foundation.USD" 
+             xmlns:view="clr-namespace:Cielo.Sirius.UI.USD.ProductsAndServices.View"
+             xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:behaviors="clr-namespace:Cielo.Sirius.Foundation.USD.Behaviors;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"     
+             Style="{DynamicResource ViewBaseControlStyle}"
+             Width="565" Height="376">
+    <UserControl.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{Binding SolutionEstimatedDate}" 
+                   Style="{DynamicResource DetailTextDark}" 
+                   Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <i:Interaction.Triggers>
+                <ei:DataTrigger Binding="{Binding HasError}" Value="true">
+                    <ei:ChangePropertyAction PropertyName="Style" Value="{DynamicResource ErrorTextDetail}"/>
+                </ei:DataTrigger>
+                 <ei:DataTrigger Binding="{Binding HasError}" Value="false">
+                    <ei:ChangePropertyAction PropertyName="Style" Value="{DynamicResource DetailTextDark}"/>
+                </ei:DataTrigger>
+            </i:Interaction.Triggers>
+            </TextBlock>
+            <TextBlock Margin="0,30,0,0" Text="Taxa desejada:" HorizontalAlignment="Left" Width="100"/>
+            <TextBox Margin="0,5,0,0" HorizontalAlignment="Left" Width="300" Text="{Binding TaxaDesejada}">
+                <i:Interaction.Behaviors>
+                    <behaviors:NumericTextBoxBehavior/>
+                </i:Interaction.Behaviors>
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="0,248,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBlock Text="Motivo" Style="{DynamicResource ScreenSubtitle}" />
+            <controls:TabulationComboBox Width="290" 
+                                         Height="20"
+                                         Margin="0,10,0,0" 
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Top"
+                                         WaterMarkTabulation="Selecione o motivo" 
+                                         ItemsSource="{Binding ReasonList}" 
+                                         DisplayMemberPath="NomeMotivo"
+                                         SelectedItem="{Binding SelectedReason}"
+                                         Style="{DynamicResource FilterTabulation}" Cursor="Hand"/>
+
+            <StackPanel Visibility="{Binding HasRatesErros, Converter={StaticResource ResourceKey=BoolToVisibilityConverter}}" 
+                                            Margin="0,10,0,0" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto">
+                <Label Content="Atenção" Style="{DynamicResource ErrorLabelText}"/>
+                <Label Content="{Binding ErrorMessage}" Style="{DynamicResource ErrorLabelTextDetail}"/>
+            </StackPanel>
+
+            <Button Content="ENVIAR" Width="111" Height="25" Margin="0,15,0,0" Style="{DynamicResource MainActionButtonStyle}" VerticalAlignment="Top" HorizontalAlignment="Left" Command="{Binding SendDemand}"/>
+        </StackPanel>
+    </Grid>
+</base:ViewBaseControl>

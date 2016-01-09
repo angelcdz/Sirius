@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:apn="http://canonico.cielo.com.br/administracaorecursosfinanceiros/moeda/v1" xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Endereco.xsd" />
+  <include schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Contato.xsd" />
+  <include schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=DadosBancarios.xsd" />
+  <include schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Proprietario.xsd" />
+  <include schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Produto.xsd" />
+  <include schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=SituacaoFuncionamentoCliente.xsd" />
+  <import schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=Moeda.xsd" namespace="http://canonico.cielo.com.br/administracaorecursosfinanceiros/moeda/v1" />
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa um
+			estabelecimento comercial Versao: 1.0 Autor: Luis Moraes
+
+			Historico de
+			revisao:
+			1.0 31-03-2014 Criacao do xsd
+			1.1 18-06-2014 RevisÃ£o dos elementos e preenchimento da documentaÃ§Ã£o</documentation>
+  </annotation>
+  <complexType name="Cliente">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+        <annotation>
+          <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroInscricaoEstadual" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero da inscricao estadual do cliente</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dataAberturaCliente" nillable="true" type="date">
+        <annotation>
+          <documentation>Data na qual o cliente foi aberto na cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoCadeia" nillable="true" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoPOS" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorCessao" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoComplementoRamoAtividade" nillable="true" type="string">
+        <annotation>
+          <documentation>Descricao complementar definido pelas bandeiras Visa
+						e Mastercard ou pela Cielo para qualificar ainda mais o ramo de
+						atividade do Cliente.para classificar o ramo de negocio dos seus
+						clientes.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorCartaCircularizacao" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorAntecipacaoAutomatica" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="nomeEnderecoSite" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorAntecipacaoSecuritizacao" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="3" name="dadosProprietarioCliente" nillable="true" type="cds:Proprietario">
+        <annotation>
+          <documentation>Informacoes do proprietario da empresa pessoa
+						juridica Cliente da Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeCliente" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome do cliente da Cielo que seja pessoa fisica</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosProdutoCliente" nillable="true" type="cds:Produtos">
+        <annotation>
+          <documentation>Produtos</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoTipoGarantia" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="nomeFantasia" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome fantasia do cliente pessoa juridica</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosContatoCliente" nillable="true" type="cds:Contato" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorEcommerce" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="unbounded" name="codigoMoeda" nillable="true" type="apn:Codigo" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorMultiBandeira" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="codigoPCT" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorSecuratizacao" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorTrava" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorMoto" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosBancarioCliente" nillable="true" type="cds:DadosBancarios" />
+      <element minOccurs="0" maxOccurs="1" name="dadosProprietarioMobile" nillable="true" type="cds:Proprietario" />
+      <element minOccurs="0" maxOccurs="1" name="percentualAntecipacao" nillable="true" type="double" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoLimite" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorVisaVale" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorJuridico" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="valorTarifaAgendamento" nillable="true" type="double" />
+      <element minOccurs="0" maxOccurs="1" name="quantidadePOS" nillable="true" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorSaldoConsolidado" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="codigoRamoAtividade" nillable="true" type="string">
+        <annotation>
+          <documentation>Codigo definido pelas bandeiras Visa e Mastercard
+						para identificar um ramo de atividade Tambem conhecido como MCC,
+						ele e adotado pela Cielo e por todos os adquirentes e emissores do
+						mundo para classificar o ramo de negocio dos seus clientes.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoBandeira" nillable="true" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="codigoSegmento" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoECAssociada" nillable="true" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="nomeRazaoSocial" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome da razao social do Cliente Pessoa Juridica</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroCNPJ" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do CNPJ do Cliente pessoa juridica</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorCadeia" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorTransmissao" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="codigoTipoPagamento" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="dadosEnderecoFisicoCliente" nillable="true" type="cds:Endereco" />
+      <element minOccurs="0" maxOccurs="1" name="descricaoRamoAtividade" nillable="true" type="string">
+        <annotation>
+          <documentation>Descricao definido pelas bandeiras Visa e Mastercard
+						para identificar um ramo de atividade.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorRecebimentoSMS" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="dadosEnderecoCorrespondenciaCliente" nillable="true" type="cds:Endereco" />
+      <element minOccurs="0" maxOccurs="1" name="codigoCategoriaAntecipacao" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoAluguelPOS" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoPeriodicidadeAntecipacaoAutomatica" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoECPrincipal" nillable="true" type="long" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorParcelado" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorMobile" nillable="true" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="numeroCPF" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do CPF do cliente Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoTipoPessoa" nillable="true" type="string">
+        <annotation>
+          <documentation>Codigo adotado pelo sistema STAR para identificar o
+						tipo de pessoa (fi­sica ou juri­dica) do cliente da Cielo.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="codigoClasseFaturamento" nillable="true" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="codigoClienteAMEX" nillable="true" type="string">
+        <annotation>
+          <documentation>Codigo adotado pela American Express para
+						identificar o seu cliente que tambem e cliente da Cielo.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosSituacaoFuncionamentoCliente" nillable="true" type="cds:SituacaoFuncionamentoCliente" />
+      <element minOccurs="0" maxOccurs="1" name="dataUltimaAlteracao" nillable="true" type="date" />
+      <element minOccurs="0" maxOccurs="1" name="dadosContatoEnderecoCorrespondencia" nillable="true" type="cds:Contato" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorPiloto" nillable="true" type="boolean">
+        <annotation>
+          <documentation>Informacao de negocios necessaria para identificar
+						se o cliente aceitou ser elegivel a ingressar em projetoas piloto.
+						Esta informacao e gerada atraves de contrato diretamente com o
+						cliente, e por isso esta sendo adicionada ao canonico.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosContatoAdicional" nillable="true" type="cds:Contato">
+        <annotation>
+          <documentation>Informacoes do contato adicional do cliente.
+						Nao esta vinculado a nenhum dos contatos anteriormente adicionados,
+						podendo ser apenas um contato sem vinculo direto a um endereco.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosEnderecoContrato" nillable="true" type="cds:Endereco">
+        <annotation>
+          <documentation>Informacaoes de endereco pertencentes ao contrato do
+						cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosContatoContrato" nillable="true" type="cds:Contato">
+        <annotation>
+          <documentation>Informacoes de contato referenciadas no contrato</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeSituacaoAtividadeCliente" nillable="true" type="string">
+        <annotation>
+          <documentation>O nome da situação de atividade do cliente
+						identifica a situação atual do estabelecimento quanto a captura de
+						transações na máquina da Cielo. Exemplos de situação: EC Ativo (A)
+						EC Inativo até um ano (I) Inativo ha um ano ou mais (Y)</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorTravaARV" nillable="true" type="boolean">
+        <annotation>
+          <documentation>Indica se estabelecimento comercial possui permissao para aderir produto ARV</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosEnderecoSuprimento" nillable="true" type="cds:Endereco">
+        <annotation>
+          <documentation>Endereco utilizado para entrega dos suprimentos ao cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeTipoCadeia" nillable="true" type="string">
+        <annotation>
+          <documentation>identifica o tipo de cadeia quanto a centralização: CENTRALIZADA, DESCENTRALIZADA ou INDIVIDUAL.</documentation>
+        </annotation>
+      </element>
+      <element name="dadosContatoContrato" type="cds:Contato">
+        <annotation>
+          <documentation>Informacoes de contato referenciadas no contrato</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeSituacaoAtivacaoCliente" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome da situação de ativação do cliente durante o ciclo de vida do cliente na Cielo, ou seja, reflete a situação do cliente desde o início da afiliação até o encerramento do relacionamento com a Cielo.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosContatoSMSCliente" nillable="true" type="cds:Contato">
+        <annotation>
+          <documentation>Dados de contato do cliente para envio de SMS.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

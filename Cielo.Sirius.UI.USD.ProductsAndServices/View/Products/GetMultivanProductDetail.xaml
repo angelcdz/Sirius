@@ -1,0 +1,30 @@
+﻿<base:ViewBaseControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.GetMultivanProductDetail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:controls="clr-namespace:Cielo.Sirius.Foundation.USD.Controls;assembly=Cielo.Sirius.Foundation.USD"
+      xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD"
+      Style="{DynamicResource ViewBaseControlStyle}">
+
+    <base:ViewBaseControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </base:ViewBaseControl.Resources>
+
+    <StackPanel Visibility="{Binding ApresentarMultivan, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <TextBlock Text="Multivan" Style="{DynamicResource ScreenSubtitle}"/>
+
+        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" 
+					          Margin="0,13,0,24" MaxHeight="120" Width="408"
+					          ItemsSource="{Binding MultivanProductDetail}"                  
+					          Style="{DynamicResource DataGridDefault}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="NOME DA EMPRESA" Width="3*" Binding="{Binding NomeEmpresa}"/>
+                <DataGridTextColumn Header="NÚMERO DE CADASTRO" Width="4*" Binding="{Binding NumeroCadastroEmpresa}"/>                
+                <DataGridTextColumn Header="INÍCIO DA VIGÊNCIA" Width="3*" Binding="{Binding InicioVigencia}"/>
+                <DataGridTextColumn Header="FIM DA VIGÊNCIA" Width="3*" Binding="{Binding FimVigencia}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+
+</base:ViewBaseControl>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\Cielo.Sirius.Integration.OutboundService</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Avanade.SmartApps.Communication.dll">
+      <publishTime>07/31/2015 08:18:47</publishTime>
+    </File>
+    <File Include="bin/Avanade.SmartApps.Communication.pdb">
+      <publishTime>07/31/2015 08:18:47</publishTime>
+    </File>
+    <File Include="bin/Avanade.SmartApps.Configuration.dll">
+      <publishTime>07/31/2015 08:18:45</publishTime>
+    </File>
+    <File Include="bin/Avanade.SmartApps.Configuration.pdb">
+      <publishTime>07/31/2015 08:18:45</publishTime>
+    </File>
+    <File Include="bin/Cielo.CredentialManager.dll">
+      <publishTime>07/14/2015 08:59:18</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.Business.Products.dll">
+      <publishTime>07/31/2015 11:29:12</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.Business.Products.pdb">
+      <publishTime>07/31/2015 11:29:12</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.Contracts.Products.dll">
+      <publishTime>07/31/2015 11:28:57</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.Contracts.Products.pdb">
+      <publishTime>07/31/2015 11:28:57</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.DAO.Products.dll">
+      <publishTime>07/31/2015 11:29:09</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.DAO.Products.pdb">
+      <publishTime>07/31/2015 11:29:09</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.Foundation.dll">
+      <publishTime>07/31/2015 08:18:46</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.Foundation.pdb">
+      <publishTime>07/31/2015 08:18:46</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.Integration.OutboundService.dll">
+      <publishTime>07/31/2015 11:42:25</publishTime>
+    </File>
+    <File Include="bin/Cielo.Sirius.Integration.OutboundService.pdb">
+      <publishTime>07/31/2015 11:42:25</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Xrm.Client.dll">
+      <publishTime>07/31/2015 08:17:29</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Xrm.Sdk.dll">
+      <publishTime>07/14/2015 08:59:20</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>07/29/2015 16:08:38</publishTime>
+    </File>
+    <File Include="ClassDiagrams/ProdutosService.cd">
+      <publishTime>07/14/2015 08:58:35</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/14/2015 08:58:35</publishTime>
+    </File>
+    <File Include="ProdutosService.svc">
+      <publishTime>07/14/2015 08:58:35</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/31/2015 11:48:41</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

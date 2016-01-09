@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Contato.xsd" />
+  <complexType name="Banco">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="codigoBanco" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero que identifica o banco dentro do sistema de compensacao nacional controlado pelo BACEN.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeBanco" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome que identifica o banco dentro do sistema de compensacao nacional controlado pelo BACEN.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="indicadorParceiro" nillable="true" type="boolean">
+        <annotation>
+          <documentation>Indica se o Banco é parceiro ou não da Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosContatoPrincipal" nillable="true" type="cds:Contato">
+        <annotation>
+          <documentation>Dados do contato principal com a instituicao bancaria.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="dadosContatoAdicional" nillable="true" type="cds:Contato">
+        <annotation>
+          <documentation>Dados do contato adicional com a instituicao bancaria.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

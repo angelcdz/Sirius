@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.Products" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.Products" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Cielo.Sirius.Integration.OutboundService/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:import schemaLocation="http://localhost/Cielo.Sirius.Integration.OutboundService/ProdutosService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GetNonEnabledServiceRequestTypesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceGroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNonEnabledServiceRequestTypesRequest" nillable="true" type="tns:GetNonEnabledServiceRequestTypesRequest" />
+  <xs:complexType name="GetNonEnabledServiceRequestTypesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceRequestTypes" nillable="true" type="tns:ArrayOfGetNonEnabledServiceRequestTypesDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNonEnabledServiceRequestTypesResponse" nillable="true" type="tns:GetNonEnabledServiceRequestTypesResponse" />
+  <xs:complexType name="ArrayOfGetNonEnabledServiceRequestTypesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetNonEnabledServiceRequestTypesDTO" nillable="true" type="tns:GetNonEnabledServiceRequestTypesDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetNonEnabledServiceRequestTypesDTO" nillable="true" type="tns:ArrayOfGetNonEnabledServiceRequestTypesDTO" />
+  <xs:complexType name="GetNonEnabledServiceRequestTypesDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="IntegrationRequestCode" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNonEnabledServiceRequestTypesDTO" nillable="true" type="tns:GetNonEnabledServiceRequestTypesDTO" />
+  <xs:complexType name="GetNonEligibleServiceRequestTypesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q4:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceGroup" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNonEligibleServiceRequestTypesRequest" nillable="true" type="tns:GetNonEligibleServiceRequestTypesRequest" />
+  <xs:complexType name="GetNonEligibleServiceRequestTypesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q5:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceRequestTypes" nillable="true" type="tns:ArrayOfGetNonEligibleServiceRequestTypesDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNonEligibleServiceRequestTypesResponse" nillable="true" type="tns:GetNonEligibleServiceRequestTypesResponse" />
+  <xs:complexType name="ArrayOfGetNonEligibleServiceRequestTypesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetNonEligibleServiceRequestTypesDTO" nillable="true" type="tns:GetNonEligibleServiceRequestTypesDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetNonEligibleServiceRequestTypesDTO" nillable="true" type="tns:ArrayOfGetNonEligibleServiceRequestTypesDTO" />
+  <xs:complexType name="GetNonEligibleServiceRequestTypesDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q6:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="IntegrationRequestCode" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetNonEligibleServiceRequestTypesDTO" nillable="true" type="tns:GetNonEligibleServiceRequestTypesDTO" />
+</xs:schema>

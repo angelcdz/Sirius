@@ -1,0 +1,43 @@
+﻿<base:ViewBaseControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.EnabledServiceDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:Cielo.Sirius.Foundation.USD.Controls;assembly=Cielo.Sirius.Foundation.USD"
+             xmlns:converters="clr-namespace:Cielo.Sirius.Foundation.USD.Converters;assembly=Cielo.Sirius.Foundation.USD" 
+             xmlns:view="clr-namespace:Cielo.Sirius.UI.USD.ProductsAndServices.View"
+             xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD"
+             Width="408" MinHeight="170">
+    <UserControl.Resources>
+        <converters:StringNullOrEmptyToVisibilityConverter x:Key="StringNullOrEmptyToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <TextBlock Margin="0,10,0,0" Text="DETALHES DO SERVIÇO" Style="{DynamicResource ScreenSubtitle}"/>
+        <Grid x:Name="dgProductDetails"  Margin="0,32,0,0" Width="408" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="151"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                <TextBlock Text="Serviço" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="Status" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="Descrição" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="Data de Habilitação" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="Utilizado nos Últimos 30 Dias" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="Vantagens" Style="{DynamicResource DetailProductText}" Margin="0,0,0,5" 
+                                       Visibility="{Binding Vantanges, Converter={StaticResource StringNullOrEmptyToVisibilityConverter}}"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Top">
+                <TextBlock Text="{Binding Service.NomeServico}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="Habilitado" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="{Binding Service.DescricaoServico}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="{Binding Service.DataHabilitacaoServico, StringFormat='dd/MM/yyyy'}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="{Binding IndicadorVendaUltimoMes}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"/>
+                <TextBlock Text="{Binding Vantanges}" Style="{DynamicResource DetailDescriptionProductText}" Margin="0,0,0,5"
+                                       Visibility="{Binding Vantanges, Converter={StaticResource StringNullOrEmptyToVisibilityConverter}}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</base:ViewBaseControl>

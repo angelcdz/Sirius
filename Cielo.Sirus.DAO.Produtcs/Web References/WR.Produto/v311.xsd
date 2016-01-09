@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:cds="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://canonico.cielo.com.br/cadastro/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+  <annotation>
+    <documentation>Entidade do modelo canonico que representa os dados de contato de um representante do Cliente.
+			Versao: 1.0
+			Autor: Luis Moraes
+
+			Historico de revisao:
+			1.0 31-03-2014 Criacao do xsd
+		   1.1 18-06-2014 Revisao dos nomes dos elementos e inclusao da documentacao</documentation>
+  </annotation>
+  <complexType name="Contato">
+    <annotation>
+      <documentation>Entidade canonica do corporativo que representa a pessoa escolhida como contato entre o Cliente e a Cielo. Ele e escolhido para ser o representante do Cliente que a Cielo utilizara durante o relacionamento entre as partes.</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="nomeContato" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome escolhido pelo Cliente da Cielo para ser o ponto de contato entre as partes.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroDDITelefoneContato" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do DDI do telefone do contato do cliente com a Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroDDDTelefoneContato" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do DDD do telefone do contato do cliente com a Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroTelefoneContato" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do telefone do contato do cliente com a Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroDDIFax" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do DDI do fax do contato do cliente com a Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroFax" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do Fax do contato do cliente com a Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="numeroDDDFax" nillable="true" type="string">
+        <annotation>
+          <documentation>Numero do DDD do fax do contato do cliente com a Cielo</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="nomeEmailContato" nillable="true" type="string">
+        <annotation>
+          <documentation>Nome do endereco de email do contato do cliente com a Cielo</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="Contatos">
+    <annotation>
+      <documentation>Ocorrencias da entidade canonica Contato</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="contato" nillable="true" type="cds:Contato" />
+    </sequence>
+  </complexType>
+</schema>

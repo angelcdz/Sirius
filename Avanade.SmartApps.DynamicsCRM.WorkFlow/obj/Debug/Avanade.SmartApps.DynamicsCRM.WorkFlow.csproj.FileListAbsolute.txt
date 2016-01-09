@@ -1,0 +1,4 @@
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.DynamicsCRM.WorkFlow\bin\Debug\Avanade.SmartApps.DynamicsCRM.WorkFlow.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.DynamicsCRM.WorkFlow\bin\Debug\Avanade.SmartApps.DynamicsCRM.WorkFlow.pdb
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.DynamicsCRM.WorkFlow\obj\Debug\Avanade.SmartApps.DynamicsCRM.WorkFlow.dll
+C:\Referencia\Cielo.Sirius\Avanade.SmartApps.DynamicsCRM.WorkFlow\obj\Debug\Avanade.SmartApps.DynamicsCRM.WorkFlow.pdb

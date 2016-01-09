@@ -1,0 +1,6 @@
+﻿<base:ViewBaseControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.TestControls.BackControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:base="clr-namespace:Cielo.Sirius.Foundation.USD;assembly=Cielo.Sirius.Foundation.USD">
+    <Button Height="20" Width="80" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5" Command="{Binding Back}">Back</Button>
+</base:ViewBaseControl>

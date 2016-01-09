@@ -1,0 +1,295 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.UI.USD.ProductsAndServices", "Cielo.Sirius.UI.USD.ProductsAndServices\Cielo.Sirius.UI.USD.ProductsAndServices.csproj", "{90CAD69A-4AFE-410A-BD0A-CF2A31C19245}"
+	ProjectSection(ProjectDependencies) = postProject
+		{07952D22-C49B-4973-8F4A-0CB5437E9C79} = {07952D22-C49B-4973-8F4A-0CB5437E9C79}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps.UI.USD", "Cielo.Sirius.Foundation.USD\Avanade.SmartApps.UI.USD.csproj", "{12916597-635D-4015-BB9A-30CA29472F16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.UI.USD.Style", "Cielo.Sirius.UI.USD.Style\Cielo.Sirius.UI.USD.Style.csproj", "{C35BE091-D052-4641-BB62-01A436BB44DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps", "Cielo.Sirius.Foundation\Avanade.SmartApps.csproj", "{0995C250-A3BD-4973-82E7-A43F8B23493A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.Contracts.Products", "Cielo.Sirius.Contracts.Product\Cielo.Sirius.Contracts.Products.csproj", "{DF68DD91-542F-4A49-88A7-E23D8BBC8405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.Business.Products", "Cielo.Sirius.BusinessLogic.Product\Cielo.Sirius.Business.Products.csproj", "{F235EE7A-CE42-401E-BA21-BCF058E802BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.Integration.OutboundService", "Cielo.Sirius.Integration.OutboundService\Cielo.Sirius.Integration.OutboundService.csproj", "{07952D22-C49B-4973-8F4A-0CB5437E9C79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Unit Tests", "4. Unit Tests", "{D0FBA502-28A1-4026-BB0E-FE20A25A75FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Assets", "Solution Assets", "{900E6B23-019A-42B1-92ED-D51E336C14A8}"
+	ProjectSection(SolutionItems) = preProject
+		build.cmd = build.cmd
+		Solution Assets\Cielo.CredentialManager.dll = Solution Assets\Cielo.CredentialManager.dll
+		Cielo.Sirius.Applications.snk = Cielo.Sirius.Applications.snk
+		Solution Assets\log4net.dll = Solution Assets\log4net.dll
+		Solution Assets\Microsoft.Crm.Sdk.Proxy.dll = Solution Assets\Microsoft.Crm.Sdk.Proxy.dll
+		Solution Assets\Microsoft.Web.Administration.dll = Solution Assets\Microsoft.Web.Administration.dll
+		Solution Assets\Microsoft.Xrm.Client.dll = Solution Assets\Microsoft.Xrm.Client.dll
+		Solution Assets\Microsoft.Xrm.Portal.dll = Solution Assets\Microsoft.Xrm.Portal.dll
+		Solution Assets\Microsoft.Xrm.Sdk.dll = Solution Assets\Microsoft.Xrm.Sdk.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.DAO.Products", "Cielo.Sirus.DAO.Produtcs\Cielo.Sirius.DAO.Products.csproj", "{9095975A-9F8A-4F83-B3E4-7D8B7433575A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Application", "3. Application", "{DA5AB8DC-7F84-40DE-87F4-45FA74EF2B19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Server-Side", "2. Server-Side", "{530F750B-B6DC-4A6A-B0A4-5A6916CA483E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockGenerator", "MockGenerator\MockGenerator.csproj", "{24F056E9-3083-4FF9-9895-C967A98D4910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.Business.UnitTest", "Cielo.Sirius.Business.UnitTest\Cielo.Sirius.Business.UnitTest.csproj", "{7F47E14D-8552-4F64-A4AE-A99A1D5BEE41}"
+	ProjectSection(ProjectDependencies) = postProject
+		{07952D22-C49B-4973-8F4A-0CB5437E9C79} = {07952D22-C49B-4973-8F4A-0CB5437E9C79}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Avanade.SmartApps", "5. Avanade.SmartApps", "{F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps.Communication", "Avanade.SmartApps.Foundation.Communication\Avanade.SmartApps.Communication.csproj", "{5B9DDBAB-1CA9-4807-82B0-856459CB8B53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Core", "1. Core", "{3152582D-3082-46C6-A009-1DC1BD1286B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.DAO.Products.UnitTest", "Cielo.Sirius.DAO.Products.UnitTest\Cielo.Sirius.DAO.Products.UnitTest.csproj", "{97F98ECA-D77D-4266-BF6D-520BAAC087E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps.Tests", "Avanade.SmartApps.Tests\Avanade.SmartApps.Tests.csproj", "{0E0742B8-C59D-415E-9B90-7C97B1E24944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps.Communication.Tests", "Avanade.SmartApps.Communication.Tests\Avanade.SmartApps.Communication.Tests.csproj", "{A8DF964B-3A93-4A2B-B63C-29A34BE140C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps.DynamicsCRM.Plugin", "Avanade.SmartApps.DynamicsCRM.Plugin\Avanade.SmartApps.DynamicsCRM.Plugin.csproj", "{902501E3-F8CC-443F-AAA6-E0F0E7481BBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.DynamicsCRM.Plugins", "Cielo.Sirius.DynamicsCRM.Plugins\Cielo.Sirius.DynamicsCRM.Plugins.csproj", "{48990D6B-F881-464A-A526-43FFAA3F664D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.DynamicsCRM.WorkFlow", "Cielo.Sirius.DynamicsCRM.WorkFlow\Cielo.Sirius.DynamicsCRM.WorkFlow.csproj", "{CB68D272-701B-482E-96EB-8E933AB6F1D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps.DynamicsCRM.WorkFlow", "Avanade.SmartApps.DynamicsCRM.WorkFlow\Avanade.SmartApps.DynamicsCRM.WorkFlow.csproj", "{230698DF-3BB8-4564-A5F2-DD3462958875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps.Logger", "Avanade.SmartApps.Logger\Avanade.SmartApps.Logger.csproj", "{ADAD64B4-6A9A-4C5B-80F9-FFD50577E06E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avanade.SmartApps.Logger.Test", "Avanade.SmartApps.Logger.Test\Avanade.SmartApps.Logger.Test.csproj", "{4787B4C5-176E-45F3-835B-E01FF969BD8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.DAO.Products.MockService.UnitTest", "Cielo.Sirius.DAO.Products.MockService.UnitTest\Cielo.Sirius.DAO.Products.MockService.UnitTest.csproj", "{AD0606FB-FEE4-4C04-AF2E-4B252BC785C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cielo.Sirius.DAO.Products.AccessServiceError.UnitTest", "Cielo.Sirius.DAO.Products.AccessServiceError.UnitTest\Cielo.Sirius.DAO.Products.AccessServiceError.UnitTest.csproj", "{85E75C76-6F38-43E4-8E80-E4582B21C1E1}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 23
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs13.dcs.avanade.com/tfs/ciel
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Cielo.Sirius.Contracts.Product\\Cielo.Sirius.Contracts.Products.csproj
+		SccProjectTopLevelParentUniqueName1 = Cielo.Sirius.sln
+		SccProjectName1 = Cielo.Sirius.Contracts.Product
+		SccLocalPath1 = Cielo.Sirius.Contracts.Product
+		SccProjectUniqueName2 = Cielo.Sirius.UI.USD.Style\\Cielo.Sirius.UI.USD.Style.csproj
+		SccProjectTopLevelParentUniqueName2 = Cielo.Sirius.sln
+		SccProjectName2 = Cielo.Sirius.UI.USD.Style
+		SccLocalPath2 = Cielo.Sirius.UI.USD.Style
+		SccProjectUniqueName3 = Cielo.Sirus.DAO.Produtcs\\Cielo.Sirius.DAO.Products.csproj
+		SccProjectTopLevelParentUniqueName3 = Cielo.Sirius.sln
+		SccProjectName3 = Cielo.Sirus.DAO.Produtcs
+		SccLocalPath3 = Cielo.Sirus.DAO.Produtcs
+		SccProjectUniqueName4 = Cielo.Sirius.BusinessLogic.Product\\Cielo.Sirius.Business.Products.csproj
+		SccProjectTopLevelParentUniqueName4 = Cielo.Sirius.sln
+		SccProjectName4 = Cielo.Sirius.BusinessLogic.Product
+		SccLocalPath4 = Cielo.Sirius.BusinessLogic.Product
+		SccProjectUniqueName5 = Cielo.Sirius.Integration.OutboundService\\Cielo.Sirius.Integration.OutboundService.csproj
+		SccProjectTopLevelParentUniqueName5 = Cielo.Sirius.sln
+		SccProjectName5 = Cielo.Sirius.Integration.OutboundService
+		SccLocalPath5 = Cielo.Sirius.Integration.OutboundService
+		SccProjectUniqueName6 = Cielo.Sirius.UI.USD.ProductsAndServices\\Cielo.Sirius.UI.USD.ProductsAndServices.csproj
+		SccProjectTopLevelParentUniqueName6 = Cielo.Sirius.sln
+		SccProjectName6 = Cielo.Sirius.UI.USD.ProductsAndServices
+		SccLocalPath6 = Cielo.Sirius.UI.USD.ProductsAndServices
+		SccProjectUniqueName7 = MockGenerator\\MockGenerator.csproj
+		SccProjectTopLevelParentUniqueName7 = Cielo.Sirius.sln
+		SccProjectName7 = MockGenerator
+		SccLocalPath7 = MockGenerator
+		SccProjectUniqueName8 = Cielo.Sirius.Business.UnitTest\\Cielo.Sirius.Business.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName8 = Cielo.Sirius.sln
+		SccProjectName8 = Cielo.Sirius.Business.UnitTest
+		SccLocalPath8 = Cielo.Sirius.Business.UnitTest
+		SccProjectUniqueName9 = Cielo.Sirius.Foundation\\Avanade.SmartApps.csproj
+		SccProjectTopLevelParentUniqueName9 = Cielo.Sirius.sln
+		SccProjectName9 = Cielo.Sirius.Foundation
+		SccLocalPath9 = Cielo.Sirius.Foundation
+		SccProjectUniqueName10 = Avanade.SmartApps.Foundation.Communication\\Avanade.SmartApps.Communication.csproj
+		SccProjectTopLevelParentUniqueName10 = Cielo.Sirius.sln
+		SccProjectName10 = Avanade.SmartApps.Foundation.Communication
+		SccLocalPath10 = Avanade.SmartApps.Foundation.Communication
+		SccProjectUniqueName11 = Cielo.Sirius.Foundation.USD\\Avanade.SmartApps.UI.USD.csproj
+		SccProjectTopLevelParentUniqueName11 = Cielo.Sirius.sln
+		SccProjectName11 = Cielo.Sirius.Foundation.USD
+		SccLocalPath11 = Cielo.Sirius.Foundation.USD
+		SccProjectUniqueName12 = Cielo.Sirius.DAO.Products.UnitTest\\Cielo.Sirius.DAO.Products.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName12 = Cielo.Sirius.sln
+		SccProjectName12 = Cielo.Sirius.DAO.Products.UnitTest
+		SccLocalPath12 = Cielo.Sirius.DAO.Products.UnitTest
+		SccProjectUniqueName13 = Avanade.SmartApps.Tests\\Avanade.SmartApps.Tests.csproj
+		SccProjectTopLevelParentUniqueName13 = Cielo.Sirius.sln
+		SccProjectName13 = Avanade.SmartApps.Tests
+		SccLocalPath13 = Avanade.SmartApps.Tests
+		SccProjectUniqueName14 = Avanade.SmartApps.Communication.Tests\\Avanade.SmartApps.Communication.Tests.csproj
+		SccProjectTopLevelParentUniqueName14 = Cielo.Sirius.sln
+		SccProjectName14 = Avanade.SmartApps.Communication.Tests
+		SccLocalPath14 = Avanade.SmartApps.Communication.Tests
+		SccProjectUniqueName15 = Cielo.Sirius.DynamicsCRM.Plugins\\Cielo.Sirius.DynamicsCRM.Plugins.csproj
+		SccProjectTopLevelParentUniqueName15 = Cielo.Sirius.sln
+		SccProjectName15 = Cielo.Sirius.DynamicsCRM.Plugins
+		SccLocalPath15 = Cielo.Sirius.DynamicsCRM.Plugins
+		SccProjectUniqueName16 = Cielo.Sirius.DynamicsCRM.WorkFlow\\Cielo.Sirius.DynamicsCRM.WorkFlow.csproj
+		SccProjectTopLevelParentUniqueName16 = Cielo.Sirius.sln
+		SccProjectName16 = Cielo.Sirius.DynamicsCRM.WorkFlow
+		SccLocalPath16 = Cielo.Sirius.DynamicsCRM.WorkFlow
+		SccProjectUniqueName17 = Avanade.SmartApps.DynamicsCRM.WorkFlow\\Avanade.SmartApps.DynamicsCRM.WorkFlow.csproj
+		SccProjectTopLevelParentUniqueName17 = Cielo.Sirius.sln
+		SccProjectName17 = Avanade.SmartApps.DynamicsCRM.WorkFlow
+		SccLocalPath17 = Avanade.SmartApps.DynamicsCRM.WorkFlow
+		SccProjectUniqueName18 = Avanade.SmartApps.DynamicsCRM.Plugin\\Avanade.SmartApps.DynamicsCRM.Plugin.csproj
+		SccProjectTopLevelParentUniqueName18 = Cielo.Sirius.sln
+		SccProjectName18 = Avanade.SmartApps.DynamicsCRM.Plugin
+		SccLocalPath18 = Avanade.SmartApps.DynamicsCRM.Plugin
+		SccProjectUniqueName19 = Cielo.Sirius.DAO.Products.MockService.UnitTest\\Cielo.Sirius.DAO.Products.MockService.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName19 = Cielo.Sirius.sln
+		SccProjectName19 = Cielo.Sirius.DAO.Products.MockService.UnitTest
+		SccLocalPath19 = Cielo.Sirius.DAO.Products.MockService.UnitTest
+		SccProjectUniqueName20 = Cielo.Sirius.DAO.Products.AccessServiceError.UnitTest\\Cielo.Sirius.DAO.Products.AccessServiceError.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName20 = Cielo.Sirius.sln
+		SccProjectName20 = Cielo.Sirius.DAO.Products.AccessServiceError.UnitTest
+		SccLocalPath20 = Cielo.Sirius.DAO.Products.AccessServiceError.UnitTest
+		SccProjectUniqueName21 = Avanade.SmartApps.Logger\\Avanade.SmartApps.Logger.csproj
+		SccProjectTopLevelParentUniqueName21 = Cielo.Sirius.sln
+		SccProjectName21 = Avanade.SmartApps.Logger
+		SccLocalPath21 = Avanade.SmartApps.Logger
+		SccProjectUniqueName22 = Avanade.SmartApps.Logger.Test\\Avanade.SmartApps.Logger.Test.csproj
+		SccProjectTopLevelParentUniqueName22 = Cielo.Sirius.sln
+		SccProjectName22 = Avanade.SmartApps.Logger.Test
+		SccLocalPath22 = Avanade.SmartApps.Logger.Test
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90CAD69A-4AFE-410A-BD0A-CF2A31C19245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CAD69A-4AFE-410A-BD0A-CF2A31C19245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CAD69A-4AFE-410A-BD0A-CF2A31C19245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CAD69A-4AFE-410A-BD0A-CF2A31C19245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12916597-635D-4015-BB9A-30CA29472F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12916597-635D-4015-BB9A-30CA29472F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12916597-635D-4015-BB9A-30CA29472F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12916597-635D-4015-BB9A-30CA29472F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35BE091-D052-4641-BB62-01A436BB44DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35BE091-D052-4641-BB62-01A436BB44DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35BE091-D052-4641-BB62-01A436BB44DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35BE091-D052-4641-BB62-01A436BB44DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0995C250-A3BD-4973-82E7-A43F8B23493A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0995C250-A3BD-4973-82E7-A43F8B23493A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0995C250-A3BD-4973-82E7-A43F8B23493A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0995C250-A3BD-4973-82E7-A43F8B23493A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF68DD91-542F-4A49-88A7-E23D8BBC8405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF68DD91-542F-4A49-88A7-E23D8BBC8405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF68DD91-542F-4A49-88A7-E23D8BBC8405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF68DD91-542F-4A49-88A7-E23D8BBC8405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F235EE7A-CE42-401E-BA21-BCF058E802BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F235EE7A-CE42-401E-BA21-BCF058E802BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F235EE7A-CE42-401E-BA21-BCF058E802BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F235EE7A-CE42-401E-BA21-BCF058E802BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07952D22-C49B-4973-8F4A-0CB5437E9C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07952D22-C49B-4973-8F4A-0CB5437E9C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07952D22-C49B-4973-8F4A-0CB5437E9C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07952D22-C49B-4973-8F4A-0CB5437E9C79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9095975A-9F8A-4F83-B3E4-7D8B7433575A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9095975A-9F8A-4F83-B3E4-7D8B7433575A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9095975A-9F8A-4F83-B3E4-7D8B7433575A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9095975A-9F8A-4F83-B3E4-7D8B7433575A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F056E9-3083-4FF9-9895-C967A98D4910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F056E9-3083-4FF9-9895-C967A98D4910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F056E9-3083-4FF9-9895-C967A98D4910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F056E9-3083-4FF9-9895-C967A98D4910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F47E14D-8552-4F64-A4AE-A99A1D5BEE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F47E14D-8552-4F64-A4AE-A99A1D5BEE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F47E14D-8552-4F64-A4AE-A99A1D5BEE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F47E14D-8552-4F64-A4AE-A99A1D5BEE41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9DDBAB-1CA9-4807-82B0-856459CB8B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9DDBAB-1CA9-4807-82B0-856459CB8B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9DDBAB-1CA9-4807-82B0-856459CB8B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9DDBAB-1CA9-4807-82B0-856459CB8B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97F98ECA-D77D-4266-BF6D-520BAAC087E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F98ECA-D77D-4266-BF6D-520BAAC087E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F98ECA-D77D-4266-BF6D-520BAAC087E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F98ECA-D77D-4266-BF6D-520BAAC087E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E0742B8-C59D-415E-9B90-7C97B1E24944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0742B8-C59D-415E-9B90-7C97B1E24944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0742B8-C59D-415E-9B90-7C97B1E24944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E0742B8-C59D-415E-9B90-7C97B1E24944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8DF964B-3A93-4A2B-B63C-29A34BE140C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DF964B-3A93-4A2B-B63C-29A34BE140C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DF964B-3A93-4A2B-B63C-29A34BE140C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DF964B-3A93-4A2B-B63C-29A34BE140C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{902501E3-F8CC-443F-AAA6-E0F0E7481BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{902501E3-F8CC-443F-AAA6-E0F0E7481BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{902501E3-F8CC-443F-AAA6-E0F0E7481BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{902501E3-F8CC-443F-AAA6-E0F0E7481BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48990D6B-F881-464A-A526-43FFAA3F664D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48990D6B-F881-464A-A526-43FFAA3F664D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48990D6B-F881-464A-A526-43FFAA3F664D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48990D6B-F881-464A-A526-43FFAA3F664D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB68D272-701B-482E-96EB-8E933AB6F1D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB68D272-701B-482E-96EB-8E933AB6F1D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB68D272-701B-482E-96EB-8E933AB6F1D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB68D272-701B-482E-96EB-8E933AB6F1D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230698DF-3BB8-4564-A5F2-DD3462958875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230698DF-3BB8-4564-A5F2-DD3462958875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230698DF-3BB8-4564-A5F2-DD3462958875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230698DF-3BB8-4564-A5F2-DD3462958875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADAD64B4-6A9A-4C5B-80F9-FFD50577E06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAD64B4-6A9A-4C5B-80F9-FFD50577E06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAD64B4-6A9A-4C5B-80F9-FFD50577E06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAD64B4-6A9A-4C5B-80F9-FFD50577E06E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4787B4C5-176E-45F3-835B-E01FF969BD8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4787B4C5-176E-45F3-835B-E01FF969BD8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4787B4C5-176E-45F3-835B-E01FF969BD8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4787B4C5-176E-45F3-835B-E01FF969BD8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD0606FB-FEE4-4C04-AF2E-4B252BC785C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD0606FB-FEE4-4C04-AF2E-4B252BC785C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD0606FB-FEE4-4C04-AF2E-4B252BC785C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD0606FB-FEE4-4C04-AF2E-4B252BC785C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E75C76-6F38-43E4-8E80-E4582B21C1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E75C76-6F38-43E4-8E80-E4582B21C1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E75C76-6F38-43E4-8E80-E4582B21C1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E75C76-6F38-43E4-8E80-E4582B21C1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{90CAD69A-4AFE-410A-BD0A-CF2A31C19245} = {DA5AB8DC-7F84-40DE-87F4-45FA74EF2B19}
+		{12916597-635D-4015-BB9A-30CA29472F16} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{C35BE091-D052-4641-BB62-01A436BB44DB} = {DA5AB8DC-7F84-40DE-87F4-45FA74EF2B19}
+		{0995C250-A3BD-4973-82E7-A43F8B23493A} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{DF68DD91-542F-4A49-88A7-E23D8BBC8405} = {3152582D-3082-46C6-A009-1DC1BD1286B3}
+		{F235EE7A-CE42-401E-BA21-BCF058E802BF} = {530F750B-B6DC-4A6A-B0A4-5A6916CA483E}
+		{07952D22-C49B-4973-8F4A-0CB5437E9C79} = {530F750B-B6DC-4A6A-B0A4-5A6916CA483E}
+		{9095975A-9F8A-4F83-B3E4-7D8B7433575A} = {530F750B-B6DC-4A6A-B0A4-5A6916CA483E}
+		{24F056E9-3083-4FF9-9895-C967A98D4910} = {D0FBA502-28A1-4026-BB0E-FE20A25A75FA}
+		{7F47E14D-8552-4F64-A4AE-A99A1D5BEE41} = {D0FBA502-28A1-4026-BB0E-FE20A25A75FA}
+		{5B9DDBAB-1CA9-4807-82B0-856459CB8B53} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{97F98ECA-D77D-4266-BF6D-520BAAC087E6} = {D0FBA502-28A1-4026-BB0E-FE20A25A75FA}
+		{0E0742B8-C59D-415E-9B90-7C97B1E24944} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{A8DF964B-3A93-4A2B-B63C-29A34BE140C7} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{902501E3-F8CC-443F-AAA6-E0F0E7481BBF} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{48990D6B-F881-464A-A526-43FFAA3F664D} = {530F750B-B6DC-4A6A-B0A4-5A6916CA483E}
+		{CB68D272-701B-482E-96EB-8E933AB6F1D6} = {530F750B-B6DC-4A6A-B0A4-5A6916CA483E}
+		{230698DF-3BB8-4564-A5F2-DD3462958875} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{ADAD64B4-6A9A-4C5B-80F9-FFD50577E06E} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{4787B4C5-176E-45F3-835B-E01FF969BD8E} = {F7B32539-A8EE-450B-A5C6-78D5ACDE0DD7}
+		{AD0606FB-FEE4-4C04-AF2E-4B252BC785C9} = {D0FBA502-28A1-4026-BB0E-FE20A25A75FA}
+		{85E75C76-6F38-43E4-8E80-E4582B21C1E1} = {D0FBA502-28A1-4026-BB0E-FE20A25A75FA}
+	EndGlobalSection
+EndGlobal

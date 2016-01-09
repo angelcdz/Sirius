@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:header="http://canonico.cielo.com.br/governancasoa/comum/v1" xmlns:tns="http://service.cielo.com.br/cadastro/cliente/cliente/v3/" xmlns:ass="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" xmlns:fault="http://canonico.cielo.com.br/comum/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:log="http://canonico.cielo.com.br/operacao/logistica/v1" name="ClienteServiceContract" targetNamespace="http://service.cielo.com.br/cadastro/cliente/cliente/v3/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Servico responsavel por encapsular a mensagens do SEC
+		no sistema SEC
+		Versao: 3.0
+		Autor: André Souza
+	
+		Historico de revisao:
+		3.0 11/03/2015 Criação do WSDL v3 adicionado CRM e URA.</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.cielo.com.br/cadastro/cliente/cliente/v3/">
+      <xsd:include schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=ClienteServiceSchema.xsd" />
+      <xsd:import schemaLocation="v3?WSDL&amp;interface=ClienteServiceSOAPBinding&amp;part=CieloSoapHeader.xsd" namespace="http://canonico.cielo.com.br/governancasoa/comum/v1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="cieloSoapHeader">
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="manterPrazoFlexivelResponse">
+    <wsdl:part name="parameters" element="tns:manterPrazoFlexivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarCadastroSiteResponse">
+    <wsdl:part name="parameters" element="tns:consultarCadastroSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDadosCadastraisClienteRequest">
+    <wsdl:part name="parameters" element="tns:consultarDadosCadastraisClienteRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarFiliaisRequest">
+    <wsdl:part name="parameters" element="tns:consultarFiliaisRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarDomicilioBancarioResponse">
+    <wsdl:part name="parameters" element="tns:consultarDomicilioBancarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="alterarDadosCadastraisClienteResponse">
+    <wsdl:part name="parameters" element="tns:alterarDadosCadastraisClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="alterarTerceiroTelefoneClienteRequest">
+    <wsdl:part name="parameters" element="tns:alterarTerceiroTelefoneClienteRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarDadosCadastraisClienteResponse">
+    <wsdl:part name="parameters" element="tns:consultarDadosCadastraisClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarFiliaisResponse">
+    <wsdl:part name="parameters" element="tns:consultarFiliaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarDomicilioBancarioTruncadoRequest">
+    <wsdl:part name="parameters" element="tns:consultarDomicilioBancarioTruncadoRequest" />
+  </wsdl:message>
+  <wsdl:message name="alterarTerceiroTelefoneClienteResponse">
+    <wsdl:part name="parameters" element="tns:alterarTerceiroTelefoneClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarPrazosTaxasPrazoFlexivelRequest">
+    <wsdl:part name="parameters" element="tns:consultarPrazosTaxasPrazoFlexivelRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="manterPrazoFlexivelRequest">
+    <wsdl:part name="parameters" element="tns:manterPrazoFlexivelRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="solicitaAnaliseAlvaraRequest">
+    <wsdl:part name="parameters" element="tns:solicitaAnaliseAlvaraRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="consultarDomicilioBancarioTruncadoResponse">
+    <wsdl:part name="parameters" element="tns:consultarDomicilioBancarioTruncadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="alterarDomicilioBancarioResponse">
+    <wsdl:part name="parameters" element="tns:alterarDomicilioBancarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarCadastroSiteRequest">
+    <wsdl:part name="parameters" element="tns:consultarCadastroSiteRequest" />
+  </wsdl:message>
+  <wsdl:message name="consultarDomicilioBancarioRequest">
+    <wsdl:part name="parameters" element="tns:consultarDomicilioBancarioRequest" />
+  </wsdl:message>
+  <wsdl:message name="alterarDadosCadastraisClienteRequest">
+    <wsdl:part name="parameters" element="tns:alterarDadosCadastraisClienteRequest" />
+  </wsdl:message>
+  <wsdl:message name="alterarDomicilioBancarioRequest">
+    <wsdl:part name="parameters" element="tns:alterarDomicilioBancarioRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="solicitaAnaliseAlvaraResponse">
+    <wsdl:part name="parameters" element="tns:solicitaAnaliseAlvaraResponse" />
+  </wsdl:message>
+  <wsdl:message name="faultMessage">
+    <wsdl:part name="parameters" element="fault:fault" />
+  </wsdl:message>
+  <wsdl:message name="consultarPrazosTaxasPrazoFlexivelResponse">
+    <wsdl:part name="parameters" element="tns:consultarPrazosTaxasPrazoFlexivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="alterarRamoAtividadeResponse">
+    <wsdl:part name="parameters" element="tns:alterarRamoAtividadeResponse" />
+  </wsdl:message>
+  <wsdl:message name="alterarRamoAtividadeRequest">
+    <wsdl:part name="parameters" element="tns:alterarRamoAtividadeRequest" />
+    <wsdl:part name="header" element="header:cieloSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="ClienteServicePortType">
+    <wsdl:operation name="consultarDadosCadastraisCliente">
+      <wsdl:documentation>Operacao responsavel consultar dados cadastrais do cliente.</wsdl:documentation>
+      <wsdl:input message="tns:consultarDadosCadastraisClienteRequest" />
+      <wsdl:output message="tns:consultarDadosCadastraisClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarFiliais">
+      <wsdl:documentation>Operacao responsavel consultar as filiais de um cliente.</wsdl:documentation>
+      <wsdl:input message="tns:consultarFiliaisRequest" />
+      <wsdl:output message="tns:consultarFiliaisResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarDadosCadastraisCliente">
+      <wsdl:documentation>Operacao responsavel por alterar Dados Cadastrais.</wsdl:documentation>
+      <wsdl:input message="tns:alterarDadosCadastraisClienteRequest" />
+      <wsdl:output message="tns:alterarDadosCadastraisClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDomicilioBancario">
+      <wsdl:documentation>Operacao responsavel por consultar Domicilio Bancario.</wsdl:documentation>
+      <wsdl:input message="tns:consultarDomicilioBancarioRequest" />
+      <wsdl:output message="tns:consultarDomicilioBancarioResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarDomicilioBancarioTruncado">
+      <wsdl:documentation>Operacao responsavel por consultar Domicilio Bancario.</wsdl:documentation>
+      <wsdl:input message="tns:consultarDomicilioBancarioTruncadoRequest" />
+      <wsdl:output message="tns:consultarDomicilioBancarioTruncadoResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarTerceiroTelefoneCliente">
+      <wsdl:documentation>Operacao responsavel alterar do terceiro telefone do cliente.</wsdl:documentation>
+      <wsdl:input message="tns:alterarTerceiroTelefoneClienteRequest" />
+      <wsdl:output message="tns:alterarTerceiroTelefoneClienteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarCadastroSite">
+      <wsdl:documentation>Operacao responsavel alterar do terceiro telefone do cliente.</wsdl:documentation>
+      <wsdl:input message="tns:consultarCadastroSiteRequest" />
+      <wsdl:output message="tns:consultarCadastroSiteResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarRamoAtividade">
+      <wsdl:documentation>Operacao responsavel por solicitar alteração de MCC.</wsdl:documentation>
+      <wsdl:input message="tns:alterarRamoAtividadeRequest" />
+      <wsdl:output message="tns:alterarRamoAtividadeResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarDomicilioBancario">
+      <wsdl:documentation>Operacao responsavel por solicitar alteração de Domicílio Bancário.</wsdl:documentation>
+      <wsdl:input message="tns:alterarDomicilioBancarioRequest" />
+      <wsdl:output message="tns:alterarDomicilioBancarioResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitaAnaliseAlvara">
+      <wsdl:documentation>Operacao responsavel por solicita Analise de Alvara.</wsdl:documentation>
+      <wsdl:input message="tns:solicitaAnaliseAlvaraRequest" />
+      <wsdl:output message="tns:solicitaAnaliseAlvaraResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="manterPrazoFlexivel">
+      <wsdl:documentation>Operacao responsavel por Manter Prazo Flexivel.</wsdl:documentation>
+      <wsdl:input message="tns:manterPrazoFlexivelRequest" />
+      <wsdl:output message="tns:manterPrazoFlexivelResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrazosTaxasPrazoFlexivel">
+      <wsdl:documentation>Operacao responsavel por Consultar Prazos e Taxas - Prazo Flexivel.</wsdl:documentation>
+      <wsdl:input message="tns:consultarPrazosTaxasPrazoFlexivelRequest" />
+      <wsdl:output message="tns:consultarPrazosTaxasPrazoFlexivelResponse" />
+      <wsdl:fault name="fault" message="tns:faultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClienteServiceSOAPBinding" type="tns:ClienteServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarDadosCadastraisCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:cieloSoapHeader" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarFiliais">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:cieloSoapHeader" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="alterarDadosCadastraisCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:cieloSoapHeader" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDomicilioBancario">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:cieloSoapHeader" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDomicilioBancarioTruncado">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:cieloSoapHeader" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="alterarTerceiroTelefoneCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:cieloSoapHeader" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCadastroSite">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:cieloSoapHeader" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="alterarRamoAtividade">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:alterarRamoAtividadeRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="alterarDomicilioBancario">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:alterarDomicilioBancarioRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="solicitaAnaliseAlvara">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:solicitaAnaliseAlvaraRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="manterPrazoFlexivel">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:manterPrazoFlexivelRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrazosTaxasPrazoFlexivel">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:consultarPrazosTaxasPrazoFlexivelRequest" part="header" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClienteService">
+    <wsdl:port name="ClienteServiceSOAPPort" binding="tns:ClienteServiceSOAPBinding">
+      <soap:address location="http://Cielo-OSB:8080/cadastro/cliente/cliente/v3" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.View.ProductsServicesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:Cielo.Sirius.UI.USD.ProductsAndServices.View"
+             Height="469" Width="1001">
+    <StackPanel>
+        <view:ProductsView/>
+        <view:ServicesView/>
+    </StackPanel>
+</UserControl>

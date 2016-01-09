@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Cielo.Sirius.UI.USD.ProductsAndServices.Shells.DetailsShell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:nav="clr-namespace:Cielo.Sirius.Foundation.USD.Navegation;assembly=Cielo.Sirius.Foundation.USD">
+    <ScrollViewer Height="479" Margin="2,0" Width="1006"
+                  Style="{DynamicResource ThinScrollViewerStyle}" >
+        <Grid>
+            <StackPanel x:Name="DetailsRegion" Width="408" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            <Rectangle Width="582" Height="553" Fill="{DynamicResource GroupBox.Background}"
+				HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,30,3,0"/>
+
+            <StackPanel Margin="0,30,0,0">
+                <ContentControl x:Name="RequestsSelectorRegion" Width="582" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <ContentControl x:Name="RequestsRegion" Width="560" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="22,2,0,0"
+                              nav:NavigationRegion.RegionName="RequestsRegion"/>
+            </StackPanel>
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>

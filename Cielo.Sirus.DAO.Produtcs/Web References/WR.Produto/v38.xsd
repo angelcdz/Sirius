@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:ass="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" xmlns:tns="http://service.cielo.com.br/cadastro/produto/produto/v3" xmlns:com="http://canonico.cielo.com.br/comum/v1" xmlns:cad="http://canonico.cielo.com.br/cadastro/v1" elementFormDefault="qualified" targetNamespace="http://service.cielo.com.br/cadastro/produto/produto/v3" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Comum.xsd" namespace="http://canonico.cielo.com.br/comum/v1" />
+  <import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Produto.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Cliente.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=Banco.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=ProdutoContratadoCliente.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=ProdutoMultivanContratadoCliente.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=PatAlelo.xsd" namespace="http://canonico.cielo.com.br/cadastro/v1" />
+  <import schemaLocation="v3?WSDL&amp;interface=ProdutoSOAP&amp;part=SolicitacaoCentralAtendimento.xsd" namespace="http://canonico.cielo.com.br/canalrelacionamento/atendimentoassistido/v1" />
+  <annotation>
+    <documentation>Versao: 1.0
+			Autor: Leandro Estrada
+			
+			Historico de revisao:
+			1.0.1 03-08-2015 Atualizacao de alterarParcelaFaixaProduto e habilitarDesabilitarVendaDigitada</documentation>
+  </annotation>
+  <element name="consultarProdutosHabilitadoClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarProdutosHabilitadoClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="produtos" type="tns:ProdutosContratadoClienteType" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTotalRegistros" type="long" />
+        <element minOccurs="0" maxOccurs="1" name="dataUltimaTransacao" type="date" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="ProdutosContratadoClienteType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="produtoContratadoCliente" type="tns:ProdutoContratadoClienteType" />
+    </sequence>
+  </complexType>
+  <complexType name="ProdutoContratadoClienteType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="produtoContratadoCliente" type="cad:ProdutoContratadoCliente" />
+      <element minOccurs="0" maxOccurs="1" name="indicadorVendaUltimoMes" type="boolean" />
+      <element minOccurs="0" maxOccurs="1" name="ordemApresentacao" type="integer" />
+      <element minOccurs="0" maxOccurs="1" name="tipoGrupoProduto" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="grupoProdutoPrazoFlexivel" nillable="true" type="tns:GrupoProdutoPrazoFlexivelType">
+        <annotation>
+          <documentation>Grupo de produtos de prazo flexível.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="GrupoProdutoPrazoFlexivelType">
+    <complexContent mixed="false">
+      <extension base="cad:GrupoProdutoPrazoFlexivel">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="IndicadorHabilitado" type="string">
+            <annotation>
+              <documentation>Indica se o grupo possui o prazo flexivel habilitado para o EC (S-Sim / N-Não)</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="consultarDetalheProdutoHabilitadoClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarDetalheProdutoHabilitadoClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="produtoContratadoCliente" type="tns:ProdutosContratadoClienteType" />
+        <element minOccurs="1" maxOccurs="1" name="produto" type="cad:Produto" />
+        <element minOccurs="1" maxOccurs="1" name="banco" type="cad:Banco" />
+        <element minOccurs="0" maxOccurs="1" name="cliente" type="cad:Cliente" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarProdutosElegiveisClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarProdutosElegiveisClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="produtos" type="tns:DadosProdutosType" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTotalRegistros" type="long" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="DadosProdutosType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="dadosProduto" nillable="true" type="tns:DadosProdutoType">
+        <annotation>
+          <documentation>Lista de produtos.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="DadosProdutoType">
+    <complexContent mixed="false">
+      <extension base="cad:Produto">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="ordemApresentacao" type="integer">
+            <annotation>
+              <documentation>Campo enviado pelo SEC para ordenar a apresentação do produtos na tela do CRM com base no faturamento da Cielo.</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="grupoProdutoPrazoFlexivel" nillable="true" type="tns:GrupoProdutoPrazoFlexivelType">
+            <annotation>
+              <documentation>Grupo de produtos de prazo flexível.</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="tipoGrupoProduto" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="consultarDetalheProdutoElegivelClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarDetalheProdutoElegivelClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="produto" nillable="true" type="tns:DadosProdutoType" />
+        <element minOccurs="0" maxOccurs="1" name="cliente" type="cad:Cliente" />
+        <element minOccurs="1" maxOccurs="1" name="produtoContratadoCliente" type="cad:ProdutoContratadoCliente" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarProdutosNaoElegiveisClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarProdutosNaoElegiveisClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="unbounded" name="produtos" nillable="true" type="tns:DadosProdutosType" />
+        <element minOccurs="1" maxOccurs="1" name="numeroTotalRegistros" type="long" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarDetalheProdutoNaoElegivelClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarDetalheProdutoNaoElegivelClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="produto" nillable="true" type="tns:DadosProdutoType" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarDetalheProdutoMultivanContratadoClienteRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarDetalheProdutoMultivanContratadoClienteResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="produtosMultivanContratadoCliente" nillable="true" type="tns:ProdutosMultivanContratadoClienteType" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <complexType name="ProdutosMultivanContratadoClienteType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="dadosProdutoMultivanContratadoCliente" type="tns:DadosProdutoMultivanContratadoClienteType" />
+    </sequence>
+  </complexType>
+  <complexType name="DadosProdutoMultivanContratadoClienteType">
+    <complexContent mixed="false">
+      <extension base="cad:ProdutoMultivanContratadoCliente">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="status" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <element name="habilitarProdutoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="protocolo" nillable="true" type="string">
+          <annotation>
+            <documentation>Numero Protocolo do CRM</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="quantidadeParcelas" nillable="true" type="integer">
+          <annotation>
+            <documentation>Quantidade de parcelas (parcelado) contrado pelo client.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="percentualTaxa" nillable="true" type="decimal">
+          <annotation>
+            <documentation>Percentual da taxa sobre o valor transacionado (que serve de remuneracao pelo produto/servico prestado) contratado pelo cliente.
+         					Referencia: TBESPREC_PCTXA (SEC/ES).</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="dadosFaixaTaxaSegmentado" nillable="true" type="tns:FaixasTaxaSegmentado">
+          <annotation>
+            <documentation>Lista de faixa de taxas de um produto parcelado contradado pelo cliente.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="nomeSolicitante" nillable="true" type="string">
+          <annotation>
+            <documentation>Nome do Solicitante</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="origem" nillable="true" type="string">
+          <annotation>
+            <documentation>Origem - Ideitifica o sistema solicitante</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="telefoneSolicitante" nillable="true" type="string">
+          <annotation>
+            <documentation>Telefone do Solicitante</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoEmpresa" nillable="true" type="string">
+          <annotation>
+            <documentation>Código da Empresa</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="habilitarProdutoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="statusRetorno" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="sistemaLegado" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="solicitacaoCentralAtendimento" type="ass:SolicitacaoCentralAtendimento" />
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="FaixaTaxaSegmentado">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="percentualTaxaFaixa" nillable="true" type="double">
+        <annotation>
+          <documentation>Valor da taxa correspondente a uma faixa de parcelas do produto contratado pelo cliente ou ofertado para o cliente.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="numeroInicialParcelaFaixa" nillable="true" type="integer">
+        <annotation>
+          <documentation>Numero inicial da parcela da faixa para a cobrança da taxa.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="numeroFinalParcelaFaixa" nillable="true" type="integer">
+        <annotation>
+          <documentation>Numero final da parcela da faixa para a cobrança da taxa.</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="codigoFaixa" nillable="true" type="integer">
+        <annotation>
+          <documentation>Codigo que identifica a faixa de taxa valida para um conjunto de prestacoes de um produto parcelado a ser ofertado para o cliente.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="FaixasTaxaSegmentado">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="dadosFaixaTaxaSegmentado" nillable="true" type="tns:FaixaTaxaSegmentado">
+        <annotation>
+          <documentation>Lista de faixa de taxas de um produto parcelado contradado pelo cliente.</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="desabilitarProdutoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="protocolo" nillable="true" type="string">
+          <annotation>
+            <documentation>Numero Protocolo do CRM</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="nomeSolicitante" nillable="true" type="string">
+          <annotation>
+            <documentation>Nome do Solicitante</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="origem" nillable="true" type="string">
+          <annotation>
+            <documentation>Origem - Ideitifica o sistema solicitante</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="telefoneSolicitante" nillable="true" type="string">
+          <annotation>
+            <documentation>Telefone do Solicitante</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoEmpresa" nillable="true" type="string">
+          <annotation>
+            <documentation>Código da Empresa</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="motivoSolicitacao" nillable="true" type="string">
+          <annotation>
+            <documentation>Motivo da Solicitacao</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="desabilitarProdutoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="statusRetorno" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="sistemaLegado" type="string" />
+        <element minOccurs="1" maxOccurs="1" name="solicitacaoCentralAtendimento" type="ass:SolicitacaoCentralAtendimento" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="alterarParcelaFaixaProdutoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="protocolo" nillable="true" type="string">
+          <annotation>
+            <documentation>Numero Protocolo do CRM</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="quantidadeParcelas" nillable="true" type="integer">
+          <annotation>
+            <documentation>Quantidade de parcelas (parcelado) contrado pelo client.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="percentualTaxa" nillable="true" type="decimal">
+          <annotation>
+            <documentation>Percentual da taxa sobre o valor transacionado (que serve de remuneracao pelo produto/servico prestado) contratado pelo cliente.
+         					Referencia: TBESPREC_PCTXA (SEC/ES).</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="dadosFaixaTaxaSegmentado" nillable="true" type="tns:FaixasTaxaSegmentado">
+          <annotation>
+            <documentation>Lista de faixa de taxas de um produto parcelado contradado pelo cliente.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="origem" type="string">
+          <annotation>
+            <documentation>Origem - Identifica o sistema solicitante</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="alterarParcelaFaixaProdutoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="statusRetorno" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="sistemaLegado" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoSolicitacao" type="integer">
+          <annotation>
+            <documentation>Codigo que identifica unicamente uma solicitacao.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="dataPrevistaConclusaoSolicitacao" nillable="true" type="date">
+          <annotation>
+            <documentation>Data prevista para a solicitacao ser concluida.</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="habilitarDesabilitarVendaDigitadaRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="indicaOperacao" nillable="true" type="string">
+          <annotation>
+            <documentation>Indica se a validação é para operação de Habilitar ou Desabilitar (H/D)</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="dadosVendaDigitada" nillable="true" type="tns:DadosVendaDigitadaType">
+          <annotation>
+            <documentation>Lista que indica se o produto deverá ser Adicionado ou Removido (S - Adicionar/N - Remover)</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="protocolo" nillable="true" type="string">
+          <annotation>
+            <documentation>Numero Protocolo do CRM</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="origem" nillable="true" type="string">
+          <annotation>
+            <documentation>Origem - Identifica o sistema solicitante</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="habilitarDesabilitarVendaDigitadaResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="statusRetorno" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="sistemaLegado" nillable="true" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="codigoSolicitacao" type="integer">
+          <annotation>
+            <documentation>Codigo que identifica unicamente uma solicitacao.</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="0" maxOccurs="1" name="dataPrevistaConclusaoSolicitacao" nillable="true" type="date">
+          <annotation>
+            <documentation>Data prevista para a solicitacao ser concluida.</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="DadosVendaDigitadaType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="vendaDigitada" type="tns:VendaDigitadaType" />
+    </sequence>
+  </complexType>
+  <complexType name="VendaDigitadaType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="codigoProduto" nillable="true" type="integer">
+        <annotation>
+          <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="1" maxOccurs="1" name="indicaAcao" nillable="true" type="string">
+        <annotation>
+          <documentation>Indica se o produto deverá ser Adicionado ou Removido (S - Adicionar/N - Remover)</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="validarPermissaoVendaDigitadaRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="indicaOperacao" nillable="true" type="string">
+          <annotation>
+            <documentation>Indica se a validação é para operação de Habilitar ou Desabilitar (H/D)</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="codigoRamoAtividade" nillable="true" type="string">
+          <annotation>
+            <documentation>Codigo definido pelas bandeiras Visa e Mastercard
+							para identificar um ramo de atividade Tambem conhecido como MCC,
+							ele e adotado pela Cielo e por todos os adquirentes e emissores do
+							mundo para classificar o ramo de negocio dos seus clientes.</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="validarPermissaoVendaDigitadaResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="tipoMensagemRetorno" type="string">
+          <annotation>
+            <documentation>Tipo de Mensagem (E - Erro / A - Alerta)</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarProdutosPrazoFlexivelRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarProdutosPrazoFlexivelResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="grupoProdutoPrazoFlexivel" type="cad:GrupoProdutoPrazoFlexivel" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarInformacaoPatAleloRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarInformacaoPatAleloResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="dadosPatAleloVVR" type="tns:DadosPatAleloVVRType" />
+        <element minOccurs="0" maxOccurs="1" name="dadosPatAleloVVA" type="tns:DadosPatAleloVVAType" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="DadosPatAleloVVRType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="patAlelo" type="cad:PatAlelo" />
+      <element minOccurs="0" maxOccurs="1" name="dadosPatAlelo" type="tns:DadosPatAleloCommonType" />
+      <element minOccurs="0" maxOccurs="1" name="dadosTipoEstabelecimentoVVR" type="tns:DadosTipoEstabelecimentoVVRType" />
+    </sequence>
+  </complexType>
+  <complexType name="DadosPatAleloVVAType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="patAlelo" type="cad:PatAlelo" />
+      <element minOccurs="0" maxOccurs="1" name="dadosPatAlelo" type="tns:DadosPatAleloCommonType" />
+      <element minOccurs="0" maxOccurs="1" name="dadosTipoEstabelecimentoVVA" type="tns:DadosTipoEstabelecimentoVVAType" />
+      <element minOccurs="0" maxOccurs="1" name="checkOutsLoja" type="integer">
+        <annotation>
+          <documentation>QUANTIDADE DE CHECKOUTS NA LOJA</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PatAleloType">
+    <complexContent mixed="false">
+      <extension base="cad:PatAlelo">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="dadosPatAlelo" type="tns:DadosPatAleloCommonType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DadosPatAleloCommonType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="aberto24Horas" type="boolean">
+        <annotation>
+          <documentation>HORARIO DE FUNCIONAMENTO - 24 HORAS (S/N)</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="horarioComercial" type="boolean">
+        <annotation>
+          <documentation>HORARIO DE FUNCIONAMENTO - COMERCIAL (S/N)</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="domingo" type="boolean">
+        <annotation>
+          <documentation>DIAS DE FUNCIONAMENTO - DOMINGO (S/N)</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="noturno" type="boolean">
+        <annotation>
+          <documentation>HORARIO DE FUNCIONAMENTO - NOTURNO (S/N)</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="sabado" type="boolean">
+        <annotation>
+          <documentation>DIAS DE FUNCIONAMENTO - SABADO (S/N)</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="segundaSexta" type="boolean">
+        <annotation>
+          <documentation>DIAS DE FUNCIONAMENTO - SEGUNDA A SEXTA (S/N)</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="padaria" type="boolean">
+        <annotation>
+          <documentation>Padaria</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="outros" type="boolean">
+        <annotation>
+          <documentation>OUTROS</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="DadosTipoEstabelecimentoVVRType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="bar" type="boolean">
+        <annotation>
+          <documentation>BAR</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="fastFood" type="boolean">
+        <annotation>
+          <documentation>FastFood</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="lanchonete" type="boolean">
+        <annotation>
+          <documentation>Lanchonete</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="restaurante" type="boolean">
+        <annotation>
+          <documentation>Restaurante</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="DadosTipoEstabelecimentoVVAType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="acougue" type="boolean">
+        <annotation>
+          <documentation>Açougue</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="armazem" type="boolean">
+        <annotation>
+          <documentation>Armazém</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="hipermercado" type="boolean">
+        <annotation>
+          <documentation>Hipermercado</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="hortimercado" type="boolean">
+        <annotation>
+          <documentation>Hortimercado</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="laticinioFrios" type="boolean">
+        <annotation>
+          <documentation>Laticínio-Frios</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="mercearia" type="boolean">
+        <annotation>
+          <documentation>Mercearia</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="peixaria" type="boolean">
+        <annotation>
+          <documentation>Peixaria</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="supermercado" type="boolean">
+        <annotation>
+          <documentation>Supermercado</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="consultarProdutoDesabilitadoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigoCliente" nillable="true" type="long">
+          <annotation>
+            <documentation>Codigo adotado pela Cielo para identificar o Cliente</documentation>
+          </annotation>
+        </element>
+        <element minOccurs="1" maxOccurs="1" name="novoCodigoRamoAtividade" nillable="true" type="string">
+          <annotation>
+            <documentation>Codigo definido pelas bandeiras Visa e Mastercard
+							para identificar um ramo de atividade Tambem conhecido como MCC,
+							ele e adotado pela Cielo e por todos os adquirentes e emissores do
+							mundo para classificar o ramo de negocio dos seus clientes.</documentation>
+          </annotation>
+        </element>
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarProdutoDesabilitadoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="produtos" type="cad:Produtos" />
+        <element minOccurs="0" maxOccurs="1" name="codigoRetorno" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricaoRetornoMensagem" type="string" />
+      </sequence>
+      <attributeGroup ref="com:paginacaoSequencialEDSLink" />
+    </complexType>
+  </element>
+  <element name="consultarOrdemProdutoRequest">
+    <complexType>
+      <sequence>
+        <element minOccurs="1" maxOccurs="1" name="codigo" nillable="true" type="integer">
+          <annotation>
+            <documentation>Codigo do produto oferecido pela Cielo aos seus clientes</documentation>
+          </annotation>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="consultarOrdemProdutoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="1" name="codigo" type="integer" />
+        <element minOccurs="0" maxOccurs="1" name="descricao" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="bandeira" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="apelido" type="string" />
+        <element minOccurs="0" maxOccurs="1" name="ordem" type="integer" />
+      </sequence>
+    </complexType>
+  </element>
+</schema>

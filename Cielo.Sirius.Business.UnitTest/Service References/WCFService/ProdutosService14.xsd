@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.DesabilitarServico" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.DesabilitarServico" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="DesabilitarServicoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ArvoreDeAssunto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CanalDeAtendimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cliente" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoServico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IlhaDeAtendimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentCaseId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TituloDaOcorrencia" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DesabilitarServicoRequest" nillable="true" type="tns:DesabilitarServicoRequest" />
+  <xs:complexType name="DesabilitarServicoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DesabilitarServicoResponse" nillable="true" type="tns:DesabilitarServicoResponse" />
+</xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.CalcularAlcadaFaixasParceladoSegmentado" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.CalcularAlcadaFaixasParceladoSegmentado" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="CalcularAlcadaFaixasParceladoSegmentadoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IlhaAtendimento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MCC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Taxas" nillable="true" type="tns:ArrayOfCalcularAlcadaFaixasParceladoSegmentadoTaxaDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CalcularAlcadaFaixasParceladoSegmentadoRequest" nillable="true" type="tns:CalcularAlcadaFaixasParceladoSegmentadoRequest" />
+  <xs:complexType name="ArrayOfCalcularAlcadaFaixasParceladoSegmentadoTaxaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalcularAlcadaFaixasParceladoSegmentadoTaxaDTO" nillable="true" type="tns:CalcularAlcadaFaixasParceladoSegmentadoTaxaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalcularAlcadaFaixasParceladoSegmentadoTaxaDTO" nillable="true" type="tns:ArrayOfCalcularAlcadaFaixasParceladoSegmentadoTaxaDTO" />
+  <xs:complexType name="CalcularAlcadaFaixasParceladoSegmentadoTaxaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoFaixa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroFinalParcelaFaixa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroInicialParcelaFaixa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentualDescontoAlcada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PercentualMaximoDescontoAlcada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PercentualMinimoDescontoAlcada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PercentualTaxaPadrao" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalcularAlcadaFaixasParceladoSegmentadoTaxaDTO" nillable="true" type="tns:CalcularAlcadaFaixasParceladoSegmentadoTaxaDTO" />
+  <xs:complexType name="CalcularAlcadaFaixasParceladoSegmentadoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Taxas" nillable="true" type="tns:ArrayOfCalcularAlcadaFaixasParceladoSegmentadoTaxaDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CalcularAlcadaFaixasParceladoSegmentadoResponse" nillable="true" type="tns:CalcularAlcadaFaixasParceladoSegmentadoResponse" />
+</xs:schema>

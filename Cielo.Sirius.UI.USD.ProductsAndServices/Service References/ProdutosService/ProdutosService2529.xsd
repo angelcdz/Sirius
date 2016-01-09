@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarServicoElegivelCliente" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Cielo.Sirius.Integration.OutboundService/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="ConsultarServicoElegivelClienteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarServicoElegivelClienteRequest" nillable="true" type="tns:ConsultarServicoElegivelClienteRequest" />
+  <xs:complexType name="ConsultarServicoElegivelClienteResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumeroTotalRegistros" type="xs:long" />
+          <xs:element minOccurs="0" name="Servicos" nillable="true" type="tns:ArrayOfConsultarServicoClienteElegivelServicoDTO" />
+          <xs:element minOccurs="0" name="Vantagem" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarServicoElegivelClienteResponse" nillable="true" type="tns:ConsultarServicoElegivelClienteResponse" />
+  <xs:complexType name="ArrayOfConsultarServicoClienteElegivelServicoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultarServicoClienteElegivelServicoDTO" nillable="true" type="tns:ConsultarServicoClienteElegivelServicoDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultarServicoClienteElegivelServicoDTO" nillable="true" type="tns:ArrayOfConsultarServicoClienteElegivelServicoDTO" />
+  <xs:complexType name="ConsultarServicoClienteElegivelServicoDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoServico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescricaoServico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicadorPossuiDemandasAbertas" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NomeServico" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarServicoClienteElegivelServicoDTO" nillable="true" type="tns:ConsultarServicoClienteElegivelServicoDTO" />
+</xs:schema>

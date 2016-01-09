@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarDetalheProdutoMultivanContratadoCliente" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Cielo.Sirius.Integration.OutboundService/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="ConsultarDetalheProdutoMultivanContratadoClienteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarDetalheProdutoMultivanContratadoClienteRequest" nillable="true" type="tns:ConsultarDetalheProdutoMultivanContratadoClienteRequest" />
+  <xs:complexType name="ConsultarDetalheProdutoMultivanContratadoClienteResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DetalhesMultivan" nillable="true" type="tns:ArrayOfConsultarDetalheProdutoMultivanContratadoClienteDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarDetalheProdutoMultivanContratadoClienteResponse" nillable="true" type="tns:ConsultarDetalheProdutoMultivanContratadoClienteResponse" />
+  <xs:complexType name="ArrayOfConsultarDetalheProdutoMultivanContratadoClienteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultarDetalheProdutoMultivanContratadoClienteDTO" nillable="true" type="tns:ConsultarDetalheProdutoMultivanContratadoClienteDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultarDetalheProdutoMultivanContratadoClienteDTO" nillable="true" type="tns:ArrayOfConsultarDetalheProdutoMultivanContratadoClienteDTO" />
+  <xs:complexType name="ConsultarDetalheProdutoMultivanContratadoClienteDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FimVigencia" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InicioVigencia" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NomeEmpresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroCadastroEmpresa" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarDetalheProdutoMultivanContratadoClienteDTO" nillable="true" type="tns:ConsultarDetalheProdutoMultivanContratadoClienteDTO" />
+</xs:schema>

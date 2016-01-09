@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarExclusaoProduto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.SolicitarExclusaoProduto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52893/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="SolicitarExclusaoProdutoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="CodigoEmpresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MotivoSolicitacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NomeSolicitante" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Origem" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Protocolo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TelefoneSolicitante" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SolicitarExclusaoProdutoRequest" nillable="true" type="tns:SolicitarExclusaoProdutoRequest" />
+  <xs:complexType name="SolicitarExclusaoProdutoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SistemaLegado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SolicitacaoCentralAtendimento" nillable="true" type="tns:SolicitarExclusaoProdutoDTO" />
+          <xs:element minOccurs="0" name="StatusRetorno" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SolicitarExclusaoProdutoResponse" nillable="true" type="tns:SolicitarExclusaoProdutoResponse" />
+  <xs:complexType name="SolicitarExclusaoProdutoDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoSolicitacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataPrevistaConclusaoSolicitacao" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SolicitarExclusaoProdutoDTO" nillable="true" type="tns:SolicitarExclusaoProdutoDTO" />
+</xs:schema>

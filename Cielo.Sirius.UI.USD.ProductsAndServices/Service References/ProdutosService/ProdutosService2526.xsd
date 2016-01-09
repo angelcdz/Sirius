@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Contracts.ConsultarProdutoHabilitadoCliente" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/Cielo.Sirius.Integration.OutboundService/ProdutosService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" />
+  <xs:complexType name="ConsultarProdutoHabilitadoClienteRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q1:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoCliente" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarProdutoHabilitadoClienteRequest" nillable="true" type="tns:ConsultarProdutoHabilitadoClienteRequest" />
+  <xs:complexType name="ConsultarProdutoHabilitadoClienteResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataUltimaTransacao" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NumeroTotalRegistros" type="xs:long" />
+          <xs:element minOccurs="0" name="Produtos" nillable="true" type="tns:ArrayOfConsultarProdutoHabilitadoClienteProdutoDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarProdutoHabilitadoClienteResponse" nillable="true" type="tns:ConsultarProdutoHabilitadoClienteResponse" />
+  <xs:complexType name="ArrayOfConsultarProdutoHabilitadoClienteProdutoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultarProdutoHabilitadoClienteProdutoDTO" nillable="true" type="tns:ConsultarProdutoHabilitadoClienteProdutoDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultarProdutoHabilitadoClienteProdutoDTO" nillable="true" type="tns:ArrayOfConsultarProdutoHabilitadoClienteProdutoDTO" />
+  <xs:complexType name="ConsultarProdutoHabilitadoClienteProdutoDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Cielo.Sirius.Foundation" base="q3:DTOBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoBandeira" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicadorPossuiDemandasAbertas" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IndicadorVendaDigitada" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IndicadorVendaDigitadaHabilitada" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IndicadorVendaUltimoMes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NomeBandeira" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NomeProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NomeTipoLiquidacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrdemApresentacao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PercentualDesconto" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PercentualTaxa" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PercentualTaxaGarantia" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="PercentualTaxaPadrao" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="QuantidadeDiasPrazo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuantidadeParcelasLoja" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoGrupoProduto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValorTarifa" nillable="true" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsultarProdutoHabilitadoClienteProdutoDTO" nillable="true" type="tns:ConsultarProdutoHabilitadoClienteProdutoDTO" />
+</xs:schema>

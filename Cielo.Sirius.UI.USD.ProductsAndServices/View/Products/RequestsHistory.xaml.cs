@@ -1,0 +1,18 @@
+﻿using Cielo.Sirius.Foundation.USD;
+using Cielo.Sirius.UI.USD.ProductsAndServices.ViewModel;
+using System.Windows.Controls;
+
+namespace Cielo.Sirius.UI.USD.ProductsAndServices.View
+{
+    /// <summary>
+    /// Interaction logic for RequestsHistory.xaml
+    /// </summary>
+    public partial class RequestsHistory : ViewBaseControl
+    {
+        public RequestsHistory()
+        {
+            this.DataContext = new RequestsHistoryViewModel();
+            InitializeComponent();
+        }
+    }
+}
